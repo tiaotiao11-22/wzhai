@@ -1553,26 +1553,82 @@ Although RGBD cameras can provide depth information in real scenes, the captured
 
 <h2>Pre-prints </h2>
 
-
 <div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/liu2024grounding.png" alt="" width="180px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2409.19650" target="“blank”">Grounding 3D Scene Affordance From Egocentric Interactions</a></b>
-<br>Cuiyu Liu, <b>Wei Zhai</b>, Yuhang Yang, Hongchen Luo, Sen Liang, Yang Cao, Yu Kang.
+<img src="./Wei Zhai_files/liao2024ef.png" alt="" width="180px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2410.15392" target="“blank”">EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting</a></b>
+<br>Bohao Liao, <b>Wei Zhai</b>, Zengyu Wan, Tianzhu Zhang, Yang Cao, Zheng-Jun Zha.
 <br><i>Arxiv.</i>
 <br>
-<a href="javascript:toggleblock(&#39;liu2024grounding-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;liu2024grounding-bib&#39;)">bibtex</a></p>
+<a href="javascript:toggleblock(&#39;liao2024ef-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;liao2024ef-bib&#39;)">bibtex</a> / <a href="https://lbh666.github.io/ef-3dgs/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
 <p>
 </p><p align="justify">
-<i id="liu2024grounding-abs" style="display: none;">
-Grounding 3D scene affordance aims to locate interactive regions in 3D environments, which is crucial for embodied agents to interact intelligently with their surroundings. Most existing approaches achieve this by mapping semantics to 3D instances based on static geometric structure and visual appearance. This passive strategy limits the agent’s ability to actively perceive and engage with the environment, making it reliant on predefined semantic instructions. In contrast, humans develop complex interaction skills by observing and imitating how others interact with their surroundings. To empower the model with such abilities, we introduce a novel task: grounding 3D scene affordance from egocentric interactions, where the goal is to identify the corresponding affordance regions in a 3D scene based on an egocentric video of an interaction. This task faces the challenges of spatial complexity and alignment complexity across multiple sources. To address these challenges, we propose the Egocentric Interaction-driven 3D Scene Affordance Grounding (Ego-SAG) framework, which utilizes interaction intent to guide the model in focusing on interaction-relevant sub-regions and aligns affordance features from different sources through a bidirectional query decoder mechanism. Furthermore, we introduce the Egocentric Video-3D Scene Affordance Dataset (VSAD), covering a wide range of common interaction types and diverse 3D environments to support this task. Extensive experiments on VSAD validate both the feasibility of the proposed task and the effectiveness of our approach.
+<i id="liao2024ef-abs" style="display: none;">
+Scene reconstruction from casually captured videos has wide applications in real-world scenarios. With recent advancements in differentiable rendering techniques, several methods have attempted to simultaneously optimize scene representations (NeRF or 3DGS) and camera poses. Despite recent progress, existing methods relying on traditional camera input tend to fail in high-speed (or equivalently low-frame-rate) scenarios. Event cameras, inspired by biological vision, record pixel-wise intensity changes asynchronously with high temporal resolution, providing valuable scene and motion information in blind inter-frame intervals. In this paper, we introduce the event camera to aid scene construction from a casually captured video for the first time, and propose Event-Aided Free-Trajectory 3DGS, called EF-3DGS, which seamlessly integrates the advantages of event cameras into 3DGS through three key components. First, we leverage the Event Generation Model (EGM) to fuse events and frames, supervising the rendered views observed by the event stream. Second, we adopt the Contrast Maximization (CMax) framework in a piece-wise manner to extract motion information by maximizing the contrast of the Image of Warped Events (IWE), thereby calibrating the estimated poses. Besides, based on the Linear Event Generation Model (LEGM), the brightness information encoded in the IWE is also utilized to constrain the 3DGS in the gradient domain. Third, to mitigate the absence of color information of events, we introduce photometric bundle adjustment (PBA) to ensure view consistency across events and this http URL evaluate our method on the public Tanks and Temples benchmark and a newly collected real-world dataset, RealEv-DAVIS.
 </i>
 </p>
 <p align="justify">
-</p><pre id="liu2024grounding-bib" style="display: none;">
+</p><pre id="liao2024ef-bib" style="display: none;">
 
 </pre>
 <p></p>
-<script language="JavaScript">hideblock("liu2024grounding-bib");hideblock("liu2024grounding-abs");</script>
+<script language="JavaScript">hideblock("liao2024ef-bib");hideblock("liao2024ef-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/luo2024visual.png" alt="" width="180px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2410.11363" target="“blank”">Visual-Geometric Collaborative Guidance for Affordance Learning</a></b>
+<br>Hongchen Luo, <b>Wei Zhai</b>, Jiao Wang, Yang Cao, Zheng-Jun Zha.
+<br><i>Arxiv.</i>
+<br><i><font color=#666666>Journal version of "<b>Leverage Interactive Affinity for Affordance Learning</b>" (CVPR 2023)</font></i>
+<br>
+<a href="javascript:toggleblock(&#39;luo2024visual-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;luo2024visual-bib&#39;)">bibtex</a> / <a href="https://github.com/lhc1224/VCR-Net" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="luo2024visual-abs" style="display: none;">
+Perceiving potential ``action possibilities'' (\ie, affordance) regions of images and learning interactive functionalities of objects from human demonstration is a challenging task due to the diversity of human-object interactions. Prevailing affordance learning algorithms often adopt the label assignment paradigm and presume that there is a unique relationship between functional region and affordance label, yielding poor performance when adapting to unseen environments with large appearance variations. In this paper, we propose to leverage interactive affinity for affordance learning, \ie extracting interactive affinity from human-object interaction and transferring it to non-interactive objects. Interactive affinity, which represents the contacts between different parts of the human body and local regions of the target object, can provide inherent cues of interconnectivity between humans and objects, thereby reducing the ambiguity of the perceived action possibilities. To this end, we propose a visual-geometric collaborative guided affordance learning network that incorporates visual and geometric cues to excavate interactive affinity from human-object interactions jointly. Besides, a contact-driven affordance learning (CAL) dataset is constructed by collecting and labeling over 55,047 images. Experimental results demonstrate that our method outperforms the representative models regarding objective metrics and visual quality.
+</i>
+</p>
+<p align="justify">
+</p><pre id="luo2024visual-bib" style="display: none;">
+@article{luo2024visual,
+    title={Visual-Geometric Collaborative Guidance for Affordance Learning},
+    author={Luo, Hongchen and Zhai, Wei and Wang, Jiao and Cao, Yang and Zha, Zheng-Jun},
+    journal={arXiv preprint arXiv:2410.11363},
+    year={2024}
+    }
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("luo2024visual-bib");hideblock("luo2024visual-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/default.jpeg" alt="" width="180px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2410.10798?" target="“blank”">MMAR: Towards Lossless Multi-Modal Auto-Regressive Prababilistic Modeling</a></b>
+<br>Jian Yang, Dacheng Yin, Yizhou Zhou, Fengyun Rao, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
+<br><i>Arxiv.</i>
+<br>
+<a href="javascript:toggleblock(&#39;yang2024mmar-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;yang2024mmar-bib&#39;)">bibtex</a></p>
+<p>
+</p><p align="justify">
+<i id="yang2024mmar-abs" style="display: none;">
+Recent advancements in multi-modal large language models have propelled the development of joint probabilistic models capable of both image understanding and generation. However, we have identified that recent methods inevitably suffer from loss of image information during understanding task, due to either image discretization or diffusion denoising steps. To address this issue, we propose a novel Multi-Modal Auto-Regressive (MMAR) probabilistic modeling framework. Unlike discretization line of method, MMAR takes in continuous-valued image tokens to avoid information loss. Differing from diffusion-based approaches, we disentangle the diffusion process from auto-regressive backbone model by employing a light-weight diffusion head on top each auto-regressed image patch embedding. In this way, when the model transits from image generation to understanding through text generation, the backbone model’s hidden representation of the image is not limited to the last denoising step. To successfully train our method, we also propose a theoretically proven technique that addresses the numerical stability issue and a training strategy that balances the generation and understanding task goals. Through extensive evaluations on 18 image understanding benchmarks, MMAR demonstrates much more superior performance than other joint multi-modal models, matching the method that employs pretrained CLIP vision encoder, meanwhile being able to generate high quality images at the same time. We also showed that our method is scalable with larger data and model size.
+</i>
+</p>
+<p align="justify">
+</p><pre id="yang2024mmar-bib" style="display: none;">
+@article{yang2024mmar,
+    title={MMAR: Towards Lossless Multi-Modal Auto-Regressive Prababilistic Modeling},
+    author={Yang, Jian and Yin, Dacheng and Zhou, Yizhou and Rao, Fengyun and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+    journal={arXiv preprint arXiv:2410.10798},
+    year={2024}
+    }
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("yang2024mmar-bib");hideblock("yang2024mmar-abs");</script>
 <p></p>
 </div></div>
 
@@ -1592,10 +1648,43 @@ Zero-shot anomaly detection (ZSAD) recognizes and localizes anomalies in previou
 </p>
 <p align="justify">
 </p><pre id="deng2024vmad-bib" style="display: none;">
-
+@article{deng2024vmad,
+    title={VMAD: Visual-enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection},
+    author={Deng, Huilin and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
+    journal={arXiv preprint arXiv:2409.20146},
+    year={2024}
+    }
 </pre>
 <p></p>
 <script language="JavaScript">hideblock("deng2024vmad-bib");hideblock("deng2024vmad-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/liu2024grounding.png" alt="" width="180px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2409.19650" target="“blank”">Grounding 3D Scene Affordance From Egocentric Interactions</a></b>
+<br>Cuiyu Liu, <b>Wei Zhai</b>, Yuhang Yang, Hongchen Luo, Sen Liang, Yang Cao, Zheng-Jun Zha.
+<br><i>Arxiv.</i>
+<br>
+<a href="javascript:toggleblock(&#39;liu2024grounding-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;liu2024grounding-bib&#39;)">bibtex</a></p>
+<p>
+</p><p align="justify">
+<i id="liu2024grounding-abs" style="display: none;">
+Grounding 3D scene affordance aims to locate interactive regions in 3D environments, which is crucial for embodied agents to interact intelligently with their surroundings. Most existing approaches achieve this by mapping semantics to 3D instances based on static geometric structure and visual appearance. This passive strategy limits the agent’s ability to actively perceive and engage with the environment, making it reliant on predefined semantic instructions. In contrast, humans develop complex interaction skills by observing and imitating how others interact with their surroundings. To empower the model with such abilities, we introduce a novel task: grounding 3D scene affordance from egocentric interactions, where the goal is to identify the corresponding affordance regions in a 3D scene based on an egocentric video of an interaction. This task faces the challenges of spatial complexity and alignment complexity across multiple sources. To address these challenges, we propose the Egocentric Interaction-driven 3D Scene Affordance Grounding (Ego-SAG) framework, which utilizes interaction intent to guide the model in focusing on interaction-relevant sub-regions and aligns affordance features from different sources through a bidirectional query decoder mechanism. Furthermore, we introduce the Egocentric Video-3D Scene Affordance Dataset (VSAD), covering a wide range of common interaction types and diverse 3D environments to support this task. Extensive experiments on VSAD validate both the feasibility of the proposed task and the effectiveness of our approach.
+</i>
+</p>
+<p align="justify">
+</p><pre id="liu2024grounding-bib" style="display: none;">
+@article{liu2024grounding,
+    title={Grounding 3D Scene Affordance From Egocentric Interactions},
+    author={Liu, Cuiyu and Zhai, Wei and Yang, Yuhang and Luo, Hongchen and Liang, Sen and Cao, Yang and Zha, Zheng-Jun},
+    journal={arXiv preprint arXiv:2409.19650},
+    year={2024}
+    }
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("liu2024grounding-bib");hideblock("liu2024grounding-abs");</script>
 <p></p>
 </div></div>
 
