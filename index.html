@@ -280,6 +280,10 @@ I work on computer vision, embodied intelligence and machine learning. I am curr
 </div>
 <h2>News</h2>
 
+<p>&#9658; (06/2025) <b><font color=#FF0000>Four </font></b><font color=#000000>papers are accepted by </font><b><font color=#FF0000>ICCV 2025 ~</font></b></i></p>
+<p>&#9658; (06/2025) <font color=#000000>Our team wins the </font><b><font color=#0000FF>1st Place </font></b><font color=#000000>of </font><b><font color=#FF0000>Efficient Event-based Eye-Tracking Challenge ~</font></b></i></p>
+<p>&#9658; (06/2025) <font color=#000000>Our team wins the </font><b><font color=#0000FF>2nd Place </font></b><font color=#000000>of </font><b><font color=#FF0000>3D Contact Estimation Challenge (RHOBIN2025 CVPR) ~</font></b></i></p>
+<p>&#9658; (05/2025) <b><font color=#FF0000>One </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>SCIENCE CHINA Information Sciences ~</font></b></i></p>
 <p>&#9658; (02/2025) <b><font color=#FF0000>Five </font></b><font color=#000000>papers are accepted by </font><b><font color=#FF0000>CVPR 2025 (<font color=#0000FF>One Highlight Paper</font>) ~</font></b></i></p>
 <p>&#9658; (09/2024) <b><font color=#FF0000>One </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>NeurIPS 2024 ~</font></b></i></p>
 <p>&#9658; (07/2024) <b><font color=#FF0000>One </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>ACM MM 2024 ~</font></b></i></p>
@@ -337,6 +341,173 @@ I work on computer vision, embodied intelligence and machine learning. I am curr
 <h2>Publications</h2>
 
 <p><b>2025</b></p>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/yang2025sigman.gif" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2504.06982" target="“blank”">SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets</a></b>
+<br>Yuhang Yang, Fengqi Liu, Yixing Lu, Qin Zhao, Pingyu Wu, <b>Wei Zhai*</b>, Ran Yi, Yang Cao, Lizhuang Ma, Zheng-Jun Zha, Junting Dong*.
+<br><i>IEEE/CVF International Conference on Computer Vision (<b>ICCV 2025</b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;yang2025sigman-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;yang2025sigman-bib&#39;)">bibtex</a> / <a href="https://yyvhang.github.io/SIGMAN_3D/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="yang2025sigman-abs" style="display: none;">
+3D human digitization has long been a highly pursued yet challenging task. Existing methods aim to generate high-quality 3D digital humans from single or multiple views, but remain primarily constrained by current paradigms and the scarcity of 3D human assets. Specifically, recent approaches fall into several paradigms: optimization-based and feed-forward (both single-view regression and multi-view generation with reconstruction). However, they are limited by slow speed, low quality, cascade reasoning, and ambiguity in mapping low-dimensional planes to high-dimensional space due to occlusion and invisibility, respectively. Furthermore, existing 3D human assets remain small-scale, insufficient for large-scale training. To address these challenges, we propose a latent space generation paradigm for 3D human digitization, which involves compressing multi-view images into Gaussians via a UV-structured VAE, along with DiT-based conditional generation, we transform the ill-posed low-to-high-dimensional mapping problem into a learnable distribution shift, which also supports end-to-end inference. In addition, we employ the multi-view optimization approach combined with synthetic data to construct the HGS-1M dataset, which contains 1 million 3D Gaussian assets to support the large-scale training. Experimental results demonstrate that our paradigm, powered by large-scale training, produces high-quality 3D human Gaussians with intricate textures, facial details, and loose clothing deformation. All training code, models, and the dataset will be open-sourced.</i>
+</p>
+<p align="justify">
+</p><pre id="yang2025sigman-bib" style="display: none;">
+@article{yang2025sigman,
+  title={SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets},
+  author={Yang, Yuhang and Liu, Fengqi and Lu, Yixing and Zhao, Qin and Wu, Pingyu and Zhai, Wei and Yi, Ran and Cao, Yang and Ma, Lizhuang and Zha, Zheng-Jun and others},
+  journal={arXiv preprint arXiv:2504.06982},
+  year={2025}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("yang2025sigman-bib");hideblock("yang2025sigman-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/yu2025hero.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2503.08270" target="“blank”">HERO: Human Reaction Generation from Videos</a></b>
+<br>Chengjun Yu, <b>Wei Zhai*</b>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
+<br><i>IEEE/CVF International Conference on Computer Vision (<b>ICCV 2025</b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;yu2025hero-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;yu2025hero-bib&#39;)">bibtex</a> / <a href="https://jackyu6.github.io/HERO/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="yu2025hero-abs" style="display: none;">
+Human reaction generation represents a significant research domain for interactive AI, as humans constantly interact with their surroundings. Previous works focus mainly on synthesizing the reactive motion given a human motion sequence. This paradigm limits interaction categories to human-human interactions and ignores emotions that may influence reaction generation. In this work, we propose to generate 3D human reactions from RGB videos, which involves a wider range of interaction categories and naturally provides information about expressions that may reflect the subject's emotions. To cope with this task, we present HERO, a simple yet powerful framework for Human rEaction geneRation from videOs. HERO considers both global and frame-level local representations of the video to extract the interaction intention, and then uses the extracted interaction intention to guide the synthesis of the reaction. Besides, local visual representations are continuously injected into the model to maximize the exploitation of the dynamic properties inherent in videos. Furthermore, the ViMo dataset containing paired Video-Motion data is collected to support the task. In addition to human-human interactions, these video-motion pairs also cover animal-human interactions and scene-human interactions. Extensive experiments demonstrate the superiority of our methodology. The code and dataset will be publicly available at this https URL.</i>
+</p>
+<p align="justify">
+</p><pre id="yu2025hero-bib" style="display: none;">
+@inproceedings{yu2025hero,
+title={HERO: Human Reaction Generation from Videos},
+author={Yu, Chengjun and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
+journal={arXiv preprint arXiv:2503.08270},
+year={2025}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("yu2025hero-bib");hideblock("yu2025hero-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/han2024event.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2412.01300" target="“blank”">MATE: Motion-Augmented Temporal Consistency for Event-based Point Tracking</a></b>
+<br>Han Han, <b>Wei Zhai*</b>, Yang Cao, Bin Li, Zheng-Jun Zha.
+<br><i>IEEE/CVF International Conference on Computer Vision (<b>ICCV 2025</b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;han2024event-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;han2024event-bib&#39;)">bibtex</a> / <a href="https://hh-xiaohu.github.io/Ev-TAP/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="han2024event-abs" style="display: none;">
+Tracking Any Point (TAP) plays a crucial role in motion analysis. Video-based approaches rely on iterative local matching for tracking, but they assume linear motion during the blind time between frames, which leads to target point loss under large displacements or nonlinear motion. The high temporal resolution and motion blur-free characteristics of event cameras provide continuous, fine-grained motion information, capturing subtle variations with microsecond precision. This paper presents an event-based framework for tracking any point, which tackles the challenges posed by spatial sparsity and motion sensitivity in events through two tailored modules. Specifically, to resolve ambiguities caused by event sparsity, a motion-guidance module incorporates kinematic features into the local matching process. Additionally, a variable motion aware module is integrated to ensure temporally consistent responses that are insensitive to varying velocities, thereby enhancing matching precision. To validate the effectiveness of the approach, an event dataset for tracking any point is constructed by simulation, and is applied in experiments together with two real-world datasets. The experimental results show that the proposed method outperforms existing SOTA methods. Moreover, it achieves 150\% faster processing with competitive model parameters.</i>
+</p>
+<p align="justify">
+</p><pre id="han2024event-bib" style="display: none;">
+@article{han2024event,
+title={Event-Based Tracking Any Point with Motion-Augmented Temporal Consistency},
+author={Han, Han and Zhai, Wei and Cao, Yang and Li, Bin and Zha, Zheng-jun},
+journal={arXiv preprint arXiv:2412.01300},
+year={2024}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("han2024event-bib");hideblock("han2024event-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/wan2025emotive.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2503.11371" target="“blank”">EMoTive: Event-guided Trajectory Modeling for 3D Motion Estimation</a></b>
+<br>Zengyu Wan, <b>Wei Zhai*</b>, Yang Cao, Zheng-Jun Zha.
+<br><i>IEEE/CVF International Conference on Computer Vision (<b>ICCV 2025</b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;wan2025emotive-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;wan2025emotive-bib&#39;)">bibtex</a></p>
+<p>
+</p><p align="justify">
+<i id="wan2025emotive-abs" style="display: none;">
+Visual 3D motion estimation aims to infer the motion of 2D pixels in 3D space based on visual cues. The key challenge arises from depth variation induced spatio-temporal motion inconsistencies, disrupting the assumptions of local spatial or temporal motion smoothness in previous motion estimation frameworks. In contrast, event cameras offer new possibilities for 3D motion estimation through continuous adaptive pixel-level responses to scene changes. This paper presents EMoTive, a novel event-based framework that models spatio-temporal trajectories via event-guided non-uniform parametric curves, effectively characterizing locally heterogeneous spatio-temporal motion. Specifically, we first introduce Event Kymograph - an event projection method that leverages a continuous temporal projection kernel and decouples spatial observations to encode fine-grained temporal evolution explicitly. For motion representation, we introduce a density-aware adaptation mechanism to fuse spatial and temporal features under event guidance, coupled with a non-uniform rational curve parameterization framework to adaptively model heterogeneous trajectories. The final 3D motion estimation is achieved through multi-temporal sampling of parametric trajectories, yielding optical flow and depth motion fields. To facilitate evaluation, we introduce CarlaEvent3D, a multi-dynamic synthetic dataset for comprehensive validation. Extensive experiments on both this dataset and a real-world benchmark demonstrate the effectiveness of the proposed method.</i>
+</p>
+<p align="justify">
+</p><pre id="wan2025emotive-bib" style="display: none;">
+@article{wan2025emotive,
+  title={EMoTive: Event-guided Trajectory Modeling for 3D Motion Estimation},
+  author={Wan, Zengyu and Zhai, Wei and Cao, Yang and Zha, Zhengjun},
+  journal={arXiv preprint arXiv:2503.11371},
+  year={2025}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("wan2025emotive-bib");hideblock("wan2025emotive-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/zhang2024pear.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2407.21510" target="“blank”">PEAR: Phrase-Based Hand-Object Interaction Anticipation</a></b>
+<br>Zichen Zhang, Hongchen Luo, <b>Wei Zhai</b>, Yang Cao, Yu Kang.
+<br><i>SCIENCE CHINA Information Sciences (<b>SCIS</b>)</i>
+<br>
+<a href="javascript:toggleblock(&#39;zhang2024pear-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhang2024pear-bib&#39;)">bibtex</a></p>
+<p>
+</p><p align="justify">
+<i id="zhang2024pear-abs" style="display: none;">
+First-person hand-object interaction anticipation aims to predict the interaction process over a forthcoming period based on current scenes and prompts. This capability is crucial for embodied intelligence and human-robot collaboration. The complete interaction process involves both pre-contact interaction intention (i.e., hand motion trends and interaction hotspots) and post-contact interaction manipulation (i.e., manipulation trajectories and hand poses with contact). Existing research typically anticipates only interaction intention while neglecting manipulation, resulting in incomplete predictions and an increased likelihood of intention errors due to the lack of manipulation constraints. To address this, we propose a novel model, PEAR (Phrase-Based Hand-Object Interaction Anticipation), which jointly anticipates interaction intention and manipulation. To handle uncertainties in the interaction process, we employ a twofold approach. Firstly, we perform cross-alignment of verbs, nouns, and images to reduce the diversity of hand movement patterns and object functional attributes, thereby mitigating intention uncertainty. Secondly, we establish bidirectional constraints between intention and manipulation using dynamic integration and residual connections, ensuring consistency among elements and thus overcoming manipulation uncertainty. To rigorously evaluate the performance of the proposed model, we collect a new task-relevant dataset, EGO-HOIP, with comprehensive annotations. Extensive experimental results demonstrate the superiority of our method.
+</i>
+</p>
+<p align="justify">
+</p><pre id="zhang2024pear-bib" style="display: none;">
+@article{zhang2024pear,
+    title={PEAR: Phrase-Based Hand-Object Interaction Anticipation},
+    author={Zhang, Zichen and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
+    journal={arXiv preprint arXiv:2407.21510},
+    year={2024}
+    }
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("zhang2024pear-bib");hideblock("zhang2024pear-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/wu2025brat.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://openaccess.thecvf.com/content/CVPR2025W/EventVision/papers/Wu_BRAT_Bidirectional_Relative_Positional_Attention_Transformer_for_Event-based_Eye_tracking_CVPRW_2025_paper.pdf" target="“blank”">BRAT: Bidirectional Relative Positional Attention Transformer for Event-based Eye tracking</a></b>
+<br>Yuliang Wu, Han Han, Jinze Chen, <b>Wei Zhai*</b>, Yang Cao, Zheng-Jun Zha.
+<br><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2025</b>), Workshop.</i>
+<br><b>Efficient Event-based Eye-Tracking Challenge, 1st Place.</b>
+<br>
+<a href="javascript:toggleblock(&#39;wu2025brat-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;wu2025brat-bib&#39;)">bibtex</a></p>
+<p>
+</p><p align="justify">
+<i id="wu2025brat-abs" style="display: none;">
+Event-based eye tracking, with its neuromorphic triggering mechanism, offers high temporal resolution and low power consumption, making it a promising technology for future application. However, this triggering mechanism is a double-edged sword. While providing exceptional temporal precision for eye tracking, it also introduces challenges such as the loss of static information, increased complexity of dynamic signals, and irregular spatio-temporal distribution of events. To tackle these challenges, this paper presents a Bidirectional Relative Positional Attention Transformer (BRAT) architecture, designed to fully exploit the spatio-temporal sequence information within event streams, enabling stable and precise eye tracking. The proposed network is composed of a spatial encoder and a temporal decoder. The former utilizes a CNN to extract geometric structural features from event representations, while the latter combines a Bi-GRU block and the BRAT block to analyze temporal motion patterns and accurately localize pupil positions. Furthermore, we propose a multi-time-step training strategy, which improves the model's stability and accuracy by incorporating event representations across multiple time spans as input. Tests on the ThreeET-plus benchmark demonstrate BRAT's high tracking accuracy and stability for complex eye movement patterns, and achieving state-of-the-art performance.
+</i>
+</p>
+<p align="justify">
+</p><pre id="wu2025brat-bib" style="display: none;">
+@inproceedings{wu2025brat,
+  title={BRAT: Bidirectional Relative Positional Attention Transformer for Event-based Eye tracking},
+  author={Wu, Yuliang and Han, Han and Chen, Jinze and Zhai, Wei and Cao, Yang and Zha, Zheng-jun},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={5136--5144},
+  year={2025}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("wu2025brat-bib");hideblock("wu2025brat-abs");</script>
+<p></p>
+</div></div>
+
 
 <div id="text-img-container"><div id="img-container">
 <img src="./Wei Zhai_files/lu2024benchmarking.png" alt="" width="200px"></div>
@@ -1684,29 +1855,22 @@ Although RGBD cameras can provide depth information in real scenes, the captured
 </div></div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>Pre-prints </h2>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/yang2025sigman.gif" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2504.06982" target="“blank”">SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets</a></b>
-<br>Yuhang Yang, Fengqi Liu, Yixing Lu, Qin Zhao, Pingyu Wu, <b>Wei Zhai</b>, Ran Yi, Yang Cao, Lizhuang Ma, Zheng-Jun Zha, Junting Dong.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;yang2025sigman-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;yang2025sigman-bib&#39;)">bibtex</a> / <a href="https://yyvhang.github.io/SIGMAN_3D/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
-<p>
-</p><p align="justify">
-<i id="yang2025sigman-abs" style="display: none;">
-3D human digitization has long been a highly pursued yet challenging task. Existing methods aim to generate high-quality 3D digital humans from single or multiple views, but remain primarily constrained by current paradigms and the scarcity of 3D human assets. Specifically, recent approaches fall into several paradigms: optimization-based and feed-forward (both single-view regression and multi-view generation with reconstruction). However, they are limited by slow speed, low quality, cascade reasoning, and ambiguity in mapping low-dimensional planes to high-dimensional space due to occlusion and invisibility, respectively. Furthermore, existing 3D human assets remain small-scale, insufficient for large-scale training. To address these challenges, we propose a latent space generation paradigm for 3D human digitization, which involves compressing multi-view images into Gaussians via a UV-structured VAE, along with DiT-based conditional generation, we transform the ill-posed low-to-high-dimensional mapping problem into a learnable distribution shift, which also supports end-to-end inference. In addition, we employ the multi-view optimization approach combined with synthetic data to construct the HGS-1M dataset, which contains 1 million 3D Gaussian assets to support the large-scale training. Experimental results demonstrate that our paradigm, powered by large-scale training, produces high-quality 3D human Gaussians with intricate textures, facial details, and loose clothing deformation. All training code, models, and the dataset will be open-sourced.</i>
-</p>
-<p align="justify">
-</p><pre id="yang2025sigman-bib" style="display: none;">
-
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("yang2025sigman-bib");hideblock("yang2025sigman-abs");</script>
-<p></p>
-</div></div>
 
 
 <div id="text-img-container"><div id="img-container">
@@ -1762,33 +1926,6 @@ Video colorization aims to transform grayscale videos into vivid color represent
 
 
 <div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/yu2025hero.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2503.08270" target="“blank”">HERO: Human Reaction Generation from Videos</a></b>
-<br>Chengjun Yu, <b>Wei Zhai</b>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;yu2025hero-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;yu2025hero-bib&#39;)">bibtex</a> / <a href="https://jackyu6.github.io/HERO/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
-<p>
-</p><p align="justify">
-<i id="yu2025hero-abs" style="display: none;">
-Human reaction generation represents a significant research domain for interactive AI, as humans constantly interact with their surroundings. Previous works focus mainly on synthesizing the reactive motion given a human motion sequence. This paradigm limits interaction categories to human-human interactions and ignores emotions that may influence reaction generation. In this work, we propose to generate 3D human reactions from RGB videos, which involves a wider range of interaction categories and naturally provides information about expressions that may reflect the subject's emotions. To cope with this task, we present HERO, a simple yet powerful framework for Human rEaction geneRation from videOs. HERO considers both global and frame-level local representations of the video to extract the interaction intention, and then uses the extracted interaction intention to guide the synthesis of the reaction. Besides, local visual representations are continuously injected into the model to maximize the exploitation of the dynamic properties inherent in videos. Furthermore, the ViMo dataset containing paired Video-Motion data is collected to support the task. In addition to human-human interactions, these video-motion pairs also cover animal-human interactions and scene-human interactions. Extensive experiments demonstrate the superiority of our methodology. The code and dataset will be publicly available at this https URL.</i>
-</p>
-<p align="justify">
-</p><pre id="yu2025hero-bib" style="display: none;">
-@inproceedings{yu2025hero,
-    title={HERO: Human Reaction Generation from Videos},
-    author={Yu, Chengjun and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
-    journal={arXiv preprint arXiv:2503.08270},
-    year={2025}
-    }
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("yu2025hero-bib");hideblock("yu2025hero-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
 <img src="./Wei Zhai_files/huang2024leverage.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://arxiv.org/abs/2411.16082" target="“blank”">Learning Object Affordance Ranking with Task Context</a></b>
 <br>Haojie Huang, Hongchen Luo, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
@@ -1838,55 +1975,6 @@ year={2025}
 </pre>
 <p></p>
 <script language="JavaScript">hideblock("chen2025event-bib");hideblock("chen2025event-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/han2024event.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2412.01300" target="“blank”">MATE: Motion-Augmented Temporal Consistency for Event-based Point Tracking</a></b>
-<br>Han Han, <b>Wei Zhai</b>, Yang Cao, Bin Li, Zheng-Jun Zha.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;han2024event-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;han2024event-bib&#39;)">bibtex</a> / <a href="https://hh-xiaohu.github.io/Ev-TAP/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
-<p>
-</p><p align="justify">
-<i id="han2024event-abs" style="display: none;">
-Tracking Any Point (TAP) plays a crucial role in motion analysis. Video-based approaches rely on iterative local matching for tracking, but they assume linear motion during the blind time between frames, which leads to target point loss under large displacements or nonlinear motion. The high temporal resolution and motion blur-free characteristics of event cameras provide continuous, fine-grained motion information, capturing subtle variations with microsecond precision. This paper presents an event-based framework for tracking any point, which tackles the challenges posed by spatial sparsity and motion sensitivity in events through two tailored modules. Specifically, to resolve ambiguities caused by event sparsity, a motion-guidance module incorporates kinematic features into the local matching process. Additionally, a variable motion aware module is integrated to ensure temporally consistent responses that are insensitive to varying velocities, thereby enhancing matching precision. To validate the effectiveness of the approach, an event dataset for tracking any point is constructed by simulation, and is applied in experiments together with two real-world datasets. The experimental results show that the proposed method outperforms existing SOTA methods. Moreover, it achieves 150\% faster processing with competitive model parameters.</i>
-</p>
-<p align="justify">
-</p><pre id="han2024event-bib" style="display: none;">
-@article{han2024event,
-title={Event-Based Tracking Any Point with Motion-Augmented Temporal Consistency},
-author={Han, Han and Zhai, Wei and Cao, Yang and Li, Bin and Zha, Zheng-jun},
-journal={arXiv preprint arXiv:2412.01300},
-year={2024}
-}
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("han2024event-bib");hideblock("han2024event-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/wan2025emotive.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2503.11371" target="“blank”">EMoTive: Event-guided Trajectory Modeling for 3D Motion Estimation</a></b>
-<br>Zengyu Wan, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;wan2025emotive-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;wan2025emotive-bib&#39;)">bibtex</a></p>
-<p>
-</p><p align="justify">
-<i id="wan2025emotive-abs" style="display: none;">
-Visual 3D motion estimation aims to infer the motion of 2D pixels in 3D space based on visual cues. The key challenge arises from depth variation induced spatio-temporal motion inconsistencies, disrupting the assumptions of local spatial or temporal motion smoothness in previous motion estimation frameworks. In contrast, event cameras offer new possibilities for 3D motion estimation through continuous adaptive pixel-level responses to scene changes. This paper presents EMoTive, a novel event-based framework that models spatio-temporal trajectories via event-guided non-uniform parametric curves, effectively characterizing locally heterogeneous spatio-temporal motion. Specifically, we first introduce Event Kymograph - an event projection method that leverages a continuous temporal projection kernel and decouples spatial observations to encode fine-grained temporal evolution explicitly. For motion representation, we introduce a density-aware adaptation mechanism to fuse spatial and temporal features under event guidance, coupled with a non-uniform rational curve parameterization framework to adaptively model heterogeneous trajectories. The final 3D motion estimation is achieved through multi-temporal sampling of parametric trajectories, yielding optical flow and depth motion fields. To facilitate evaluation, we introduce CarlaEvent3D, a multi-dynamic synthetic dataset for comprehensive validation. Extensive experiments on both this dataset and a real-world benchmark demonstrate the effectiveness of the proposed method.</i>
-</p>
-<p align="justify">
-</p><pre id="wan2025emotive-bib" style="display: none;">
-
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("wan2025emotive-bib");hideblock("wan2025emotive-abs");</script>
 <p></p>
 </div></div>
 
@@ -2000,34 +2088,6 @@ Grounding 3D scene affordance aims to locate interactive regions in 3D environme
 </pre>
 <p></p>
 <script language="JavaScript">hideblock("liu2024grounding-bib");hideblock("liu2024grounding-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/zhang2024pear.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2407.21510" target="“blank”">PEAR: Phrase-Based Hand-Object Interaction Anticipation</a></b>
-<br>Zichen Zhang, Hongchen Luo, <b>Wei Zhai</b>, Yang Cao, Yu Kang.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;zhang2024pear-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhang2024pear-bib&#39;)">bibtex</a></p>
-<p>
-</p><p align="justify">
-<i id="zhang2024pear-abs" style="display: none;">
-First-person hand-object interaction anticipation aims to predict the interaction process over a forthcoming period based on current scenes and prompts. This capability is crucial for embodied intelligence and human-robot collaboration. The complete interaction process involves both pre-contact interaction intention (i.e., hand motion trends and interaction hotspots) and post-contact interaction manipulation (i.e., manipulation trajectories and hand poses with contact). Existing research typically anticipates only interaction intention while neglecting manipulation, resulting in incomplete predictions and an increased likelihood of intention errors due to the lack of manipulation constraints. To address this, we propose a novel model, PEAR (Phrase-Based Hand-Object Interaction Anticipation), which jointly anticipates interaction intention and manipulation. To handle uncertainties in the interaction process, we employ a twofold approach. Firstly, we perform cross-alignment of verbs, nouns, and images to reduce the diversity of hand movement patterns and object functional attributes, thereby mitigating intention uncertainty. Secondly, we establish bidirectional constraints between intention and manipulation using dynamic integration and residual connections, ensuring consistency among elements and thus overcoming manipulation uncertainty. To rigorously evaluate the performance of the proposed model, we collect a new task-relevant dataset, EGO-HOIP, with comprehensive annotations. Extensive experimental results demonstrate the superiority of our method.
-</i>
-</p>
-<p align="justify">
-</p><pre id="zhang2024pear-bib" style="display: none;">
-@article{zhang2024pear,
-    title={PEAR: Phrase-Based Hand-Object Interaction Anticipation},
-    author={Zhang, Zichen and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
-    journal={arXiv preprint arXiv:2407.21510},
-    year={2024}
-    }
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("zhang2024pear-bib");hideblock("zhang2024pear-abs");</script>
 <p></p>
 </div></div>
 
