@@ -280,6 +280,10 @@ I work on computer vision, embodied intelligence and machine learning. I am curr
 </div>
 <h2>News</h2>
 
+<p>&#9658; (09/2025) <b><font color=#FF0000>Three </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>NeurIPS 2025 (<font color=#0000FF>One Spotlight Paper</font>) ~</font></b></i></p>
+<p>&#9658; (09/2025) <b><font color=#FF0000>One </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>ACM MM MSMA Workshop (<font color=#0000FF>Best Student Paper</font>)~</font></b></i></p>
+<p>&#9658; (07/2025) <b><font color=#FF0000>One </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>Journal of Intelligent Computing and Networking ~</font></b></i></p>
+<p>&#9658; (07/2025) <b><font color=#FF0000>One </font></b><font color=#000000>paper is accepted by </font><b><font color=#FF0000>T-ASE ~</font></b></i></p>
 <p>&#9658; (06/2025) <b><font color=#FF0000>Four </font></b><font color=#000000>papers are accepted by </font><b><font color=#FF0000>ICCV 2025 ~</font></b></i></p>
 <p>&#9658; (06/2025) <font color=#000000>Our team wins the </font><b><font color=#0000FF>1st Place </font></b><font color=#000000>of </font><b><font color=#FF0000>Efficient Event-based Eye-Tracking Challenge ~</font></b></i></p>
 <p>&#9658; (06/2025) <font color=#000000>Our team wins the </font><b><font color=#0000FF>1st Place </font></b><font color=#000000>of </font><b><font color=#FF0000>Body Contact Estimation Challenge (RHOBIN2025 CVPR) ~</font></b></i></p>
@@ -341,6 +345,114 @@ I work on computer vision, embodied intelligence and machine learning. I am curr
 <h2>Publications</h2>
 
 <p><b>2025</b></p>
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/liao2024ef.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2410.15392" target="“blank”">EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting</a></b>
+<br>Bohao Liao, <b>Wei Zhai*</b>, Zengyu Wan, Zhixin Cheng, Wenfei Yang, Yang Cao, Tianzhu Zhang, Zheng-Jun Zha.
+<br><i>Neural Information Processing Systems (<b>NeurIPS 2025, <i><font color=#0000FF>Spotlight</font></i></b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;liao2024ef-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;liao2024ef-bib&#39;)">bibtex</a> / <a href="https://lbh666.github.io/ef-3dgs/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="liao2024ef-abs" style="display: none;">
+Scene reconstruction from casually captured videos has wide real-world applications. Despite recent progress, existing methods relying on traditional cameras tend to fail in high-speed scenarios due to insufficient observations and inaccurate pose estimation. Event cameras, inspired by biological vision, record pixel-wise intensity changes asynchronously with high temporal resolution and low latency, providing valuable scene and motion information in blind inter-frame intervals. In this paper, we introduce the event cameras to aid scene construction from a casually captured video for the first time, and propose Event-Aided Free-Trajectory 3DGS, called \textbf{EF-3DGS}, which seamlessly integrates the advantages of event cameras into 3DGS through three key components. First, we leverage the Event Generation Model (EGM) to fuse events and frames, enabling continuous supervision between discrete frames. Second, we extract motion information through Contrast Maximization (CMax) of warped events, which calibrates camera poses and provides gradient-domain constraints for 3DGS.Third, to address the absence of color information in events, we combine photometric bundle adjustment (PBA) with a Fixed-GS training strategy that separates structure and color optimization, effectively ensuring color consistency across different views. We evaluate our method on the public Tanks and Temples benchmark and a newly collected real-world dataset, RealEv-DAVIS. Our method achieves up to 3dB higher PSNR and 40% lower Absolute Trajectory Error (ATE) compared to state-of-the-art methods under challenging high-speed scenarios.
+</i>
+</p>
+<p align="justify">
+</p><pre id="liao2024ef-bib" style="display: none;">
+@article{liao2024ef,
+title={EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting},
+author={Liao, Bohao and Zhai, Wei and Wan, Zengyu and Zhang, Tianzhu and Cao, Yang and Zha, Zheng-Jun},
+journal={arXiv preprint arXiv:2410.15392},
+year={2024}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("liao2024ef-bib");hideblock("liao2024ef-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/fang2025panoramic.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2506.23513" target="“blank”">ViewPoint: Panoramic Video Generation with Pretrained Diffusion Models</a></b>
+<br>Zixun Fang, Kai Zhu, Zhiheng Liu, Yu Liu, <b>Wei Zhai*</b>, Yang Cao, Zheng-Jun Zha.
+<br><i>Neural Information Processing Systems (<b>NeurIPS 2025</b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;fang2025panoramic-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;fang2025panoramic-bib&#39;)">bibtex</a> / <a href="https://becauseimbatman0.github.io/ViewPoint" target=&ldquo;blank&rdquo;><font color=#BB0000>demo</font></a></p>
+<p>
+</p><p align="justify">
+<i id="fang2025panoramic-abs" style="display: none;">
+Panoramic video generation aims to synthesize 360-degree immersive videos, holding significant importance in the fields of VR, world models, and spatial intelligence. Existing works fail to synthesize high-quality panoramic videos due to the inherent modality gap between panoramic data and perspective data, which constitutes the majority of the training data for modern diffusion models. In this paper, we propose a novel framework utilizing pretrained perspective video models for generating panoramic videos. Specifically, we design a novel panorama representation named ViewPoint map, which possesses global spatial continuity and fine-grained visual details simultaneously. With our proposed Pano-Perspective attention mechanism, the model benefits from pretrained perspective priors and captures the panoramic spatial correlations of the ViewPoint map effectively. Extensive experiments demonstrate that our method can synthesize highly dynamic and spatially consistent panoramic videos, achieving state-of-the-art performance and surpassing previous methods.</i>
+</p>
+<p align="justify">
+</p><pre id="fang2025panoramic-bib" style="display: none;">
+@article{fang2025panoramic,
+  title={Panoramic Video Generation with Pretrained Diffusion Models},
+  author={Fang, Zixun and Zhu, Kai and Liu, Zhiheng and Liu, Yu and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2506.23513},
+  year={2025}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("fang2025panoramic-bib");hideblock("fang2025panoramic-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/wang2025paid.jpg" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2506.02453" target="“blank”">PAID: Pairwise Angular-Invariant Decomposition for Continual Test-Time Adaptation</a></b>
+<br>Kunyu Wang, Xueyang Fu, Yuanfei Bao, Chengjie Ge, Chengzhi Cao, <b>Wei Zhai</b>, Zheng-Jun Zha.
+<br><i>Neural Information Processing Systems (<b>NeurIPS 2025</b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;wang2025paid-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;wang2025paid-bib&#39;)">bibtex</a> / <a href="https://github.com/wangkunyu241/PAID" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="wang2025paid-abs" style="display: none;">
+Continual Test-Time Adaptation (CTTA) aims to online adapt a pre-trained model to changing environments during inference. Most existing methods focus on exploiting target data, while overlooking another crucial source of information, the pre-trained weights, which encode underutilized domain-invariant priors. This paper takes the geometric attributes of pre-trained weights as a starting point, systematically analyzing three key components: magnitude, absolute angle, and pairwise angular structure. We find that the pairwise angular structure remains stable across diverse corrupted domains and encodes domain-invariant semantic information, suggesting it should be preserved during adaptation. Based on this insight, we propose PAID (Pairwise Angular-Invariant Decomposition), a prior-driven CTTA method that decomposes weight into magnitude and direction, and introduces a learnable orthogonal matrix via Householder reflections to globally rotate direction while preserving the pairwise angular structure. During adaptation, only the magnitudes and the orthogonal matrices are updated. PAID achieves consistent improvements over recent SOTA methods on four widely used CTTA benchmarks, demonstrating that preserving pairwise angular structure offers a simple yet effective principle for CTTA.</i>
+</p>
+<p align="justify">
+</p><pre id="wang2025paid-bib" style="display: none;">
+@article{wang2025paid,
+  title={PAID: Pairwise Angular-Invariant Decomposition for Continual Test-Time Adaptation},
+  author={Wang, Kunyu and Fu, Xueyang and Bao, Yuanfei and Ge, Chengjie and Cao, Chengzhi and Zhai, Wei and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2506.02453},
+  year={2025}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("wang2025paid-bib");hideblock("wang2025paid-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/huang2024leverage.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2411.16082" target="“blank”">Learning Object Affordance Ranking with Task Context</a></b>
+<br>Haojie Huang, Hongchen Luo*, <b>Wei Zhai*</b>, Yang Cao, Zheng-Jun Zha.
+<br><i>ACM Multimedia (<b>ACM MM 2025 MSMA Workshop, <font color=#0000FF>Best Student Paper</font></b>).</i>
+<br>
+<a href="javascript:toggleblock(&#39;huang2024leverage-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;huang2024leverage-bib&#39;)">bibtex</a> / <a href="https://wpy1999.github.io/IV-VAE/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="huang2024leverage-abs" style="display: none;">
+Understanding the affordance of various objects in relation to task requirements is fundamental for an agent to perform daily activities. Most previous studies leverage task input to locate relevant objects and treat them equally, overlooking the internal priority difference among objects with the same affordance within the task context, which may lead to inappropriate decisions. To enable agents to develop a more fine-grained understanding of the objects required to perform tasks, we propose to learn object affordance ranking with task context, i.e., given image of a complex scene and the textual description of the affordance and task context, revealing task-object relationships and clarifying the priority rank of detected objects. To this end, we propose a novel Context-embed Group Ranking Framework with task relation mining and graph group update to deeply integrate task context and perform global relative relationship transmission. Due to lack of such data, we construct the first large-scale task-oriented affordance ranking dataset with 25 common tasks, over 50k images and more than 661k objects. Experimental results demonstrate the feasibility of the task context based affordance learning paradigm and the superiority of our model over state-of-the-art models in the fields of saliency ranking and multimodal object detection. The source code and dataset will open to the public.</i>
+</p>
+<p align="justify">
+</p><pre id="huang2024leverage-bib" style="display: none;">
+@article{huang2024leverage,
+title={Leverage Task Context for Object Affordance Ranking},
+author={Huang, Haojie and Luo, Hongchen and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+journal={arXiv preprint arXiv:2411.16082},
+year={2024}
+}
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("huang2024leverage-bib");hideblock("huang2024leverage-abs");</script>
+<p></p>
+</div></div>
 
 
 <div id="text-img-container"><div id="img-container">
@@ -622,7 +734,7 @@ Recent advancements in multi-modal large language models have propelled the deve
 <img src="./Wei Zhai_files/wang2025efficient.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://arxiv.org/abs/" target="“blank”">Efficient Test-time Adaptive Object Detection via Sensitivity-Guided Pruning</a></b>
 <br>Kunyu Wang, Xueyang Fu, Xin Lu, Chengjie Ge, Chengzhi Cao, <b>Wei Zhai</b>, Zheng-Jun Zha.
-<br><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2025, <i><font color=#FF0000>Highlight</font></i></b>).</i>
+<br><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2025, <i><font color=#0000FF>Highlight</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;wang2025efficient-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;wang2025efficient-bib&#39;)">bibtex</a></p>
 <p>
@@ -636,6 +748,62 @@ Continual test-time adaptive object detection (CTTA-OD) aims to online adapt a s
 </pre>
 <p></p>
 <script language="JavaScript">hideblock("wang2025efficient-bib");hideblock("wang2025efficient-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/deng2024vmad.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2409.20146" target="“blank”">VMAD: Visual-enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection</a></b>
+<br>Huilin Deng, Hongchen Luo, <b>Wei Zhai</b>, Yang Cao, Yu Kang.
+<br><i>IEEE Transactions on Automation Science and Engineering (<b>T-ASE</b>)</i>
+<br>
+<a href="javascript:toggleblock(&#39;deng2024vmad-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;deng2024vmad-bib&#39;)">bibtex</a></p>
+<p>
+</p><p align="justify">
+<i id="deng2024vmad-abs" style="display: none;">
+Zero-shot anomaly detection (ZSAD) recognizes and localizes anomalies in previously unseen objects by establishing feature mapping between textual prompts and inspection images, demonstrating excellent research value in flexible industrial manufacturing. However, existing ZSAD methods are limited by closed-world settings, struggling to unseen defects with predefined prompts. Recently, adapting Multimodal Large Language Models (MLLMs) for Industrial Anomaly Detection (IAD) presents a viable solution. Unlike fixed-prompt methods, MLLMs exhibit a generative paradigm with open-ended text interpretation, enabling more adaptive anomaly analysis. However, this adaption faces inherent challenges as anomalies often manifest in finegrained regions and exhibit minimal visual discrepancies from normal samples. To address these challenges, we propose a novel framework VMAD (Visual-enhanced MLLM Anomaly Detection) that enhances MLLM with visual-based IAD knowledge and finegrained perception, simultaneously providing precise detection and comprehensive analysis of anomalies. Specifically, we design a Defect-Sensitive Structure Learning scheme that transfers patchsimilarities cues from visual branch to our MLLM for improved anomaly discrimination. Besides, we introduce a novel visual projector, Locality-enhanced Token Compression, which mines multi-level features in local contexts to enhance fine-grained detection. Furthermore, we introduce the Real Industrial Anomaly Detection (RIAD), a comprehensive IAD dataset with detailed anomaly descriptions and analyses, offering a valuable resource for MLLM-based IAD development. Extensive experiments on zero-shot benchmarks, including MVTec-AD, Visa, WFDD, and RIAD datasets, demonstrate our superior performance over stateof-the-art methods.
+</i>
+</p>
+<p align="justify">
+</p><pre id="deng2024vmad-bib" style="display: none;">
+@article{deng2024vmad,
+    title={VMAD: Visual-enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection},
+    author={Deng, Huilin and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
+    journal={arXiv preprint arXiv:2409.20146},
+    year={2024}
+    }
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("deng2024vmad-bib");hideblock("deng2024vmad-abs");</script>
+<p></p>
+</div></div>
+
+
+<div id="text-img-container"><div id="img-container">
+<img src="./Wei Zhai_files/lu2023likelihood.png" alt="" width="200px"></div>
+<div id="text-container"><p><b><a href="https://arxiv.org/abs/2312.01732" target="“blank”">Likelihood-Aware Semantic Alignment for Full-Spectrum Out-of-Distribution Detection</a></b>
+<br>Fan Lu, Kai Zhu, Kecheng Zheng, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
+<br><i>Journal of Intelligent Computing and Networking.</i>
+<br>
+<a href="javascript:toggleblock(&#39;lu2023likelihood-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;lu2023likelihood-bib&#39;)">bibtex</a> / <a href="https://github.com/LuFan31/LSA" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
+<p>
+</p><p align="justify">
+<i id="lu2023likelihood-abs" style="display: none;">
+Full-spectrum out-of-distribution (F-OOD) detection aims to accurately recognize in-distribution (ID) samples while encountering semantic and covariate shifts simultaneously. However, existing out-of-distribution (OOD) detectors tend to overfit the covariance information and ignore intrinsic semantic correlation, inadequate for adapting to complex domain transformations. To address this issue, we propose a Likelihood-Aware Semantic Alignment (LSA) framework to promote the image-text correspondence into semantically high-likelihood regions. LSA consists of an offline Gaussian sampling strategy which efficiently samples semantic-relevant visual embeddings from the class-conditional Gaussian distribution, and a bidirectional prompt customization mechanism that adjusts both ID-related and negative context for discriminative ID/OOD boundary. Extensive experiments demonstrate the remarkable OOD detection performance of our proposed LSA especially on the intractable Near-OOD setting, surpassing existing methods by a margin of 15.26% and 18.88% on two F-OOD benchmarks, respectively.
+</i>
+</p>
+<p align="justify">
+</p><pre id="lu2023likelihood-bib" style="display: none;">
+@article{lu2023likelihood,
+    title={Likelihood-Aware Semantic Alignment for Full-Spectrum Out-of-Distribution Detection},
+    author={Lu, Fan and Zhu, Kai and Zheng, Kecheng and Zhai, Wei and Cao, Yang},
+    journal={arXiv preprint arXiv:2312.01732},
+    year={2023}
+    }
+</pre>
+<p></p>
+<script language="JavaScript">hideblock("lu2023likelihood-bib");hideblock("lu2023likelihood-abs");</script>
 <p></p>
 </div></div>
 
@@ -1185,7 +1353,7 @@ Semantically coherent out-of-distribution (SCOOD) detection aims to discern outl
 <img src="./Wei Zhai_files/dong2023exploring.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://ojs.aaai.org/index.php/AAAI/article/download/25128/24900" target="“blank”">Exploring Tuning Characteristics of Ventral Stream's Neurons for Few-Shot Image Classification</a></b>
 <br>Lintao Dong, <b>Wei Zhai</b>, Zheng-Jun Zha.
-<br><i>AAAI Conference on Artificial Intelligence (<b>AAAI 2023, <i><font color=#FF0000>Oral</font></i>, <i><font color=#FF0000>Distinguished Paper</font></i></b>).</i>
+<br><i>AAAI Conference on Artificial Intelligence (<b>AAAI 2023, <i><font color=#0000FF>Oral</font></i>, <i><font color=#0000FF>Distinguished Paper</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;dong2023exploring-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;dong2023exploring-bib&#39;)">bibtex</a></p>
 <p>
@@ -1491,7 +1659,7 @@ Deep object detection models trained on clean images may not generalize well on 
 <img src="./Wei Zhai_files/luo2021one.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://www.ijcai.org/proceedings/2021/0124.pdf" target="“blank”">Robust Object Detection via Adversarial Novel Style Exploration</a></b>
 <br>Hongchen Luo, <b>Wei Zhai</b>, Jing Zhang, Yang Cao, Dacheng Tao.
-<br><i>International Joint Conferences on Artificial Intelligence Organization (<b>IJCAI 2021, <i><font color=#FF0000>Oral</font></i></b>).</i>
+<br><i>International Joint Conferences on Artificial Intelligence Organization (<b>IJCAI 2021, <i><font color=#0000FF>Oral</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;luo2021one-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;luo2021one-bib&#39;)">bibtex</a> / <a href="https://arxiv.org/pdf/2106.14747.pdf" target=&ldquo;blank&rdquo;><font color=#BB0000>arxiv</font></a> / <a href="https://github.com/lhc1224/OSAD_Net" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
 <p>
@@ -1583,7 +1751,7 @@ Few-shot class-incremental learning is to recognize the new classes given few sa
 <img src="./Wei Zhai_files/zhu2020self.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://www.ijcai.org/proceedings/2020/0142.pdf" target="“blank”">Self-Supervised Tuning for Few-Shot Segmentation</a></b>
 <br>Kai Zhu, <b>Wei Zhai</b>, Yang Cao.
-<br><i>International Joint Conferences on Artificial Intelligence Organization (<b>IJCAI 2020, <i><font color=#FF0000>Oral</font></i></b>).</i>
+<br><i>International Joint Conferences on Artificial Intelligence Organization (<b>IJCAI 2020, <i><font color=#0000FF>Oral</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;zhu2020self-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhu2020self-bib&#39;)">bibtex</a></p>
 <p>
@@ -1643,7 +1811,7 @@ Fine-tuning is an effective transfer learning method to achieve ideal performanc
 <img src="./Wei Zhai_files/zhai2020deep.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhai_Deep_Structure-Revealed_Network_for_Texture_Recognition_CVPR_2020_paper.pdf" target="“blank”">Deep Structure-Revealed Network for Texture Recognition</a></b>
 <br><b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha, HaiYong Xie, Feng Wu.
-<br><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2020, <i><font color=#FF0000>Oral</font></i></b>).</i>
+<br><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR 2020, <i><font color=#0000FF>Oral</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;zhai2020deep-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhai2020deep-bib&#39;)">bibtex</a></p>
 <p>
@@ -1736,7 +1904,7 @@ Texture recognition is a challenging visual task as multiple perceptual attribut
 <img src="./Wei Zhai_files/zhu2019one.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://arxiv.org/pdf/1905.06656.pdf" target="“blank”">One-Shot Texture Retrieval with Global Context Metric</a></b>
 <br>Kai Zhu, <b>Wei Zhai</b>, Zheng-Jun Zha, Yang Cao.
-<br><i>International Joint Conferences on Artificial Intelligence Organization (<b>IJCAI 2019, <i><font color=#FF0000>Oral</font></i></b>).</i>
+<br><i>International Joint Conferences on Artificial Intelligence Organization (<b>IJCAI 2019, <i><font color=#0000FF>Oral</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;zhu2019one-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhu2019one-bib&#39;)">bibtex</a></p>
 <p>
@@ -1799,7 +1967,7 @@ Rapid progress on text image recognition has been achieved with the development 
 <img src="./Wei Zhai_files/zhai2018generative.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://ieeexplore.ieee.org/abstract/document/8462364" target="“blank”">A Generative Adversarial Network Based Framework for Unsupervised Visual Surface Inspection</a></b>
 <br><b>Wei Zhai</b>, Jiang Zhu, Yang Cao, Zengfu Wang.
-<br><i>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2018, <b><i><font color=#FF0000>Oral</font></i></b>).</i>
+<br><i>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2018, <b><i><font color=#0000FF>Oral</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;zhai2018generative-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhai2018generative-bib&#39;)">bibtex</a></p>
 <p>
@@ -1829,7 +1997,7 @@ Visual surface inspection is a challenging task due to the highly inconsistent a
 <img src="./Wei Zhai_files/zhu2018co.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://link.springer.com/content/pdf/10.1007%2F978-3-319-73603-7_8.pdf" target="“blank”">Co-Occurrent Structural Edge Detection for Color-Guided Depth Map Super-Resolution</a></b>
 <br>Jiang Zhu, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
-<br><i>International Conference on Multimedia Modeling (MMM 2018, <b><i><font color=#FF0000>Oral</font></i></b>).</i>
+<br><i>International Conference on Multimedia Modeling (MMM 2018, <b><i><font color=#0000FF>Oral</font></i></b>).</i>
 <br>
 <a href="javascript:toggleblock(&#39;zhu2018co-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;zhu2018co-bib&#39;)">bibtex</a></p>
 <p>
@@ -1871,33 +2039,6 @@ Although RGBD cameras can provide depth information in real scenes, the captured
 
 
 <h2>Pre-prints </h2>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/fang2025panoramic.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2506.23513" target="“blank”">ViewPoint: Panoramic Video Generation with Pretrained Diffusion Models</a></b>
-<br>Zixun Fang, Kai Zhu, Zhiheng Liu, Yu Liu, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;fang2025panoramic-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;fang2025panoramic-bib&#39;)">bibtex</a> / <a href="https://becauseimbatman0.github.io/ViewPoint" target=&ldquo;blank&rdquo;><font color=#BB0000>demo</font></a></p>
-<p>
-</p><p align="justify">
-<i id="fang2025panoramic-abs" style="display: none;">
-Panoramic video generation aims to synthesize 360-degree immersive videos, holding significant importance in the fields of VR, world models, and spatial intelligence. Existing works fail to synthesize high-quality panoramic videos due to the inherent modality gap between panoramic data and perspective data, which constitutes the majority of the training data for modern diffusion models. In this paper, we propose a novel framework utilizing pretrained perspective video models for generating panoramic videos. Specifically, we design a novel panorama representation named ViewPoint map, which possesses global spatial continuity and fine-grained visual details simultaneously. With our proposed Pano-Perspective attention mechanism, the model benefits from pretrained perspective priors and captures the panoramic spatial correlations of the ViewPoint map effectively. Extensive experiments demonstrate that our method can synthesize highly dynamic and spatially consistent panoramic videos, achieving state-of-the-art performance and surpassing previous methods.</i>
-</p>
-<p align="justify">
-</p><pre id="fang2025panoramic-bib" style="display: none;">
-@article{fang2025panoramic,
-  title={Panoramic Video Generation with Pretrained Diffusion Models},
-  author={Fang, Zixun and Zhu, Kai and Liu, Zhiheng and Liu, Yu and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
-  journal={arXiv preprint arXiv:2506.23513},
-  year={2025}
-}
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("fang2025panoramic-bib");hideblock("fang2025panoramic-abs");</script>
-<p></p>
-</div></div>
 
 
 <div id="text-img-container"><div id="img-container">
@@ -1985,33 +2126,6 @@ Video colorization aims to transform grayscale videos into vivid color represent
 
 
 <div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/huang2024leverage.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2411.16082" target="“blank”">Learning Object Affordance Ranking with Task Context</a></b>
-<br>Haojie Huang, Hongchen Luo, <b>Wei Zhai</b>, Yang Cao, Zheng-Jun Zha.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;huang2024leverage-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;huang2024leverage-bib&#39;)">bibtex</a> / <a href="https://wpy1999.github.io/IV-VAE/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
-<p>
-</p><p align="justify">
-<i id="huang2024leverage-abs" style="display: none;">
-Understanding the affordance of various objects in relation to task requirements is fundamental for an agent to perform daily activities. Most previous studies leverage task input to locate relevant objects and treat them equally, overlooking the internal priority difference among objects with the same affordance within the task context, which may lead to inappropriate decisions. To enable agents to develop a more fine-grained understanding of the objects required to perform tasks, we propose to learn object affordance ranking with task context, i.e., given image of a complex scene and the textual description of the affordance and task context, revealing task-object relationships and clarifying the priority rank of detected objects. To this end, we propose a novel Context-embed Group Ranking Framework with task relation mining and graph group update to deeply integrate task context and perform global relative relationship transmission. Due to lack of such data, we construct the first large-scale task-oriented affordance ranking dataset with 25 common tasks, over 50k images and more than 661k objects. Experimental results demonstrate the feasibility of the task context based affordance learning paradigm and the superiority of our model over state-of-the-art models in the fields of saliency ranking and multimodal object detection. The source code and dataset will open to the public.</i>
-</p>
-<p align="justify">
-</p><pre id="huang2024leverage-bib" style="display: none;">
-@article{huang2024leverage,
-title={Leverage Task Context for Object Affordance Ranking},
-author={Huang, Haojie and Luo, Hongchen and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
-journal={arXiv preprint arXiv:2411.16082},
-year={2024}
-}
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("huang2024leverage-bib");hideblock("huang2024leverage-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
 <img src="./Wei Zhai_files/chen2025event.png" alt="" width="200px"></div>
 <div id="text-container"><p><b><a href="https://arxiv.org/abs/2504.07503" target="“blank”">Event Signal Filtering via Probability Flux Estimation</a></b>
 <br>Jinze Chen, <b>Wei Zhai</b>, Yang Cao, Bin Li, Zheng-Jun Zha.
@@ -2034,34 +2148,6 @@ year={2025}
 </pre>
 <p></p>
 <script language="JavaScript">hideblock("chen2025event-bib");hideblock("chen2025event-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/liao2024ef.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2410.15392" target="“blank”">EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting</a></b>
-<br>Bohao Liao, <b>Wei Zhai</b>, Zengyu Wan, Zhixin Cheng, Wenfei Yang, Yang Cao, Tianzhu Zhang, Zheng-Jun Zha.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;liao2024ef-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;liao2024ef-bib&#39;)">bibtex</a> / <a href="https://lbh666.github.io/ef-3dgs/" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
-<p>
-</p><p align="justify">
-<i id="liao2024ef-abs" style="display: none;">
-Scene reconstruction from casually captured videos has wide real-world applications. Despite recent progress, existing methods relying on traditional cameras tend to fail in high-speed scenarios due to insufficient observations and inaccurate pose estimation. Event cameras, inspired by biological vision, record pixel-wise intensity changes asynchronously with high temporal resolution and low latency, providing valuable scene and motion information in blind inter-frame intervals. In this paper, we introduce the event cameras to aid scene construction from a casually captured video for the first time, and propose Event-Aided Free-Trajectory 3DGS, called \textbf{EF-3DGS}, which seamlessly integrates the advantages of event cameras into 3DGS through three key components. First, we leverage the Event Generation Model (EGM) to fuse events and frames, enabling continuous supervision between discrete frames. Second, we extract motion information through Contrast Maximization (CMax) of warped events, which calibrates camera poses and provides gradient-domain constraints for 3DGS.Third, to address the absence of color information in events, we combine photometric bundle adjustment (PBA) with a Fixed-GS training strategy that separates structure and color optimization, effectively ensuring color consistency across different views. We evaluate our method on the public Tanks and Temples benchmark and a newly collected real-world dataset, RealEv-DAVIS. Our method achieves up to 3dB higher PSNR and 40% lower Absolute Trajectory Error (ATE) compared to state-of-the-art methods under challenging high-speed scenarios.
-</i>
-</p>
-<p align="justify">
-</p><pre id="liao2024ef-bib" style="display: none;">
-@article{liao2024ef,
-title={EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting},
-author={Liao, Bohao and Zhai, Wei and Wan, Zengyu and Zhang, Tianzhu and Cao, Yang and Zha, Zheng-Jun},
-journal={arXiv preprint arXiv:2410.15392},
-year={2024}
-}
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("liao2024ef-bib");hideblock("liao2024ef-abs");</script>
 <p></p>
 </div></div>
 
@@ -2091,34 +2177,6 @@ Perceiving potential ``action possibilities'' (\ie, affordance) regions of image
 </pre>
 <p></p>
 <script language="JavaScript">hideblock("luo2024visual-bib");hideblock("luo2024visual-abs");</script>
-<p></p>
-</div></div>
-
-
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/deng2024vmad.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/pdf/2409.20146" target="“blank”">VMAD: Visual-enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection</a></b>
-<br>Huilin Deng, Hongchen Luo, <b>Wei Zhai</b>, Yang Cao, Yu Kang.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;deng2024vmad-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;deng2024vmad-bib&#39;)">bibtex</a></p>
-<p>
-</p><p align="justify">
-<i id="deng2024vmad-abs" style="display: none;">
-Zero-shot anomaly detection (ZSAD) recognizes and localizes anomalies in previously unseen objects by establishing feature mapping between textual prompts and inspection images, demonstrating excellent research value in flexible industrial manufacturing. However, existing ZSAD methods are limited by closed-world settings, struggling to unseen defects with predefined prompts. Recently, adapting Multimodal Large Language Models (MLLMs) for Industrial Anomaly Detection (IAD) presents a viable solution. Unlike fixed-prompt methods, MLLMs exhibit a generative paradigm with open-ended text interpretation, enabling more adaptive anomaly analysis. However, this adaption faces inherent challenges as anomalies often manifest in finegrained regions and exhibit minimal visual discrepancies from normal samples. To address these challenges, we propose a novel framework VMAD (Visual-enhanced MLLM Anomaly Detection) that enhances MLLM with visual-based IAD knowledge and finegrained perception, simultaneously providing precise detection and comprehensive analysis of anomalies. Specifically, we design a Defect-Sensitive Structure Learning scheme that transfers patchsimilarities cues from visual branch to our MLLM for improved anomaly discrimination. Besides, we introduce a novel visual projector, Locality-enhanced Token Compression, which mines multi-level features in local contexts to enhance fine-grained detection. Furthermore, we introduce the Real Industrial Anomaly Detection (RIAD), a comprehensive IAD dataset with detailed anomaly descriptions and analyses, offering a valuable resource for MLLM-based IAD development. Extensive experiments on zero-shot benchmarks, including MVTec-AD, Visa, WFDD, and RIAD datasets, demonstrate our superior performance over stateof-the-art methods.
-</i>
-</p>
-<p align="justify">
-</p><pre id="deng2024vmad-bib" style="display: none;">
-@article{deng2024vmad,
-    title={VMAD: Visual-enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection},
-    author={Deng, Huilin and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
-    journal={arXiv preprint arXiv:2409.20146},
-    year={2024}
-    }
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("deng2024vmad-bib");hideblock("deng2024vmad-abs");</script>
 <p></p>
 </div></div>
 
@@ -2207,34 +2265,6 @@ Ego-to-exo video generation refers to generating the corresponding exocentric vi
 </div></div>
 
 
-<div id="text-img-container"><div id="img-container">
-<img src="./Wei Zhai_files/lu2023likelihood.png" alt="" width="200px"></div>
-<div id="text-container"><p><b><a href="https://arxiv.org/abs/2312.01732" target="“blank”">Likelihood-Aware Semantic Alignment for Full-Spectrum Out-of-Distribution Detection</a></b>
-<br>Fan Lu, Kai Zhu, Kecheng Zheng, <b>Wei Zhai</b>, Yang Cao.
-<br><i>Arxiv.</i>
-<br>
-<a href="javascript:toggleblock(&#39;lu2023likelihood-abs&#39;)">abstract</a> / <a href="javascript:toggleblock(&#39;lu2023likelihood-bib&#39;)">bibtex</a> / <a href="https://github.com/LuFan31/LSA" target=&ldquo;blank&rdquo;><font color=#BB0000>code</font></a></p>
-<p>
-</p><p align="justify">
-<i id="lu2023likelihood-abs" style="display: none;">
-Full-spectrum out-of-distribution (F-OOD) detection aims to accurately recognize in-distribution (ID) samples while encountering semantic and covariate shifts simultaneously. However, existing out-of-distribution (OOD) detectors tend to overfit the covariance information and ignore intrinsic semantic correlation, inadequate for adapting to complex domain transformations. To address this issue, we propose a Likelihood-Aware Semantic Alignment (LSA) framework to promote the image-text correspondence into semantically high-likelihood regions. LSA consists of an offline Gaussian sampling strategy which efficiently samples semantic-relevant visual embeddings from the class-conditional Gaussian distribution, and a bidirectional prompt customization mechanism that adjusts both ID-related and negative context for discriminative ID/OOD boundary. Extensive experiments demonstrate the remarkable OOD detection performance of our proposed LSA especially on the intractable Near-OOD setting, surpassing existing methods by a margin of 15.26% and 18.88% on two F-OOD benchmarks, respectively.
-</i>
-</p>
-<p align="justify">
-</p><pre id="lu2023likelihood-bib" style="display: none;">
-@article{lu2023likelihood,
-    title={Likelihood-Aware Semantic Alignment for Full-Spectrum Out-of-Distribution Detection},
-    author={Lu, Fan and Zhu, Kai and Zheng, Kecheng and Zhai, Wei and Cao, Yang},
-    journal={arXiv preprint arXiv:2312.01732},
-    year={2023}
-    }
-</pre>
-<p></p>
-<script language="JavaScript">hideblock("lu2023likelihood-bib");hideblock("lu2023likelihood-abs");</script>
-<p></p>
-</div></div>
-
-
 <h2>Professional Activities</h2>
 
 <p><b>Conference Reviewer:</b></p>
@@ -2267,6 +2297,8 @@ Full-spectrum out-of-distribution (F-OOD) detection aims to accurately recognize
 <h2>Awards and Honors</h2>
 
 <ul>
+<li><p>ACM MM MSMA Workshop Best Student Paper, 2025</p>
+</li>
 <li><p>Body Contact Estimation Challenge-RHOBIN2025 CVPR Workshop, 1st Place, 2025</p>
 </li>
 <li><p>Efficient Event-based Eye-Tracking Challenge CVPR Workshop, 1st Place, 2025</p>
