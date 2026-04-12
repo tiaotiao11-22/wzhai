@@ -325,7 +325,7 @@ function toggleNews() {
     font-weight: 400;
 }
 .profile-title strong {
-    color: #0066cc; /* USTC Blue */
+    color: #1a1a1a; /* USTC Blue */
     font-weight: 600;
 }
 
@@ -690,15 +690,19 @@ function toggleNews() {
     padding-top: 2px;
 }
 
-.paper-img img {
+/* 让 video 和 img 享受完全相同的排版、圆角、阴影和悬停放大效果 */
+.paper-img img,
+.paper-img video {
     width: 100%;
-    border-radius: 6px;        /* 圆角稍微加大 */
-    border: 1px solid #f2f2f2; /* 给图片加一个极淡的边框，增加精致感 */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.06); /* 阴影更柔和 */
+    border-radius: 6px;        
+    border: 1px solid #f2f2f2; 
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06); 
     transition: transform 0.3s ease;
+    object-fit: cover; /* 确保视频比例不失调 */
 }
 
-.paper-img:hover img {
+.paper-img:hover img,
+.paper-img:hover video {
     transform: scale(1.02);
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
@@ -897,12 +901,78 @@ function toggleNews() {
     border: 1px solid #fff3cd;
 }
 
-
-
-
 </style>
 
 
+<style>
+/* === Publication Filters (年份/精选筛选菜单) === */
+.pub-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eaeaea; /* 底部灰线 */
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    padding: 6px 12px;
+    border: none;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 4px;
+}
+
+.filter-btn:hover {
+    color: #0066cc; /* 鼠标悬停变蓝 */
+    background-color: #f4f6f8;
+}
+
+.filter-btn.active {
+    color: #0066cc;
+}
+
+/* 激活状态下的底部下划线特效 */
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px; /* 覆盖到容器的边框上 */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0066cc;
+    border-radius: 2px;
+}
+
+/* === Paper Tags (研究方向标签) === */
+.paper-tags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-item {
+    font-size: 12px;
+    color: #0066cc;
+    background-color: #f0f7ff; /* 极浅的蓝色背景 */
+    padding: 4px 10px;
+    border-radius: 14px; /* 圆角标签 */
+    border: 1px solid #cce0ff;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* 如果你希望不同类别有不同的颜色，可以加一些额外的 class */
+.tag-item.tag-embodied { color: #d9534f; background-color: #fff5f5; border-color: #ffebeb; } /* 红色系 */
+.tag-item.tag-vision { color: #0066cc; background-color: #f0f7ff; border-color: #e1f0ff; }   /* 蓝色系 */
+.tag-item.tag-neuromorphic { color: #b58900; background-color: #fff9e6; border-color: #fff3cd; } /* 金色系 */
+</style>
 
 
 </head>
@@ -910,7 +980,6 @@ function toggleNews() {
 <div id="main-container">
 <div id="layout-content"> <!-- nomenu  -->
 <div id="toptitle">
-
 
 
 <div class="profile-section">
@@ -951,6 +1020,28 @@ function toggleNews() {
 <div class="news-container">
 
     <div class="news-row">
+        <div class="news-date">03/2026</div>
+        <div class="news-content">
+            <span class="h-red">1</span> papers accepted by <span class="h-red">T-PAMI</span>.
+        </div>
+    </div>
+
+    <div class="news-row">
+        <div class="news-date">02/2026</div>
+        <div class="news-content">
+            <span class="h-red">7</span> papers accepted by <span class="h-red">CVPR 2026</span>.
+            <span class="news-badge">1 Highlight</span>
+        </div>
+    </div>
+
+    <div class="news-row">
+        <div class="news-date">01/2026</div>
+        <div class="news-content">
+            <span class="h-red">3</span> papers accepted by <span class="h-red">ICLR 2026</span>.
+        </div>
+    </div>
+
+    <div class="news-row">
         <div class="news-date">11/2025</div>
         <div class="news-content">
             <span class="h-red">1</span> paper accepted by <span class="h-red">AAAI 2025</span>.
@@ -977,20 +1068,6 @@ function toggleNews() {
         <div class="news-content">
             <span class="h-red">1</span> paper accepted by <span class="h-red">ACM MM MSMA Workshop</span>.
             <span class="news-badge">Best Student Paper</span>
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">07/2025</div>
-        <div class="news-content">
-            <span class="h-red">1</span> paper accepted by <span class="h-red">Journal of Intelligent Computing and Networking</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">07/2025</div>
-        <div class="news-content">
-            <span class="h-red">1</span> paper accepted by <span class="h-red">T-ASE</span>.
         </div>
     </div>
 
@@ -1259,10 +1336,683 @@ function toggleNews() {
 
 <h2>Publications</h2>
 
+
+<div class="pub-filters">
+    <button class="filter-btn" data-filter="selected" onclick="filterPubs('selected')">Recent Highlights</button>
+    <button class="filter-btn" data-filter="2026" onclick="filterPubs('2026')">2026</button>
+    <button class="filter-btn" data-filter="2025" onclick="filterPubs('2025')">2025</button>
+    <button class="filter-btn" data-filter="2024" onclick="filterPubs('2024')">2024</button>
+    <button class="filter-btn" data-filter="2023" onclick="filterPubs('2023')">2023</button>
+    <button class="filter-btn" data-filter="2022" onclick="filterPubs('2022')">2022</button>
+    <button class="filter-btn" data-filter="all" onclick="filterPubs('all')">All</button>
+    <button class="filter-btn" data-filter="preprint" onclick="filterPubs('preprint')">Pre-print</button>
+</div>
+
+
+
+<div class="year-header">Pre-Print</div>
+
+
+<div class="paper-row pub-preprint pub-selected">
+    <div class="paper-img">
+        <video autoplay loop muted playsinline>
+            <source src="./Wei Zhai_files/zhang2026end.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2603.14435" class="paper-title">
+            End-to-End Spatial-Temporal Transformer for Real-time 4D HOI Reconstruction
+        </a>
+        <div class="paper-authors">
+            Haoyu Zhang, <span class="me">Wei Zhai</span>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2603.14435">PDF</a>
+            <a href="https://nianheng.github.io/THO-project/">Project</a>
+            <a href="javascript:toggleblock('zhang2026end-bib')">BibTeX</a>
+        </div>
+
+        <div class="paper-desc">
+            An end-to-end Spatial-Temporal Transformer that achieves real-time (31.5 FPS), physically plausible 4D human-object reconstruction from a single video without test-time optimization.
+        </div>
+
+        <div id="zhang2026end-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{zhang2026end,
+  title={End-to-End Spatial-Temporal Transformer for Real-time 4D HOI Reconstruction},
+  author={Zhang, Haoyu and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2603.14435},
+  year={2026}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/yu2026explore.png" alt="EXPLORE-Bench">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2603.09731" class="paper-title">
+            EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning
+        </a>
+        <div class="paper-authors">
+            Chengjun Yu, Xuhan Zhu, Chaoqun Du, Pengfei Yu, <span class="me">Wei Zhai</span>, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2603.09731">PDF</a>
+            <a href="https://jackyu6.github.io/EXPLORE-Page/">Project</a>
+            <a href="javascript:toggleblock('yu2026explore-bib')">BibTeX</a>
+        </div>
+        <div id="yu2026explore-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{yu2026explore,
+  title={EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning},
+  author={Yu, Chengjun and Zhu, XuHan and Du, Chaoqun and Yu, Pengfei and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2603.09731},
+  year={2026}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/shao2025value.png" alt="VGPO">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/" class="paper-title">
+            Value-Anchored Group Policy Optimization for Flow Models
+        </a>
+        <div class="paper-authors">
+            Yawen Shao, Jie Xiao, Kai Zhu, Yu Liu, <span class="me">Wei Zhai</span>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/">PDF</a>
+            <a href="https://xxxx.github.io/">Project</a>
+            <a href="javascript:toggleblock('shao2025value-bib')">BibTeX</a>
+        </div>
+        <div id="shao2025value-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/yang2025videogen.png" alt="VideoGen-Eval">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2503.23452" class="paper-title">
+            VideoGen-Eval: Agent-based System for Video Generation Evaluation
+        </a>
+        <div class="paper-authors">
+            Yuhang Yang, Shangkun Sun, Hongxiang Li, Ke Fan, Ailing Zeng, Feilin Han, <span class="me">Wei Zhai</span>, Wei Liu, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2503.23452">PDF</a>
+            <a href="https://github.com/AILab-CVC/VideoGen-Eval">Code</a>
+            <a href="javascript:toggleblock('yang2025videogen-bib')">BibTeX</a>
+        </div>
+        <div id="yang2025videogen-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{yang2025videogen,
+  title={VideoGen-Eval: Agent-based System for Video Generation Evaluation},
+  author={Yang, Yuhang and Fan, Ke and Sun, Shangkun and Li, Hongxiang and Zeng, Ailing and Han, FeiLin and Zhai, Wei and Liu, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2503.23452},
+  year={2025}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/luo2024visual.png" alt="VCR-Net">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/pdf/2410.11363" class="paper-title">
+            Visual-Geometric Collaborative Guidance for Affordance Learning
+        </a>
+        <div class="paper-authors">
+            Hongchen Luo, <span class="me">Wei Zhai</span>, Jiao Wang, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+            <br><span style="color:#666; font-size:12px;">Journal version of "Leverage Interactive Affinity for Affordance Learning" (CVPR 2023)</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/pdf/2410.11363">PDF</a>
+            <a href="https://github.com/lhc1224/VCR-Net">Code</a>
+            <a href="javascript:toggleblock('luo2024visual-bib')">BibTeX</a>
+        </div>
+        <div id="luo2024visual-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{luo2024visual,
+    title={Visual-Geometric Collaborative Guidance for Affordance Learning},
+    author={Luo, Hongchen and Zhai, Wei and Wang, Jiao and Cao, Yang and Zha, Zheng-Jun},
+    journal={arXiv preprint arXiv:2410.11363},
+    year={2024}
+    }
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/liu2024grounding.png" alt="Ego-SAG">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/pdf/2409.19650" class="paper-title">
+            Grounding 3D Scene Affordance From Egocentric Interactions
+        </a>
+        <div class="paper-authors">
+            Cuiyu Liu, <span class="me">Wei Zhai</span>, Yuhang Yang, Hongchen Luo, Sen Liang, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/pdf/2409.19650">PDF</a>
+            <a href="javascript:toggleblock('liu2024grounding-bib')">BibTeX</a>
+        </div>
+        <div id="liu2024grounding-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{liu2024grounding,
+    title={Grounding 3D Scene Affordance From Egocentric Interactions},
+    author={Liu, Cuiyu and Zhai, Wei and Yang, Yuhang and Luo, Hongchen and Liang, Sen and Cao, Yang and Zha, Zheng-Jun},
+    journal={arXiv preprint arXiv:2409.19650},
+    year={2024}
+    }
+</pre>
+        </div>
+    </div>
+</div>
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/fang2024vivid.gif" alt="ViViD">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2405.11794" class="paper-title">
+            ViViD: Video Virtual Try-on using Diffusion Models
+        </a>
+        <div class="paper-authors">
+            Zixun Fang, <span class="me">Wei Zhai</span>, Aimin Su, Hongliang Song, Kai Zhu, Mao Wang, Yu Chen, Zhiheng Liu, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2405.11794">PDF</a>
+            <a href="https://github.com/alibaba-yuanjing-aigclab/ViViD">Code</a>
+            <a href="javascript:toggleblock('fang2024vivid-bib')">BibTeX</a>
+        </div>
+        <div id="fang2024vivid-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{fang2024vivid,
+    title={ViViD: Video Virtual Try-on using Diffusion Models},
+    author={Fang, Zixun and Zhai, Wei and Su, Aimin and Song, Hongliang and Zhu, Kai and Wang, Mao and Chen, Yu and Liu, Zhiheng and Cao, Yang and Zha, Zheng-Jun},
+    journal={arXiv preprint arXiv:2405.11794},
+    year={2024}
+    }
+</pre>
+        </div>
+    </div>
+</div>
+
+<div class="paper-row pub-preprint">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/luo2024intention.png" alt="IDE">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2403.09194" class="paper-title">
+            Intention-driven Ego-to-Exo Video Generation
+        </a>
+        <div class="paper-authors">
+            Hongchen Luo, Kai Zhu, <span class="me">Wei Zhai</span>, Yang Cao.
+        </div>
+        <div class="paper-venue">
+            Arxiv
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2403.09194">PDF</a>
+            <a href="javascript:toggleblock('luo2024intention-bib')">BibTeX</a>
+        </div>
+        <div id="luo2024intention-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{luo2024intention,
+    title={Intention-driven Ego-to-Exo Video Generation},
+    author={Luo, Hongchen and Zhu, Kai and Zhai, Wei and Cao, Yang},
+    journal={arXiv preprint arXiv:2403.09194},
+    year={2024}
+    }
+</pre>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="year-header">2026</div>
+
+
+<div class="paper-row pub-2026 pub-selected">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/wang2026skyfind.png" alt="Skyfind">
+    </div>
+    <div class="paper-content">
+        <a href="https://www.computer.org/csdl/journal/tp/5555/01/11475181/2fuLQIZcQMw" class="paper-title">
+            SkyFind: A Large-Scale Benchmark Unveiling Referring Expression Comprehension for UAV
+        </a>
+        <div class="paper-authors">
+            Kunyu Wang, Guanbo Wu, Xueyang Fu, Xingbo Wang, Kean Liu, Xin Lu, Chengjie Ge, <span class="me">Wei Zhai</span>, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">IEEE T-PAMI</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://www.computer.org/csdl/journal/tp/5555/01/11475181/2fuLQIZcQMw">PDF</a>
+            <a href="https://github.com/wangkunyu241/SkyFind">Code</a>
+            <a href="javascript:toggleblock('wang2026skyfind-bib')">BibTeX</a>
+        </div>
+
+        <div class="paper-desc">
+            Establishes the first formal definition of UAV-based REC and provides SkyFind—a large-scale dataset with one million high-quality pairs—to address the unique challenges of aerial target localization.
+        </div>
+
+        <!-- <div class="paper-tags">
+            <span class="tag-item tag-vision">多模态计算</span>
+            <span class="tag-item tag-embodied">具身智能</span>
+        </div> -->
+
+        <div id="wang2026skyfind-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026 pub-selected">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/wu2026event.png" alt="Event">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2602.14376" class="paper-title">
+            Event-based Visual Deformation Measurement
+        </a>
+        <div class="paper-authors">
+            Yuliang Wu, <span class="me">Wei Zhai*</span>, Yuxin Cui, Tiesong Zhao, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+            <span class="highlight-tag">(Highlight)</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2602.14376">PDF</a>
+            <a href="javascript:toggleblock('wu2026event-bib')">BibTeX</a>
+        </div>
+
+        <div class="paper-desc">
+            An event-frame fusion framework featuring Affine Invariant Simplicial modeling that achieves robust long-term dense deformation tracking while using only 18.9% of the resources required by high-speed video methods.
+        </div>
+
+        <div id="wu2026event-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{wu2026event,
+  title={Event-based Visual Deformation Measurement},
+  author={Wu, Yuliang and Zhai, Wei and Cui, Yuxin and Zhao, Tiesong and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2602.14376},
+  year={2026}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026 pub-selected">
+    <div class="paper-img">
+        <video autoplay loop muted playsinline>
+            <source src="./Wei Zhai_files/yang2026gloria.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2603.29931" class="paper-title">
+            Gloria: Consistent Character Video Generation via Content Anchors
+        </a>
+        <div class="paper-authors">
+            Yuhang Yang, Fan Zhang, Huaijin Pi, Shuai Guo, Guowei Xu, <span class="me">Wei Zhai*</span>, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2603.29931">PDF</a>
+            <a href="https://yyvhang.github.io/Gloria_Page/">Project</a>
+            <a href="javascript:toggleblock('yang2026gloria-bib')">BibTeX</a>
+        </div>
+
+        <div class="paper-desc">
+            Proposes a compact anchor-frame representation to generate high-quality, 10-minute+ character videos with superior identity preservation and multi-view appearance consistency.
+        </div>
+
+        <div id="yang2026gloria-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{yang2026gloria,
+  title={Gloria: Consistent Character Video Generation via Content Anchors},
+  author={Yang, Yuhang and Zhang, Fan and Pi, Huaijin and Guo, Shuai and Xu, Guowei and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2603.29931},
+  year={2026}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/zhang2026mate.png" alt="Mate">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2512.18312" class="paper-title">
+            MatE: Material Extraction from Single-Image via Geometric Prior
+        </a>
+        <div class="paper-authors">
+            Zeyu Zhang, <span class="me">Wei Zhai*</span>, Jian Yang, Yang Cao*.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2512.18312">PDF</a>
+            <a href="https://tiptoehigherz.github.io/Material-Extraction/">Project</a>
+            <a href="javascript:toggleblock('zhang2026mate-bib')">BibTeX</a>
+        </div>
+        <div id="zhang2026mate-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{zhang2025mate,
+  title={MatE: Material Extraction from Single-Image via Geometric Prior},
+  author={Zhang, Zeyu and Zhai, Wei and Yang, Jian and Cao, Yang},
+  journal={arXiv preprint arXiv:2512.18312},
+  year={2025}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/han2026unsupervised.png" alt="Unsupervised">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/xxxx" class="paper-title">
+            Unsupervised 3d Motion Estimation Using Event Camera
+        </a>
+        <div class="paper-authors">
+            Han Han, <span class="me">Wei Zhai*</span>, Tiesong Zhao, Bin Li, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/xxxx">PDF</a>
+            <a href="javascript:toggleblock('han2026unsupervised-bib')">BibTeX</a>
+        </div>
+        <div id="han2026unsupervised-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/yang2026wemmu.png" alt="Wemmu">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2512.02536" class="paper-title">
+            WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens
+        </a>
+        <div class="paper-authors">
+            Jian Yang, Dacheng Yin, Xiaoxuan He, Yong Li, Fengyun Rao, Jing Lyu, <span class="me">Wei Zhai</span>, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2512.02536">PDF</a>
+            <a href="javascript:toggleblock('yang2026wemmu-bib')">BibTeX</a>
+        </div>
+        <div id="yang2026wemmu-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{yang2025wemmu,
+  title={WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens},
+  author={Yang, Jian and Yin, Dacheng and He, Xiaoxuan and Li, Yong and Rao, Fengyun and Lyu, Jing and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2512.02536},
+  year={2025}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/wang2026diffusion.png" alt="Diffusion">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/xxx" class="paper-title">
+            Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models
+        </a>
+        <div class="paper-authors">
+            Xinyang Wang, Kecheng Zheng, Minfeng Zhu, Wei Wu, Fan Lu, <span class="me">Wei Zhai</span>, Wei Chen.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/xxx">PDF</a>
+            <a href="javascript:toggleblock('wang2026diffusion-bib')">BibTeX</a>
+        </div>
+        <div id="wang2026diffusion-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+
+</pre>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/chen2025event.png" alt="EDFilter">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2504.07503" class="paper-title">
+            Event Signal Filtering via Probability Flux Estimation
+        </a>
+        <div class="paper-authors">
+            Jinze Chen, <span class="me">Wei Zhai*</span>, Yang Cao, Bin Li, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">CVPR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2504.07503">PDF</a>
+            <a href="javascript:toggleblock('chen2025event-bib')">BibTeX</a>
+        </div>
+        <div id="chen2025event-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{chen2025event,
+title={Event Signal Filtering via Probability Flux Estimation},
+author={Chen, Jinze and Zhai, Wei and Cao, Yang and Li, Bin and Zha, Zheng-Jun},
+journal={arXiv preprint arXiv:2504.07503},
+year={2025}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="paper-row pub-2026 pub-selected">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/han2026touch.gif" alt="TOUCH">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2510.14874" class="paper-title">
+            TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions
+        </a>
+        <div class="paper-authors">
+            Guangyi Han#, <span class="me">Wei Zhai#</span>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">ICLR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2510.14874">PDF</a>
+            <a href="https://guangyid.github.io/hoi123touch/">Project</a>
+            <a href="javascript:toggleblock('han2025touch-bib')">BibTeX</a>
+        </div>
+
+        <div class="paper-desc">
+            Extends HOI generation from fixed grasping to diverse free-form interactions (e.g., pushing, poking) by introducing the large-scale WildO2 dataset and the TOUCH diffusion-based framework for fine-grained semantic control.
+        </div>
+
+        <div id="han2025touch-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{han2025touch,
+  title={TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions},
+  author={Han, Guangyi and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2510.14874},
+  year={2025}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/chen2026unbias.png" alt="unbia">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2602.12590" class="paper-title">
+            Unbiased Gradient Estimation for Event Binning via Functional Backpropagation
+        </a>
+        <div class="paper-authors">
+            Jinze Chen, <span class="me">Wei Zhai*</span>, Han Han, Tiankai Ma, Yang Cao, Bin Li, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">ICLR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2602.12590">PDF</a>
+            <a href="javascript:toggleblock('chen2026unbias-bib')">BibTeX</a>
+        </div>
+        <div id="chen2026unbias-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{chen2026unbiased,
+  title={Unbiased Gradient Estimation for Event Binning via Functional Backpropagation},
+  author={Chen, Jinze and Zhai, Wei and Han, Han and Ma, Tiankai and Cao, Yang and Li, Bin and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2602.12590},
+  year={2026}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="paper-row pub-2026">
+    <div class="paper-img">
+        <img src="./Wei Zhai_files/wu2025alitok.png" alt="AliTok">
+    </div>
+    <div class="paper-content">
+        <a href="https://arxiv.org/abs/2506.05289" class="paper-title">
+            Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model
+        </a>
+        <div class="paper-authors">
+            Pingyu Wu, Kai Zhu, Yu Liu, Longxiang Tang, Jian Yang, Yansong Peng, <span class="me">Wei Zhai</span>, Yang Cao, Zheng-Jun Zha.
+        </div>
+        <div class="paper-venue">
+            In <span class="venue-name">ICLR 2026</span>
+        </div>
+
+        <div class="paper-links">
+            <a href="https://arxiv.org/abs/2506.05289">PDF</a>
+            <a href="https://github.com/ali-vilab/alitok">Code</a>
+            <a href="javascript:toggleblock('wu2025alitok-bib')">BibTeX</a>
+        </div>
+        <div id="wu2025alitok-bib" style="display:none; margin-top:10px;">
+<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+@article{wu2025alitok,
+  title={AliTok: Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model},
+  author={Wu, Pingyu and Zhu, Kai and Liu, Yu and Tang, Longxiang and Yang, Jian and Peng, Yansong and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2506.05289},
+  year={2025}
+}
+</pre>
+        </div>
+    </div>
+</div>
+
 <div class="year-header">2025</div>
 
-
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/han2025e.png" alt="E-MaT">
     </div>
@@ -1277,11 +2027,7 @@ function toggleNews() {
         </div>
         
         <div class="paper-venue">
-            In <span class="venue-name">AAAI 2026</span>
-        </div>
-
-        <div class="paper-desc">
-            We propose a <b>Mamba-based tracking framework</b> that leverages <b>event cameras</b> to capture global motion trends, significantly enhancing egocentric point tracking robustness under <b>fast motion</b> and high dynamic range conditions.
+            In <span class="venue-name">AAAI 2025</span>
         </div>
 
         <div class="paper-links">
@@ -1296,7 +2042,7 @@ function toggleNews() {
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2025towards.png" alt="De-raining Generalization">
     </div>
@@ -1312,10 +2058,6 @@ function toggleNews() {
         
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-NNLS</span>
-        </div>
-
-        <div class="paper-desc">
-            We introduce a continuous learning framework inspired by the <b>complementary learning system</b> of the human brain, utilizing <b>memory replay</b> and knowledge distillation to enable de-raining networks to generalize across varied real-world scenarios.
         </div>
 
         <div class="paper-links">
@@ -1336,7 +2078,7 @@ function toggleNews() {
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/liao2024ef.png" alt="EF-3DGS">
     </div>
@@ -1353,10 +2095,6 @@ function toggleNews() {
         <div class="paper-venue">
             In <span class="venue-name">NeurIPS 2025</span>
             <span class="highlight-tag">(Spotlight)</span>
-        </div>
-
-        <div class="paper-desc">
-            We propose <b>EF-3DGS</b>, the first event-aided framework to handle <b>fast motion blur</b> and <b>high dynamic range</b> scenes by fusing events and frames, achieving significantly higher PSNR and lower trajectory error in high-speed scenarios.
         </div>
 
         <div class="paper-links">
@@ -1378,7 +2116,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/fang2025panoramic.png" alt="ViewPoint">
     </div>
@@ -1394,10 +2132,6 @@ year={2024}
         
         <div class="paper-venue">
             In <span class="venue-name">NeurIPS 2025</span>
-        </div>
-
-        <div class="paper-desc">
-            We propose a novel framework utilizing <b>pretrained perspective diffusion models</b> for generating panoramic videos via a new <b>ViewPoint map</b> representation, ensuring global spatial continuity and fine-grained visual details.
         </div>
 
         <div class="paper-links">
@@ -1419,7 +2153,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2025paid.jpg" alt="PAID">
     </div>
@@ -1433,9 +2167,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">NeurIPS 2025</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>PAID</b>, a prior-driven CTTA method that preserves the <b>pairwise angular structure</b> of pre-trained weights using <b>Householder reflections</b>, achieving consistent improvements in <b>continual test-time adaptation</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2506.02453">PDF</a>
             <a href="https://github.com/wangkunyu241/PAID">Code</a>
@@ -1454,7 +2186,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/huang2024leverage.png" alt="Affordance Ranking">
     </div>
@@ -1468,9 +2200,6 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ACM MM 2025 MSMA Workshop</span>
             <span class="highlight-tag">(Best Student Paper)</span>
-        </div>
-        <div class="paper-desc">
-            We introduce a <b>Context-embed Group Ranking Framework</b> to learn <b>object affordance ranking</b> by deeply integrating <b>task context</b>, supported by a new large-scale <b>task-oriented dataset</b>.
         </div>
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2411.16082">PDF</a>
@@ -1488,9 +2217,9 @@ year={2024}
 </pre>
         </div>
     </div>
-</div>
+</div>  
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/yang2025sigman.gif" alt="SIGMAN">
     </div>
@@ -1504,9 +2233,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2025</span>
         </div>
-        <div class="paper-desc">
-            We present <b>SIGMAN</b>, a <b>latent space generation paradigm</b> for 3D human digitization utilizing a <b>UV-structured VAE</b> and <b>DiT</b>, trained on a newly constructed dataset of <b>1 million 3D Gaussian assets</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2504.06982">PDF</a>
             <a href="https://yyvhang.github.io/SIGMAN_3D/">Code</a>
@@ -1525,7 +2252,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/yu2025hero.png" alt="HERO">
     </div>
@@ -1539,9 +2266,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2025</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>HERO</b>, a framework for <b>human reaction generation</b> from RGB videos that extracts <b>interaction intention</b> and local visual cues, validated on a new <b>Video-Motion dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.08270">PDF</a>
             <a href="https://jackyu6.github.io/HERO/">Code</a>
@@ -1560,7 +2285,7 @@ year={2025}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/han2024event.png" alt="MATE">
     </div>
@@ -1574,9 +2299,7 @@ year={2025}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2025</span>
         </div>
-        <div class="paper-desc">
-            We introduce <b>MATE</b>, an <b>event-based point tracking</b> framework that resolves spatial sparsity and motion blur through <b>motion-augmented temporal consistency</b>, achieving significantly faster processing and higher precision.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2412.01300">PDF</a>
             <a href="https://hh-xiaohu.github.io/Ev-TAP/">Code</a>
@@ -1595,7 +2318,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wan2025emotive.png" alt="EMoTive">
     </div>
@@ -1609,9 +2332,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2025</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>EMoTive</b>, an event-based framework for <b>3D motion estimation</b> that models spatio-temporal trajectories via <b>Event Kymograph</b> projection and <b>non-uniform parametric curves</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.11371">PDF</a>
             <a href="javascript:toggleblock('wan2025emotive-bib')">BibTeX</a>
@@ -1629,7 +2350,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhang2024pear.png" alt="PEAR">
     </div>
@@ -1643,9 +2364,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">SCIENCE CHINA Information Sciences (SCIS)</span>
         </div>
-        <div class="paper-desc">
-            We present <b>PEAR</b>, a model for <b>hand-object interaction anticipation</b> that jointly predicts intention and manipulation using <b>phrase-based cross-alignment</b>, supported by the <b>EGO-HOIP dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2407.21510">PDF</a>
             <a href="javascript:toggleblock('zhang2024pear-bib')">BibTeX</a>
@@ -1663,7 +2382,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wu2025brat.png" alt="BRAT">
     </div>
@@ -1678,9 +2397,7 @@ year={2024}
             In <span class="venue-name">CVPR 2025 Workshop</span>
             <span class="highlight-tag">(1st Place Challenge)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>BRAT</b>, a <b>Bidirectional Relative Positional Attention Transformer</b> for event-based <b>eye tracking</b> that fully exploits spatio-temporal sequences, winning 1st place in the <b>Efficient Event-based Eye-Tracking Challenge</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2025W/EventVision/papers/Wu_BRAT_Bidirectional_Relative_Positional_Attention_Transformer_for_Event-based_Eye_tracking_CVPRW_2025_paper.pdf">PDF</a>
             <a href="javascript:toggleblock('wu2025brat-bib')">BibTeX</a>
@@ -1699,7 +2416,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/lu2024benchmarking.png" alt="CompreCap">
     </div>
@@ -1713,9 +2430,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2025</span>
         </div>
-        <div class="paper-desc">
-            We introduce <b>CompreCap</b>, a benchmark for evaluating <b>detailed image captioning</b> in LVLMs using a <b>directed scene graph</b> to assess object coverage, attributes, and relationships comprehensively.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2412.08614">PDF</a>
             <a href="https://github.com/LuFan31/CompreCap">Code</a>
@@ -1734,7 +2449,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/shao2024great.png" alt="GREAT">
     </div>
@@ -1748,9 +2463,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2025</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>GREAT</b>, a framework for <b>open-vocabulary 3D object affordance grounding</b> that combines <b>geometry attributes</b> with interaction intention reasoning, verified on the large-scale <b>PIADv2 dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2411.19626">PDF</a>
             <a href="https://yawen-shao.github.io/GREAT/">Code</a>
@@ -1769,7 +2482,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wu2024improved.png" alt="IV-VAE">
     </div>
@@ -1783,9 +2496,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2025</span>
         </div>
-        <div class="paper-desc">
-            We propose an <b>Improved Video VAE (IV-VAE)</b> featuring <b>Keyframe-based Temporal Compression</b> and <b>Group Causal Convolution</b> to resolve temporal-spatial conflicts in latent video diffusion models.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2411.06449">PDF</a>
             <a href="https://wpy1999.github.io/IV-VAE/">Code</a>
@@ -1804,7 +2515,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/yang2024mmar.png" alt="MMAR">
     </div>
@@ -1818,9 +2529,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2025</span>
         </div>
-        <div class="paper-desc">
-            We introduce <b>MMAR</b>, a <b>lossless multi-modal auto-regressive</b> framework that uses continuous-valued image tokens and a lightweight <b>diffusion head</b> to unify image understanding and generation without information loss.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2410.10798?">PDF</a>
             <a href="javascript:toggleblock('yang2024mmar-bib')">BibTeX</a>
@@ -1838,7 +2547,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2025efficient.png" alt="Efficient CTTA-OD">
     </div>
@@ -1853,9 +2562,7 @@ year={2024}
             In <span class="venue-name">CVPR 2025</span>
             <span class="highlight-tag">(Highlight)</span>
         </div>
-        <div class="paper-desc">
-            We propose an <b>efficient CTTA-OD</b> method utilizing <b>sensitivity-guided channel pruning</b> to selectively suppress domain-sensitive channels, reducing computational overhead while maintaining adaptation performance.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/">PDF</a>
             <a href="javascript:toggleblock('wang2025efficient-bib')">BibTeX</a>
@@ -1868,7 +2575,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/deng2024vmad.png" alt="VMAD">
     </div>
@@ -1882,9 +2589,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-ASE</span>
         </div>
-        <div class="paper-desc">
-            We present <b>VMAD</b>, a <b>Visual-enhanced MLLM</b> for <b>zero-shot anomaly detection</b> that incorporates defect-sensitive structure learning and locality-enhanced token compression, benchmarked on the <b>RIAD dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2409.20146">PDF</a>
             <a href="javascript:toggleblock('deng2024vmad-bib')">BibTeX</a>
@@ -1902,7 +2607,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2025">
     <div class="paper-img">
         <img src="./Wei Zhai_files/lu2023likelihood.png" alt="LSA">
     </div>
@@ -1916,9 +2621,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">Journal of Intelligent Computing and Networking</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>Likelihood-Aware Semantic Alignment (LSA)</b> framework for <b>full-spectrum OOD detection</b>, utilizing Gaussian sampling and <b>bidirectional prompt customization</b> to align image-text correspondence.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2312.01732">PDF</a>
             <a href="https://github.com/LuFan31/LSA">Code</a>
@@ -1943,7 +2646,7 @@ year={2024}
 
 
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/yang2024egochoir.gif" alt="EgoChoir">
     </div>
@@ -1957,9 +2660,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">NeurIPS 2024</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>EgoChoir</b> to capture <b>3D interaction regions</b> from egocentric views by harmonizing visual appearance, head motion, and 3D objects to jointly infer <b>human contact</b> and <b>object affordance</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://openreview.net/pdf?id=ea4oxkiMP7">PDF</a>
             <a href="https://yyvhang.github.io/EgoChoir/">Code</a>
@@ -1978,7 +2679,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/dong2024unidense.png" alt="UniDense">
     </div>
@@ -1992,9 +2693,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ACM MM 2024</span>
         </div>
-        <div class="paper-desc">
-            We introduce <b>UniDense</b>, a framework utilizing <b>Meta-Routers</b> to select task-relevant computation pathways within a frozen <b>Stable Diffusion</b> model for efficient <b>universal few-shot dense prediction</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://dl.acm.org/doi/pdf/10.1145/3664647.3680831">PDF</a>
             <a href="javascript:toggleblock('dong2024unidense-bib')">BibTeX</a>
@@ -2007,7 +2706,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wan2023event.png" alt="MV-Net">
     </div>
@@ -2021,9 +2720,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-IP</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>MV-Net</b>, which transforms the orthogonal view into a <b>motion-dependent view</b> using an <b>Event View Transformation Module</b> to enhance event-based motion representation for <b>optical flow estimation</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10612786/">PDF</a>
             <a href="javascript:toggleblock('wan2023event-bib')">BibTeX</a>
@@ -2042,7 +2739,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhang2023bidirectional.png" alt="BOT">
     </div>
@@ -2056,9 +2753,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ECCV 2024</span>
         </div>
-        <div class="paper-desc">
-            We present <b>BOT</b>, a <b>Bidirectional Progressive Transformer</b> that mutually corrects <b>hand trajectories</b> and <b>interaction hotspots</b> predictions to minimize error accumulation in interaction intention anticipation.
-        </div>
+
         <div class="paper-links">
             <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/07631.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2405.05552">Arxiv</a>
@@ -2077,7 +2772,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wu2024event.png" alt="AsynHDR">
     </div>
@@ -2091,9 +2786,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">Optics Express</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>AsynHDR</b>, a system integrating <b>DVS</b> with LCD panels for <b>temporal incident light modulation</b>, enabling pixel-asynchronous <b>High Dynamic Range (HDR) imaging</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-32-11-18527&id=549921">PDF</a>
             <a href="javascript:toggleblock('wu2024event-bib')">BibTeX</a>
@@ -2115,7 +2808,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/deng2023priorited.png" alt="PLMNet">
     </div>
@@ -2129,9 +2822,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-AI</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>PLMNet</b> for <b>Cross-Category Few-shot Anomaly Detection</b>, utilizing a <b>Local Perception Network</b> and <b>Defect-sensitive Weight Learner</b> to establish fine-grained correspondence between query and normal samples.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10494062">PDF</a>
             <a href="javascript:toggleblock('deng2023prioritized-bib')">BibTeX</a>
@@ -2150,7 +2841,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/yang2023lemon.png" alt="LEMON">
     </div>
@@ -2164,9 +2855,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2024</span>
         </div>
-        <div class="paper-desc">
-            We present <b>LEMON</b>, a unified model that learns <b>3D human-object interaction relations</b> from 2D images by mining <b>interaction intentions</b> and geometric correlations to jointly anticipate interaction elements.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_LEMON_Learning_3D_Human-Object_Interaction_Relation_from_2D_Images_CVPR_2024_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2312.08963">Arxiv</a>
@@ -2187,7 +2876,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2024mambapupil.png" alt="Mambapupil">
     </div>
@@ -2202,9 +2891,7 @@ year={2024}
             In <span class="venue-name">CVPR 2024 Workshop</span>
             <span class="highlight-tag">(1st Place Challenge)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>MambaPupil</b>, a <b>bidirectional selective recurrent model</b> for <b>event-based eye tracking</b>, utilizing a <b>Linear Time-Varying State Space Module</b> to handle diverse eye movement patterns.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2024W/AI4Streaming/papers/Wang_MambaPupil_Bidirectional_Selective_Recurrent_Model_for_Event-based_Eye_Tracking_CVPRW_2024_paper.pdf">PDF</a>
             <a href="javascript:toggleblock('wang2024mambapupil-bib')">BibTeX</a>
@@ -2223,7 +2910,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2024">
     <div class="paper-img">
         <img src="./Wei Zhai_files/liang2023hypercorrelation.png" alt="HCE">
     </div>
@@ -2237,9 +2924,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">AAAI 2024</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>hierarchical aggregation strategy</b> and <b>correlation refinement mechanism</b> for <b>Video Class-Incremental Learning</b>, optimizing hierarchical matching matrices to alleviate catastrophic forgetting.
-        </div>
+
         <div class="paper-links">
             <a href="https://ojs.aaai.org/index.php/AAAI/article/download/28117/28238">PDF</a>
             <a href="javascript:toggleblock('liang2023hypercorrelation-bib')">BibTeX</a>
@@ -2264,7 +2949,7 @@ year={2024}
 <div class="year-header">2023</div>
 
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/luo2022grounded.png" alt="Grounded Affordance">
     </div>
@@ -2279,9 +2964,7 @@ year={2024}
             In <span class="venue-name">International Journal of Computer Vision (IJCV)</span>
             <br><span style="color:#666; font-size:12px;">Journal version of "Learning Affordance Grounding from Exocentric Images" (CVPR 2022)</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>cross-view affordance knowledge transfer framework</b> to ground affordance from exocentric views by transferring affordance-specific features to egocentric views, supported by the <b>AGD20K dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://link.springer.com/article/10.1007/s11263-023-01962-z">PDF</a>
             <a href="https://arxiv.org/abs/2208.13196">Arxiv</a>
@@ -2305,7 +2988,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2021on.png" alt="MPAP">
     </div>
@@ -2320,9 +3003,7 @@ year={2024}
             In <span class="venue-name">IEEE T-PAMI</span>
             <br><span style="color:#666; font-size:12px;">Journal version of MPAP (ICCV 2019) and DSR-Net (CVPR 2020)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>MPAP</b>, a novel network for <b>texture recognition</b> that models the relation of bottom-up structure and top-down attributes in a multi-branch unified framework to capture <b>multiple primitives and attributes</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10286884/">PDF</a>
             <a href="https://github.com/tiaotiao11-22/MPAP">Code</a>
@@ -2342,7 +3023,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2022background.png" alt="BAS">
     </div>
@@ -2357,9 +3038,7 @@ year={2024}
             In <span class="venue-name">International Journal of Computer Vision (IJCV)</span>
             <br><span style="color:#666; font-size:12px;">Journal version of BAS (CVPR 2022)</span>
         </div>
-        <div class="paper-desc">
-            We introduce <b>Background Activation Suppression (BAS)</b> for <b>weakly supervised object localization</b>, using an <b>Activation Map Constraint</b> to facilitate generator learning by suppressing background activation.
-        </div>
+
         <div class="paper-links">
             <a href="https://link.springer.com/article/10.1007/s11263-023-01919-2">PDF</a>
             <a href="https://arxiv.org/abs/2309.12943">Arxiv</a>
@@ -2383,7 +3062,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/luo2021learning.png" alt="HAG-Net">
     </div>
@@ -2397,9 +3076,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-NNLS</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>HAG-Net</b>, a hand-aided network that leverages <b>demonstration videos</b> and a <b>dual-branch structure</b> to learn visual affordance grounding by transferring knowledge from video to object branches.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10246333/">PDF</a>
             <a href="https://arxiv.org/abs/2108.05675">Arxiv</a>
@@ -2420,7 +3097,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wu2023spatial.png" alt="SAT">
     </div>
@@ -2434,9 +3111,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2023</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>Spatial-Aware Token (SAT)</b> for <b>weakly supervised object localization</b> to resolve optimization conflicts in transformers by learning a task-specific token to condition localization.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Wu_Spatial-Aware_Token_for_Weakly_Supervised_Object_Localization_ICCV_2023_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2303.10438">Arxiv</a>
@@ -2457,7 +3132,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/yang2023grounding.png" alt="IAG">
     </div>
@@ -2471,9 +3146,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2023</span>
         </div>
-        <div class="paper-desc">
-            We introduce a novel task of <b>grounding 3D object affordance</b> from 2D interactions using an <b>Interaction-driven 3D Affordance Grounding Network (IAG)</b> and the new <b>PIAD dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_Grounding_3D_Object_Affordance_from_2D_Interactions_in_Images_ICCV_2023_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2303.10438">Arxiv</a>
@@ -2494,7 +3167,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2023robustness.png" alt="Robustness Benchmark">
     </div>
@@ -2508,9 +3181,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">Journal of University of Science and Technology of China (JUSTC)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>MVTec-C</b>, a dataset to evaluate the <b>robustness</b> of <b>unsupervised anomaly detection</b> models, and a <b>Feature Alignment Module (FAM)</b> to reduce feature drift caused by corruptions.
-        </div>
+
         <div class="paper-links">
             <a href="https://just.ustc.edu.cn/en/article/doi/10.52396/JUSTC-2022-0165">PDF</a>
             <a href="javascript:toggleblock('wang2023robustness-bib')">BibTeX</a>
@@ -2532,7 +3203,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/luo2023leverage.png" alt="Interactive Affinity">
     </div>
@@ -2546,9 +3217,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2023</span>
         </div>
-        <div class="paper-desc">
-            We propose to leverage <b>interactive affinity</b> for <b>affordance learning</b>, using a <b>pose-aided framework</b> and <b>keypoint heuristic perception</b> to transfer cues from human-object interactions to non-interactive objects.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Luo_Leverage_Interactive_Affinity_for_Affordance_Learning_CVPR_2023_paper.pdf">PDF</a>
             <a href="https://github.com/lhc1224/PIAL-Net">Code</a>
@@ -2568,7 +3237,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/lu2023uncertainty.png" alt="SCOOD">
     </div>
@@ -2581,9 +3250,6 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2023</span>
-        </div>
-        <div class="paper-desc">
-            We propose an <b>uncertainty-aware optimal transport</b> scheme for <b>Semantically Coherent OOD detection</b>, utilizing an energy-based transport mechanism to discern outliers from intended data distributions.
         </div>
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Lu_Uncertainty-Aware_Optimal_Transport_for_Semantically_Coherent_Out-of-Distribution_Detection_CVPR_2023_paper.pdf">PDF</a>
@@ -2604,7 +3270,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2023">
     <div class="paper-img">
         <img src="./Wei Zhai_files/dong2023exploring.png" alt="Ventral Stream">
     </div>
@@ -2619,9 +3285,7 @@ year={2024}
             In <span class="venue-name">AAAI 2023</span>
             <span class="highlight-tag">(Oral, Distinguished Paper)</span>
         </div>
-        <div class="paper-desc">
-            We explore the <b>tuning characteristics</b> of <b>ventral stream neurons</b> for <b>few-shot image classification</b>, proposing <b>hierarchical feature regularization</b> to produce generic and robust features.
-        </div>
+
         <div class="paper-links">
             <a href="https://ojs.aaai.org/index.php/AAAI/article/download/25128/24900">PDF</a>
             <a href="javascript:toggleblock('dong2023exploring-bib')">BibTeX</a>
@@ -2646,7 +3310,7 @@ year={2024}
 <div class="year-header">2022</div>
 
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2022exploring.png" alt="FGA">
     </div>
@@ -2660,9 +3324,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">NeurIPS 2022</span>
         </div>
-        <div class="paper-desc">
-            We explore the <b>figure-ground assignment mechanism</b> to empower CNNs for robust <b>perceptual organization</b>, utilizing a <b>Figure-Ground-Aided (FGA)</b> module to handle visual ambiguity.
-        </div>
+
         <div class="paper-links">
             <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/6cc31b44d88dce8380d36e81485cd07f-Paper-Conference.pdf">PDF</a>
             <a href="javascript:toggleblock('zhai2022exploring-bib')">BibTeX</a>
@@ -2682,7 +3344,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/lu2022phrase.png" alt="CBCE-Net">
     </div>
@@ -2696,9 +3358,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-AI</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>CBCE-Net</b> for <b>phrase-based affordance detection</b>, utilizing a cyclic bilateral interaction module to align vision and language features, extended with the annotated <b>PAD dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/6cc31b44d88dce8380d36e81485cd07f-Paper-Conference.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2202.12076">Arxiv</a>
@@ -2719,7 +3379,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2022one.png" alt="OSAD-Net">
     </div>
@@ -2734,9 +3394,7 @@ year={2024}
             In <span class="venue-name">International Journal of Computer Vision (IJCV)</span>
             <br><span style="color:#666; font-size:12px;">Journal version of "One-Shot Affordance Detection" (IJCAI 2021)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>OSAD-Net</b> for <b>one-shot affordance detection</b> by transferring human action purpose to unseen scenarios, benchmarked on the large-scale <b>PADv2 dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://link.springer.com/article/10.1007/s11263-022-01642-4">PDF</a>
             <a href="https://arxiv.org/pdf/2108.03658.pdf">Arxiv</a>
@@ -2760,7 +3418,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2022deep.png" alt="DTC-Net">
     </div>
@@ -2774,9 +3432,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-MM</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>DTC-Net</b> for <b>camouflaged object detection</b>, utilizing <b>Local Bilinear</b> modules and <b>Spatial Coherence Organization</b> to leverage spatial statistical properties of textons.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9815160">PDF</a>
             <a href="javascript:toggleblock('zhai2022deep-bib')">BibTeX</a>
@@ -2795,7 +3451,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/li2022location.png" alt="LCG-Net">
     </div>
@@ -2809,9 +3465,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-MM</span>
         </div>
-        <div class="paper-desc">
-            We present <b>LCG-Net</b>, a <b>location-free camouflage generation</b> network that uses <b>Position-aligned Structure Fusion (PSF)</b> to efficiently generate camouflage in multi-appearance regions.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9817812">PDF</a>
             <a href="https://arxiv.org/abs/2203.09845">Arxiv</a>
@@ -2832,7 +3486,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/luo2022learning.png" alt="Exocentric Affordance">
     </div>
@@ -2846,9 +3500,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2022</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>cross-view knowledge transfer framework</b> for <b>affordance grounding</b> that extracts features from exocentric interactions to perceive affordance in egocentric views, introducing the <b>AGD20K dataset</b>.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Luo_Learning_Affordance_Grounding_From_Exocentric_Images_CVPR_2022_paper.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2203.09905.pdf">Arxiv</a>
@@ -2869,7 +3521,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wu2022background.png" alt="BAS">
     </div>
@@ -2883,9 +3535,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2022</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>Background Activation Suppression (BAS)</b> for <b>Weakly Supervised Object Localization (WSOL)</b>, which uses an <b>Activation Map Constraint (AMC)</b> to suppress background activation and learn whole object regions.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Wu_Background_Activation_Suppression_for_Weakly_Supervised_Object_Localization_CVPR_2022_paper.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2112.00580.pdf">Arxiv</a>
@@ -2907,7 +3557,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhu2022self.png" alt="SSRE">
     </div>
@@ -2921,9 +3571,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2022</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>self-sustaining representation expansion</b> scheme for <b>non-exemplar class-incremental learning</b>, featuring structure reorganization and <b>main-branch distillation</b> to maintain old features.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Zhu_Self-Sustaining_Representation_Expansion_for_Non-Exemplar_Class-Incremental_Learning_CVPR_2022_paper.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2203.06359.pdf">Arxiv</a>
@@ -2944,7 +3592,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2022">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2022robust.png" alt="DANSE">
     </div>
@@ -2958,9 +3606,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-IP</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>DANSE</b>, a method for <b>robust object detection</b> that uses <b>adversarial novel style exploration</b> to discover diverse degradation styles and adapt models to open and compound degradation types.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9697984">PDF</a>
             <a href="javascript:toggleblock('wang2022robust-bib')">BibTeX</a>
@@ -2983,7 +3629,7 @@ year={2024}
 
 <div class="year-header">2021</div>
 
-<div class="paper-row">
+<div class="paper-row pub-2021">
     <div class="paper-img">
         <img src="./Wei Zhai_files/luo2021one.png" alt="OS-AD">
     </div>
@@ -2998,9 +3644,7 @@ year={2024}
             In <span class="venue-name">IJCAI 2021</span>
             <span class="highlight-tag">(Oral)</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>One-Shot Affordance Detection (OS-AD)</b> network that estimates action purpose and transfers it to detect common affordances in unseen scenarios, utilizing <b>collaboration learning</b>. 
-        </div>
+
         <div class="paper-links">
             <a href="https://www.ijcai.org/proceedings/2021/0124.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2106.14747.pdf">Arxiv</a>
@@ -3020,7 +3664,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2021">
     <div class="paper-img">
         <img src="./Wei Zhai_files/li2021tri.png" alt="TAM-GCN">
     </div>
@@ -3034,9 +3678,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IET Computer Vision (IET-CV 2021)</span>
         </div>
-        <div class="paper-desc">
-            We introduce a <b>Tri-Attention Module (TAM)</b> for <b>skeleton-based action recognition</b> to guide GCNs in perceiving significant variations across body poses, joint trajectories, and evolving projections. 
-        </div>
+
         <div class="paper-links">
             <a href="https://ietresearch.onlinelibrary.wiley.com/doi/pdfdirect/10.1049/cvi2.12017">PDF</a>
             <a href="javascript:toggleblock('li2021tri-bib')">BibTeX</a>
@@ -3058,7 +3700,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2021">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhu2021self.png" alt="SPPR">
     </div>
@@ -3072,9 +3714,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">CVPR 2021</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>Self-Promoted Prototype Refinement</b> mechanism for <b>few-shot class-incremental learning</b>, utilizing random episode selection and dynamic relation projection to strengthen new class expression. 
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Zhu_Self-Promoted_Prototype_Refinement_for_Few-Shot_Class-Incremental_Learning_CVPR_2021_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2107.08918">Arxiv</a>
@@ -3097,7 +3737,7 @@ year={2024}
 
 <div class="year-header">2020</div>
 
-<div class="paper-row">
+<div class="paper-row pub-2020">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhu2020self.png" alt="Self-Supervised Tuning">
     </div>
@@ -3112,9 +3752,7 @@ year={2024}
             In <span class="venue-name">IJCAI 2020</span>
             <span class="highlight-tag">(Oral)</span>
         </div>
-        <div class="paper-desc">
-            We present an <b>adaptive tuning framework</b> for <b>few-shot segmentation</b> that uses a novel <b>self-supervised inner-loop</b> to dynamically adjust latent features and augment category-specific descriptors. 
-        </div>
+
         <div class="paper-links">
             <a href="https://www.ijcai.org/proceedings/2020/0142.pdf">PDF</a>
             <a href="javascript:toggleblock('zhu2020self-bib')">BibTeX</a>
@@ -3133,7 +3771,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2020">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wang2020deep.png" alt="IR Method">
     </div>
@@ -3146,9 +3784,6 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">ICIP 2020</span>
-        </div>
-        <div class="paper-desc">
-            We propose a novel <b>Inhomogeneous Regularization (IR)</b> method for <b>transfer learning</b> that imposes decaying averaged deviation penalties to tackle <b>catastrophic forgetting</b> and negative transfer.
         </div>
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9190822">PDF</a>
@@ -3169,7 +3804,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2020">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2020deep.png" alt="DSR-Net">
     </div>
@@ -3184,9 +3819,7 @@ year={2024}
             In <span class="venue-name">CVPR 2020</span>
             <span class="highlight-tag">(Oral)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>DSR-Net</b> for <b>texture recognition</b>, leveraging a <b>primitive capturing module</b> and <b>dependence learning module</b> to reveal spatial dependency and structural representations. 
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhai_Deep_Structure-Revealed_Network_for_Texture_Recognition_CVPR_2020_paper.pdf">PDF</a>
             <a href="javascript:toggleblock('zhai2020deep-bib')">BibTeX</a>
@@ -3205,7 +3838,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2020">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhu2020one.png" alt="OS-TR">
     </div>
@@ -3220,9 +3853,7 @@ year={2024}
             In <span class="venue-name">IEEE T-MM 2020</span>
             <br><span style="color:#666; font-size:12px;">Journal version of "One-Shot Texture Retrieval with Global Context Metric" (IJCAI 2019)</span>
         </div>
-        <div class="paper-desc">
-            We propose an <b>OS-TR network</b> for <b>one-shot texture retrieval</b> that utilizes an <b>adaptive directionality-aware module</b> and a <b>grouping-attention mechanism</b> for robust generalization.
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9224176">PDF</a>
             <a href="javascript:toggleblock('zhu2020one-bib')">BibTeX</a>
@@ -3245,7 +3876,7 @@ year={2024}
 
 <div class="year-header">2019</div>
 
-<div class="paper-row">
+<div class="paper-row pub-2019">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2019deep.png" alt="MAP-Net">
     </div>
@@ -3259,9 +3890,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">ICCV 2019</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>MAP-Net</b> for texture recognition, which progressively learns <b>visual texture attributes</b> in a multi-branch architecture using <b>deformable pooling</b> and attribute transfer schemes.
-        </div>
+
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhai_Deep_Multiple-Attribute-Perceived_Network_for_Real-World_Texture_Recognition_ICCV_2019_paper.pdf">PDF</a>
             <a href="javascript:toggleblock('zhai2019deep-bib')">BibTeX</a>
@@ -3280,7 +3909,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2019">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhu2019one.png" alt="OS-TR">
     </div>
@@ -3295,9 +3924,7 @@ year={2024}
             In <span class="venue-name">IJCAI 2019</span>
             <span class="highlight-tag">(Oral)</span>
         </div>
-        <div class="paper-desc">
-            We tackle <b>one-shot texture retrieval</b> with an OS-TR network that includes a <b>directionality-aware module</b> and a <b>self-gating mechanism</b> to exploit global context information.
-        </div>
+
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/1905.06656.pdf">PDF</a>
             <a href="javascript:toggleblock('zhu2019one-bib')">BibTeX</a>
@@ -3315,7 +3942,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2019">
     <div class="paper-img">
         <img src="./Wei Zhai_files/wu2019pixtextgan.png" alt="PixTextGAN">
     </div>
@@ -3329,9 +3956,7 @@ year={2024}
         <div class="paper-venue">
             In <span class="venue-name">IET Image Processing (IET-IP 2019)</span>
         </div>
-        <div class="paper-desc">
-            We propose <b>PixTextGAN</b>, a controllable architecture for synthesizing <b>license plate images</b> with structure-aware loss, refraining from collecting vast amounts of labelled data. 
-        </div>
+
         <div class="paper-links">
             <a href="https://ietresearch.onlinelibrary.wiley.com/doi/pdfdirect/10.1049/iet-ipr.2018.6588">PDF</a>
             <a href="javascript:toggleblock('wu2019pixtextgan-bib')">BibTeX</a>
@@ -3355,7 +3980,7 @@ year={2024}
 
 <div class="year-header">2018</div>
 
-<div class="paper-row">
+<div class="paper-row pub-2018">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhai2018generative.png" alt="Unsupervised Inspection">
     </div>
@@ -3370,9 +3995,7 @@ year={2024}
             In <span class="venue-name">ICASSP 2018</span>
             <span class="highlight-tag">(Oral)</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>GAN-based framework</b> for <b>unsupervised visual surface inspection</b>, where the discriminator serves as a one-class classifier to detect <b>abnormal regions</b> using multi-scale fusion. 
-        </div>
+
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/8462364">PDF</a>
             <a href="javascript:toggleblock('zhai2018generative-bib')">BibTeX</a>
@@ -3392,7 +4015,7 @@ year={2024}
     </div>
 </div>
 
-<div class="paper-row">
+<div class="paper-row pub-2018">
     <div class="paper-img">
         <img src="./Wei Zhai_files/zhu2018co.png" alt="Depth Map SR">
     </div>
@@ -3407,9 +4030,7 @@ year={2024}
             In <span class="venue-name">MMM 2018</span>
             <span class="highlight-tag">(Oral)</span>
         </div>
-        <div class="paper-desc">
-            We propose a <b>CNN-based method</b> for <b>color-guided depth map super-resolution</b> that detects <b>co-occurrent structural edges</b> to effectively exploit structural correlations between depth and color images. 
-        </div>
+
         <div class="paper-links">
             <a href="https://link.springer.com/content/pdf/10.1007%2F978-3-319-73603-7_8.pdf">PDF</a>
             <a href="javascript:toggleblock('zhu2018co-bib')">BibTeX</a>
@@ -3432,356 +4053,6 @@ year={2024}
 
 
 
-
-
-<h2>Pre-prints </h2>
-
-
-
-
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/han2025touch.png" alt="TOUCH">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2510.14874" class="paper-title">
-            TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions
-        </a>
-        <div class="paper-authors">
-            Guangyi Han, <span class="me">Wei Zhai</span>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We introduce <b>Free-Form HOI Generation</b> and <b>TOUCH</b>, a framework leveraging a multi-level diffusion model and <b>explicit contact modeling</b> to generate diverse, physically plausible hand-object interactions from text. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2510.14874">PDF</a>
-            <a href="https://guangyid.github.io/hoi123touch/">Project</a>
-            <a href="javascript:toggleblock('han2025touch-bib')">BibTeX</a>
-        </div>
-        <div id="han2025touch-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{
-}
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/shao2025value.png" alt="VGPO">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/" class="paper-title">
-            Value-Anchored Group Policy Optimization for Flow Models
-        </a>
-        <div class="paper-authors">
-            Yawen Shao, Jie Xiao, Kai Zhu, Yu Liu, <span class="me">Wei Zhai</span>, Yuhang Yang, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We propose <b>Value-Anchored Group Policy Optimization (VGPO)</b> for flow matching-based image generation, redefining value estimation with <b>process-aware value estimates</b> to enable precise credit assignment and stable optimization. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/">PDF</a>
-            <a href="https://xxxx.github.io/">Project</a>
-            <a href="javascript:toggleblock('shao2025value-bib')">BibTeX</a>
-        </div>
-        <div id="shao2025value-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{
-}
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/wu2025alitok.png" alt="AliTok">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2506.05289" class="paper-title">
-            AliTok: Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model
-        </a>
-        <div class="paper-authors">
-            Pingyu Wu, Kai Zhu, Yu Liu, Longxiang Tang, Jian Yang, Yansong Peng, <span class="me">Wei Zhai</span>, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We introduce <b>AliTok</b>, an <b>Aligned Tokenizer</b> using a causal decoder to establish unidirectional dependencies, aligning token modeling with autoregressive models for superior <b>image generation</b> performance. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2506.05289">PDF</a>
-            <a href="https://github.com/ali-vilab/alitok">Code</a>
-            <a href="javascript:toggleblock('wu2025alitok-bib')">BibTeX</a>
-        </div>
-        <div id="wu2025alitok-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{wu2025alitok,
-  title={AliTok: Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model},
-  author={Wu, Pingyu and Zhu, Kai and Liu, Yu and Tang, Longxiang and Yang, Jian and Peng, Yansong and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
-  journal={arXiv preprint arXiv:2506.05289},
-  year={2025}
-}
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/yang2025videogen.png" alt="VideoGen-Eval">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2503.23452" class="paper-title">
-            VideoGen-Eval: Agent-based System for Video Generation Evaluation
-        </a>
-        <div class="paper-authors">
-            Yuhang Yang, Shangkun Sun, Hongxiang Li, Ke Fan, Ailing Zeng, Feilin Han, <span class="me">Wei Zhai</span>, Wei Liu, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We propose <b>VideoGen-Eval</b>, an <b>agent-based dynamic evaluation system</b> for video generation that integrates content structuring and multimodal judgment, validated against human preferences. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2503.23452">PDF</a>
-            <a href="https://github.com/AILab-CVC/VideoGen-Eval">Code</a>
-            <a href="javascript:toggleblock('yang2025videogen-bib')">BibTeX</a>
-        </div>
-        <div id="yang2025videogen-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{yang2025videogen,
-  title={VideoGen-Eval: Agent-based System for Video Generation Evaluation},
-  author={Yang, Yuhang and Fan, Ke and Sun, Shangkun and Li, Hongxiang and Zeng, Ailing and Han, FeiLin and Zhai, Wei and Liu, Wei and Cao, Yang and Zha, Zheng-Jun},
-  journal={arXiv preprint arXiv:2503.23452},
-  year={2025}
-}
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/fang2025vangogh.gif" alt="VanGogh">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2501.09499" class="paper-title">
-            VanGogh: A Unified Multimodal Diffusion-based Framework for Video Colorization
-        </a>
-        <div class="paper-authors">
-            Zixun Fang, Zhiheng Liu, Kai Zhu, Yu Liu, Ka Leong Cheng, <span class="me">Wei Zhai</span>, Yang Cao, Zheng-Jun Zha
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We introduce <b>VanGogh</b>, a <b>unified multimodal diffusion-based framework</b> for <b>video colorization</b> that employs a Dual Qformer and depth-guided generation to achieve superior temporal consistency and color fidelity. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2501.09499">PDF</a>
-            <a href="https://becauseimbatman0.github.io/VanGogh">Code</a>
-            <a href="javascript:toggleblock('fang2025vangogh-bib')">BibTeX</a>
-        </div>
-        <div id="fang2025vangogh-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@misc{fang2025vangoghunifiedmultimodaldiffusionbased,
-    title={VanGogh: A Unified Multimodal Diffusion-based Framework for Video Colorization}, 
-    author={Zixun Fang and Zhiheng Liu and Kai Zhu and Yu Liu and Ka Leong Cheng and Wei Zhai and Yang Cao and Zheng-Jun Zha},
-    year={2025},
-    eprint={2501.09499},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV},
-    url={https://arxiv.org/abs/2501.09499}, 
-}
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/chen2025event.png" alt="EDFilter">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2504.07503" class="paper-title">
-            Event Signal Filtering via Probability Flux Estimation
-        </a>
-        <div class="paper-authors">
-            Jinze Chen, <span class="me">Wei Zhai</span>, Yang Cao, Bin Li, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We introduce <b>EDFilter</b>, an event signal filtering framework that estimates <b>probability flux</b> from discrete events using <b>nonparametric kernel smoothing</b>, enhancing signal fidelity for downstream tasks. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2504.07503">PDF</a>
-            <a href="javascript:toggleblock('chen2025event-bib')">BibTeX</a>
-        </div>
-        <div id="chen2025event-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{chen2025event,
-title={Event Signal Filtering via Probability Flux Estimation},
-author={Chen, Jinze and Zhai, Wei and Cao, Yang and Li, Bin and Zha, Zheng-Jun},
-journal={arXiv preprint arXiv:2504.07503},
-year={2025}
-}
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/luo2024visual.png" alt="VCR-Net">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/pdf/2410.11363" class="paper-title">
-            Visual-Geometric Collaborative Guidance for Affordance Learning
-        </a>
-        <div class="paper-authors">
-            Hongchen Luo, <span class="me">Wei Zhai</span>, Jiao Wang, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-            <br><span style="color:#666; font-size:12px;">Journal version of "Leverage Interactive Affinity for Affordance Learning" (CVPR 2023)</span>
-        </div>
-        <div class="paper-desc">
-            We propose a <b>visual-geometric collaborative guided affordance learning network</b> that leverages <b>interactive affinity</b> to transfer knowledge from human-object interactions to non-interactive objects. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/pdf/2410.11363">PDF</a>
-            <a href="https://github.com/lhc1224/VCR-Net">Code</a>
-            <a href="javascript:toggleblock('luo2024visual-bib')">BibTeX</a>
-        </div>
-        <div id="luo2024visual-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{luo2024visual,
-    title={Visual-Geometric Collaborative Guidance for Affordance Learning},
-    author={Luo, Hongchen and Zhai, Wei and Wang, Jiao and Cao, Yang and Zha, Zheng-Jun},
-    journal={arXiv preprint arXiv:2410.11363},
-    year={2024}
-    }
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/liu2024grounding.png" alt="Ego-SAG">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/pdf/2409.19650" class="paper-title">
-            Grounding 3D Scene Affordance From Egocentric Interactions
-        </a>
-        <div class="paper-authors">
-            Cuiyu Liu, <span class="me">Wei Zhai</span>, Yuhang Yang, Hongchen Luo, Sen Liang, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We introduce <b>Ego-SAG</b>, a framework for <b>grounding 3D scene affordance</b> from <b>egocentric interactions</b> using interaction intent guidance and a bidirectional query decoder mechanism. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/pdf/2409.19650">PDF</a>
-            <a href="javascript:toggleblock('liu2024grounding-bib')">BibTeX</a>
-        </div>
-        <div id="liu2024grounding-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{liu2024grounding,
-    title={Grounding 3D Scene Affordance From Egocentric Interactions},
-    author={Liu, Cuiyu and Zhai, Wei and Yang, Yuhang and Luo, Hongchen and Liang, Sen and Cao, Yang and Zha, Zheng-Jun},
-    journal={arXiv preprint arXiv:2409.19650},
-    year={2024}
-    }
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/fang2024vivid.gif" alt="ViViD">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2405.11794" class="paper-title">
-            ViViD: Video Virtual Try-on using Diffusion Models
-        </a>
-        <div class="paper-authors">
-            Zixun Fang, <span class="me">Wei Zhai</span>, Aimin Su, Hongliang Song, Kai Zhu, Mao Wang, Yu Chen, Zhiheng Liu, Yang Cao, Zheng-Jun Zha.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We present <b>ViViD</b>, a framework using <b>diffusion models</b> for <b>video virtual try-on</b>, incorporating a Garment Encoder, Pose Encoder, and Temporal Modules to ensure spatial-temporal consistency. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2405.11794">PDF</a>
-            <a href="https://github.com/alibaba-yuanjing-aigclab/ViViD">Code</a>
-            <a href="javascript:toggleblock('fang2024vivid-bib')">BibTeX</a>
-        </div>
-        <div id="fang2024vivid-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{fang2024vivid,
-    title={ViViD: Video Virtual Try-on using Diffusion Models},
-    author={Fang, Zixun and Zhai, Wei and Su, Aimin and Song, Hongliang and Zhu, Kai and Wang, Mao and Chen, Yu and Liu, Zhiheng and Cao, Yang and Zha, Zheng-Jun},
-    journal={arXiv preprint arXiv:2405.11794},
-    year={2024}
-    }
-</pre>
-        </div>
-    </div>
-</div>
-
-<div class="paper-row">
-    <div class="paper-img">
-        <img src="./Wei Zhai_files/luo2024intention.png" alt="IDE">
-    </div>
-    <div class="paper-content">
-        <a href="https://arxiv.org/abs/2403.09194" class="paper-title">
-            Intention-driven Ego-to-Exo Video Generation
-        </a>
-        <div class="paper-authors">
-            Hongchen Luo, Kai Zhu, <span class="me">Wei Zhai</span>, Yang Cao.
-        </div>
-        <div class="paper-venue">
-            Arxiv
-        </div>
-        <div class="paper-desc">
-            We propose <b>IDE</b>, an <b>Intention-Driven Ego-to-Exo video generation</b> framework that uses action intention and cross-view feature perception to generate consistent exocentric videos from egocentric inputs. 
-        </div>
-        <div class="paper-links">
-            <a href="https://arxiv.org/abs/2403.09194">PDF</a>
-            <a href="javascript:toggleblock('luo2024intention-bib')">BibTeX</a>
-        </div>
-        <div id="luo2024intention-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{luo2024intention,
-    title={Intention-driven Ego-to-Exo Video Generation},
-    author={Luo, Hongchen and Zhu, Kai and Zhai, Wei and Cao, Yang},
-    journal={arXiv preprint arXiv:2403.09194},
-    year={2024}
-    }
-</pre>
-        </div>
-    </div>
-</div>
 
 
 
@@ -3928,6 +4199,13 @@ year={2025}
         </div>
     </div>
 
+    <div class="info-row">
+        <div class="info-label">Spring 2026</div>
+        <div class="info-content">
+            Deep Learning, USTC
+        </div>
+    </div>
+
 </div>
 
 
@@ -3967,5 +4245,63 @@ function toggleNewsHistory() {
 }
 </script>
 
-</body></html>
 
+
+<script type="text/javascript">
+// 控制 News 折叠/展开的函数保持不变
+function toggleNewsHistory() {
+    var hiddenDiv = document.getElementById("news-hidden");
+    var btn = document.getElementById("news-btn-text");
+    
+    if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
+        hiddenDiv.style.display = "block"; // 展开
+        btn.innerHTML = "Collaspe History &#9650;"; 
+    } else {
+        hiddenDiv.style.display = "none"; // 收起
+        btn.innerHTML = "View History News... &#9660;"; 
+    }
+}
+
+// === 新增/更新的论文筛选功能 ===
+function filterPubs(category) {
+    // 1. 切换按钮的激活(高亮)状态
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // 2. 遍历所有论文并控制显示/隐藏
+    const papers = document.querySelectorAll('.paper-row');
+    papers.forEach(paper => {
+        // 如果点击的是 'all'，或者该论文包含对应的类名 (例如 'pub-2026' 或 'pub-selected')
+        if (category === 'all' || paper.classList.contains('pub-' + category)) {
+            paper.style.display = 'flex'; // 显示（因为你的CSS是用flex布局的）
+        } else {
+            paper.style.display = 'none'; // 隐藏
+        }
+    });
+
+    // 3. 处理年份分界线 (year-header)
+    // 只有在点击 "All" 时，才显示 "2026", "2025" 这种年份文字分隔符，其他模式下隐藏以保持页面整洁
+    const headers = document.querySelectorAll('.year-header');
+    headers.forEach(header => {
+        if (category === 'all') {
+            header.style.display = 'inline-block';
+        } else {
+            header.style.display = 'none';
+        }
+    });
+}
+
+// 4. 网页加载完成后，自动触发“Selected”筛选
+document.addEventListener('DOMContentLoaded', function() {
+    filterPubs('selected');
+});
+</script>
+
+
+</body></html>
