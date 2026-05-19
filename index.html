@@ -1,16 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
 
-<link rel="icon" src="./Wei Zhai_files/ustc_icon.png">
+<link rel="icon" href="./Wei Zhai_files/ustc_icon.png">
 
 <link rel="stylesheet" href="./Wei Zhai_files/main.css" type="text/css">
 <link rel="stylesheet" href="./Wei Zhai_files/nomenu.css" type="text/css">
+<link rel="stylesheet" href="./Wei Zhai_files/base.css" type="text/css">
+<link rel="stylesheet" href="./Wei Zhai_files/publications.css" type="text/css">
+<link rel="stylesheet" href="./Wei Zhai_files/sections.css" type="text/css">
 <!--- <title>Wei Zhai</title> --->
 <title>Wei Zhai</title>
 <!-- MathJax -->
-<script src="./Wei Zhai_files/latest.js.下载" async="">
+<script src="./Wei Zhai_files/latest.js" async="">
 </script>
 <script type="text/x-mathjax-config;executed=true">
 MathJax.Hub.Config({
@@ -18,777 +21,17 @@ MathJax.Hub.Config({
 });
 </script>
 <!-- End MathJax -->
-<script type="text/javascript" src="./Wei Zhai_files/hidebib.js.下载"></script>
+<script type="text/javascript" src="./Wei Zhai_files/hidebib.js"></script>
+<script type="text/javascript" src="./Wei Zhai_files/site.js"></script>
 
-<script type="text/javascript">
-function toggleNews() {
-    var newsDiv = document.getElementById("more-news");
-    var btn = document.getElementById("news-toggle-btn");
-    
-    if (newsDiv.style.display === "none") {
-        newsDiv.style.display = "block";
-        btn.innerHTML = "Hide details &#9650;"; 
-    } else {
-        newsDiv.style.display = "none";
-        btn.innerHTML = "Show more news... &#9660;"; 
-    }
-}
-</script>
-
-
-<style>
-/* === 全局字体堆栈：模仿 Saurabh Gupta 风格 === */
-html, body {
-    /* 你已有的字体堆栈保持不变 */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    
-    /* === 核心：模仿他的渲染质感 === */
-    -webkit-font-smoothing: antialiased; /* 强制抗锯齿，让字体变细 */
-    -moz-osx-font-smoothing: grayscale;  /* 火狐浏览器抗锯齿 */
-    text-rendering: optimizeLegibility;   /* 优化文字可读性 */
-    color: #222;                         /* 他的颜色比 #333 稍微深一点点，更接近黑 */
-}
-
-/* === 新增：扩展网页主体内容的宽度 === */
-#layout-content {
-    max-width: 900px !important; /* 调整这个数值可以控制整体宽度，比如 1100px 或 1200px */
-    margin: 0 auto !important;    /* 保证内容居中 */
-    padding: 0 20px;              /* 给手机端留出一点呼吸空间 */
-}
-
-/* 确保标题也继承这套字体，但加粗 */
-h1, h2, h3, h4 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    color: #000;            /* 标题使用纯黑以示区别 */
-}
-
-h1 {
-    /* 1. 调整字号：Saurabh 的风格通常在 40px - 42px 之间 */
-    font-size: 36px; 
-
-    /* 2. 调整粗细：使用 800 (Extra Bold) 配合系统字体非常有张力 */
-    font-weight: 600; 
-
-    /* 3. 核心风格：负的字间距。让字母和汉字靠得更近，显得更专业、更像平面设计 */
-    letter-spacing: -1.5px; 
-
-    /* 4. 颜色：使用纯黑 #000 突出个人身份 */
-    color: #000;
-
-    /* 5. 字体：英文优先系统原生，中文使用苹方或微软雅黑 */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-
-    /* 6. 间距：调整姓名下方的空隙 */
-    margin-top: 0px;
-    margin-bottom: 10px;
-    border: none; /* 确保没有 h2 默认的下划线 */
-}
-
-
-h2, .profile-name {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    color: #000;
-    letter-spacing: -1.2px; 
-}
-
-
-/* === Saurabh Gupta Style Profile === */
-.profile-section {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.profile-avatar {
-    flex: 0 0 160px; /* 头像宽度 */
-}
-
-.profile-avatar img {
-    width: 100%;
-    border-radius: 4px; /* 极小的圆角或不加圆角 */
-    background: #ffffff;
-}
-
-.profile-info {
-    flex: 1;
-}
-
-/* 姓名：大而醒目 */
-.profile-name {
-    font-size: 35px;      /* 他实际代码中的尺寸 */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 8px;
-    
-    /* 核心细节：收紧字间距，让名字看起来更专业 */
-    letter-spacing: -1.2px; 
-    line-height: 1.2;
-}
-
-/* 职位与单位：紧凑排列 */
-.profile-title-line {
-    font-size: 19px;
-    color: #333;
-    margin-bottom: 5px;
-    line-height: 1.5;
-}
-
-.profile-title-line strong {
-    font-weight: 600;
-}
-
-/* 链接部分：使用分隔符，而不是按钮 */
-.profile-links-line {
-    margin-top: 15px;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.profile-links-line a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.profile-links-line a:hover {
-    color: #004b96;
-}
-
-.link-sep {
-    color: #ccc;
-    margin: 0 8px;
-}
-
-/* 简介：行高适中，文字深灰 */
-.profile-bio {
-    font-size: 16px;
-    line-height: 1.5; /* 他的行高是 1.5，比你的 1.6 稍微紧凑点 */
-    color: #444;
-    text-align: justify;
-}
-
-.profile-bio a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.profile-bio a:hover {
-    color: #004b96;
-}
-
-.profile-bio b {
-    font-weight: 500; /* 把默认的 700 降为 600（半粗体） */
-    color: #000000;      /* 可以顺便调一下颜色 */
-}
-
-
-/* === Modern News List (No Scrollbar) === */
-
-.news-container {
-    margin-bottom: 10px;
-}
-
-/* 单条新闻行 */
-.news-row {
-    display: flex;
-    align-items: baseline; /* 文字基线对齐 */
-    padding: 6px 0;
-    border-bottom: 1px dashed #eaeaea; /* 虚线分割 */
-    transition: background-color 0.2s;
-}
-.news-row:hover {
-    background-color: #fafafa; /* 鼠标悬停微高亮 */
-}
-
-/* 左侧日期 */
-.news-date {
-    flex: 0 0 85px; /* 固定宽度 */
-    font-size: 15px;
-    font-weight: 600;
-    color: #444;
-}
-
-/* 右侧内容 */
-.news-content {
-    flex: 1;
-    font-size: 15px;
-    color: #333;
-    line-height: 1.5;
-}
-
-/* 高亮样式 */
-.h-red { color: #d9534f; font-weight: 600; }
-.h-blue { color: #0066cc; font-weight: 600; }
-
-/* 徽章 (可选，用于 Awards) */
-.news-badge {
-    display: inline-block;
-    padding: 1px 6px;
-    background: #eef0f3;
-    color: #0066cc;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 600;
-    margin-left: 6px;
-    vertical-align: middle;
-}
-
-/* === 折叠/展开控制 === */
-#news-hidden {
-    display: none; /* 默认隐藏旧新闻 */
-}
-
-/* 展开按钮样式 */
-.news-more-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 5px 0;
-    margin-top: 5px;
-    background-color: #ffffff;
-    color: #666;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 6px;
-
-    transition: all 0.2s;
-    cursor: pointer;
-}
-.news-more-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-
-
-
-/* === Experience Section === */
-
-.exp-section {
-    margin-bottom: 10px;
-}
-
-.exp-item {
-    display: flex;
-    margin-bottom: 0px; /* 项目之间的距离由 padding-bottom 控制，方便画线 */
-}
-
-/* 1. 左侧：时间区域 */
-.exp-time {
-    flex: 0 0 160px;       /* 固定宽度，确保对齐 */
-    text-align: right;
-    padding-right: 30px;   /* 离中间线的距离 */
-    font-size: 15px;
-    font-weight: 600;
-    color: #555;           /* 深灰色时间 */
-    padding-top: 2px;      /* 视觉上与右侧标题对齐 */
-    line-height: 1.5;
-}
-
-/* 2. 右侧：内容区域 (带左边框线) */
-.exp-content {
-    flex: 1;
-    border-left: 2px solid #eef0f3; /* 浅灰色时间轴线 */
-    padding-left: 30px;    /* 内容离线的距离 */
-    padding-bottom: 20px;  /* 每个经历下方的留白 */
-    position: relative;    /* 用于定位圆点 */
-}
-
-/* 最后一个项目去掉左边框线 (可选，或者保留线延伸) */
-/* .exp-item:last-child .exp-content { border-left: 2px solid transparent; } */
-
-/* 3. 时间轴上的圆点 */
-.exp-content::before {
-    content: '';
-    position: absolute;
-    left: -6px;            /* (线宽2px / 2) - (圆点宽10px / 2) = -1 - 5 = -6px */
-    top: 6px;              /* 根据字号微调垂直位置 */
-    width: 10px;
-    height: 10px;
-    background: #fff;      /* 白底 */
-    border: 2px solid #0066cc; /* 宝石蓝圆环 (呼应 Publication 的链接色) */
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* 4. 单位名称 */
-.exp-org {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-bottom: 5px;
-}
-.exp-org a {
-    color: inherit;        /* 继承父元素颜色 */
-    text-decoration: none;
-}
-.exp-org a:hover {
-    color: #0066cc;        /* 悬停变蓝 */
-}
-
-/* 5. 职位/学位 */
-.exp-role {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;           /* 次深色 */
-    margin-bottom: 8px;
-}
-
-/* 6. 详细描述 (导师、部门等) */
-.exp-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-}
-.exp-desc a {
-    color: #d9534f;
-    text-decoration: none;
-}
-
-
-
-.year-header {
-    font-size: 22px;
-    font-weight: 600;          /* 特粗 */
-    color: #000;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;       /* 文字到底部线的距离 */
-    border-bottom: 3px solid #000; /* 底部黑线 */
-    display: inline-block;     /* 让下划线只跟文字一样宽 */
-}
-
-
-
-</style>
-
-<style>
-/* === Highlight Works === */
-.highlight-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 15px 5px 25px 5px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* === 卡片基础样式 === */
-.highlight-card {
-    flex: 0 0 240px;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 12px;
-    text-align: left; /* 改为左对齐，阅读体验更好 */
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
-
-/* === 链接样式 === */
-.highlight-card a {
-    text-decoration: none;
-    color: inherit; /* 继承父元素颜色 */
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* === 图片样式 === */
-.highlight-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 8px;
-    border: 1px solid #f0f0f0;
-}
-
-/* === 论文题目样式 === */
-.work-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #2c3e50;
-    line-height: 1.3;
-    margin-bottom: 6px;
-    /* 限制显示两行，超出省略 */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.highlight-card a:hover .work-title {
-    color: #0000FF; /* 悬停时题目变蓝 */
-    text-decoration: underline;
-}
-
-/* === 会议/期刊名称样式 === */
-.work-meta {
-    font-size: 12px;
-    color: #666;
-    margin-top: auto; /* 将其推到底部 */
-    line-height: 1.5;
-}
-
-/* === 亮点标注样式 (Spotlight, Best Paper 等) === */
-.work-highlight {
-    font-weight: bold;
-    color: #d9534f; /* 红色高亮 */
-    display: inline-block;
-    margin-top: 2px;
-}
-.work-highlight.blue {
-    color: #0000FF; /* 蓝色高亮 */
-}
-
-/* === 滚动条美化 === */
-.highlight-container::-webkit-scrollbar { height: 8px; }
-.highlight-container::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-.highlight-container::-webkit-scrollbar-track { background: #f1f1f1; }
-</style>
-
-
-
-
-
-<style>
-/* === 高端质感风格布局 === */
-
-.paper-row {
-    display: flex;
-    padding: 22px 0;           /* 增加上下留白，显得更从容 */
-    border-bottom: 1px solid #eaeaea; /* 分割线颜色变得更浅更细 */
-    align-items: flex-start;
-}
-
-.paper-img {
-    flex: 0 0 220px;
-    margin-right: 28px;        /* 稍微拉大图文间距 */
-    padding-top: 2px;
-}
-
-/* 让 video 和 img 享受完全相同的排版、圆角、阴影和悬停放大效果 */
-.paper-img img,
-.paper-img video {
-    width: 100%;
-    border-radius: 6px;        
-    border: 1px solid #f2f2f2; 
-    box-shadow: 0 3px 8px rgba(0,0,0,0.06); 
-    transition: transform 0.3s ease;
-    object-fit: cover; /* 确保视频比例不失调 */
-}
-
-.paper-img:hover img,
-.paper-img:hover video {
-    transform: scale(1.02);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-.paper-content {
-    flex: 1;
-}
-
-/* 1. 题目：深邃、稳重 */
-.paper-title {
-    display: block;
-    font-size: 18px;           /* 稍微加大字号 */
-    font-weight: 600;          /* 半粗体，比 bold 稍微细一点点，更显精致 */
-    color: #d9534f;            /* 深炭灰，比纯黑更有质感 */
-    margin-bottom: 6px;
-    text-decoration: none;
-    line-height: 1.35;
-    letter-spacing: -0.2px;    /* 稍微收紧字间距，显得紧凑 */
-}
-.paper-title:hover {
-    color: #0066cc;            /* 悬停变为宝石蓝 */
-    text-decoration: none;     /* 悬停不去掉下划线，保持清爽，仅变色即可（或者你喜欢下划线可以加） */
-}
-
-/* 2. 作者：清晰，突出自己 */
-.paper-authors {
-    font-size: 15px;
-    color: #444;               /* 深灰 */
-    line-height: 1.5;
-    margin-bottom: 6px;
-}
-/* 你的名字特殊样式 */
-.me {
-    color: #000;               /* 你的名字用纯黑 */
-    font-weight: 600;
-}
-
-/* 3. 会议/期刊：优雅 */
-.paper-venue {
-    font-size: 15px;
-    color: #222;
-    margin-bottom: 10px;
-}
-.venue-name {
-    font-style: italic;
-    font-weight: 600;          /* 会议简称加粗 */
-}
-
-/* 4. 奖项/高亮：高级的红色 */
-.highlight-tag {
-    color: #d9534f;            /* 砖红色，不刺眼 */
-    font-weight: 700;
-    font-size: 14px;
-    margin-left: 6px;
-}
-.highlight-tag.blue {
-    color: #1a73e8;            /* 谷歌蓝，用于 Distinction 等 */
-}
-
-/* 5. 亮点描述：细腻 */
-.paper-desc {
-    font-size: 14px;
-    color: #666;               /* 浅灰 */
-    line-height: 1.5;          /* 行高拉大，增加可读性 */
-    margin-bottom: 12px;
-    font-weight: 400;
-    text-align: justify;
-}
-/* 描述中的强调词 */
-.paper-desc b {
-    color: #333;               /* 强调词颜色加深 */
-    font-weight: 600;
-}
-
-/* 6. 链接：统一化 */
-.paper-links a {
-    font-size: 12px;
-    font-weight: 600;
-    color: #0066cc;            /* 宝石蓝 */
-    text-decoration: none;
-    margin-right: 14px;
-    text-transform: uppercase; /* 全大写，显得整齐 */
-    letter-spacing: 0.5px;
-}
-.paper-links a:hover {
-    color: #004c99;            /* 悬停变深 */
-}
-
-.paper-links a:not(:last-child)::after {
-    content: "/";
-    color: #232323;          /* 让斜杠变成浅灰色，不抢链接的风头 */
-    margin-left: 12px;    /* 这里控制斜杠【左侧】的间距 */
-    display: inline-block;
-    pointer-events: none; /* 确保鼠标点到斜杠上不会触发链接 */
-    text-decoration: none; 
-}
-
-
-/* === Services, Awards & Teaching Section === */
-
-.info-section {
-    margin-bottom: 10px;
-}
-
-.info-section b {
-    font-weight: 600;
-}
-
-/* --- 1. Professional Activities (双栏布局) --- */
-.service-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px; /* 两栏之间的间距 */
-}
-
-.service-col {
-    flex: 1;
-    min-width: 300px; /* 移动端自动换行 */
-}
-
-.service-header {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    display: block;
-}
-
-.service-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.service-list li {
-    font-size: 15px;
-    color: #444;
-    margin-bottom: 8px;
-    padding-left: 15px;
-    position: relative;
-    line-height: 1.5;
-}
-
-.service-list li::before {
-    content: '•';
-    color: #0066cc; /* 蓝点装饰 */
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-/* --- 2. Awards & Teaching Rows (左侧时间，右侧内容) --- */
-.info-row {
-    display: flex;
-    padding: 5px 0;
-    border-bottom: 1px solid #f5f5f5; /* 极淡的分割线 */
-    align-items: baseline;
-    transition: background 0.2s;
-}
-.info-row:hover {
-    background-color: #fafbfd; /* 悬停微高亮 */
-}
-.info-row:last-child { border-bottom: none; }
-
-.info-label {
-    flex: 0 0 100px; /* 左侧固定宽度 (年份) */
-    font-weight: 600;
-    color: #555;
-    font-size: 15px;
-}
-
-.info-content {
-    flex: 1;
-    font-size: 15px;
-    color: #222;
-    line-height: 1.5;
-}
-
-/* 奖项高亮徽章 */
-.award-badge {
-    display: inline-block;
-    padding: 1px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-left: 8px;
-    vertical-align: middle;
-    text-transform: uppercase;
-}
-.badge-red { 
-    background-color: #fff5f5; 
-    color: #d9534f; 
-    border: 1px solid #ffebeb;
-    font-weight: 600;
-}
-.badge-blue { 
-    background-color: #f0f7ff; 
-    color: #0066cc; 
-    border: 1px solid #e1f0ff;
-    font-weight: 600;
-}
-.badge-gold {
-    background-color: #fff9e6;
-    color: #b58900;
-    border: 1px solid #fff3cd;
-    font-weight: 600;
-}
-
-</style>
-
-
-<style>
-/* === Publication Filters (年份/精选筛选菜单) === */
-.pub-filters {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eaeaea; /* 底部灰线 */
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    font-size: 18px;
-    font-weight: 500;
-    color: #666;
-    cursor: pointer;
-    padding: 6px 12px;
-    border: none;
-    background: transparent;
-    transition: all 0.3s ease;
-    position: relative;
-    border-radius: 4px;
-}
-
-.filter-btn:hover {
-    color: #0066cc; /* 鼠标悬停变蓝 */
-    background-color: #f4f6f8;
-}
-
-.filter-btn.active {
-    color: #0066cc;
-}
-
-/* 激活状态下的底部下划线特效 */
-.filter-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -12px; /* 覆盖到容器的边框上 */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #0066cc;
-    border-radius: 2px;
-}
-
-/* === Paper Tags (研究方向标签) === */
-.paper-tags {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag-item {
-    font-size: 12px;
-    color: #0066cc;
-    background-color: #f0f7ff; /* 极浅的蓝色背景 */
-    padding: 4px 10px;
-    border-radius: 14px; /* 圆角标签 */
-    border: 1px solid #cce0ff;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-
-/* 如果你希望不同类别有不同的颜色，可以加一些额外的 class */
-.tag-item.tag-embodied { color: #d9534f; background-color: #fff5f5; border-color: #ffebeb; } /* 红色系 */
-.tag-item.tag-vision { color: #0066cc; background-color: #f0f7ff; border-color: #e1f0ff; }   /* 蓝色系 */
-.tag-item.tag-neuromorphic { color: #b58900; background-color: #fff9e6; border-color: #fff3cd; } /* 金色系 */
-</style>
-
-<style>
-span {
-    font-weight: 400; /* 你可以改成 400(常规), 600(半粗), 或 700(加粗) */
-}
-</style>
 
 </head>
-<body><div id="MathJax_Message" style="display: none;"></div>
+<body><div id="MathJax_Message" class="mathjax-message"></div>
 <div id="main-container">
 <div id="layout-content"> <!-- nomenu  -->
 <div id="toptitle">
 
-<h2 style="font-size: 36px; font-weight: 600;">Wei Zhai (翟伟)</h2>
+<h2 class="page-title">Wei Zhai (翟伟)</h2>
 <div class="profile-section">
     
     <div class="profile-avatar">
@@ -799,7 +42,7 @@ span {
 
         <div class="profile-bio">
             I am an Associate Researcher at the Department of Automation, University of Science and Technology of China (USTC). 
-            I earned my Ph.D. from USTC in 2022, where I was advised by Prof. <a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm" target="_blank">Zheng-Jun Zha</a> and Prof. <a href="https://staff.iaticetc.cn:1234/" target="_blank">Yang Cao</a>. 
+            I earned my Ph.D. from USTC in 2022, where I was advised by Prof. <a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm" target="_blank" rel="noopener noreferrer">Zheng-Jun Zha</a> and Prof. <a href="https://staff.iaticetc.cn:1234/" target="_blank" rel="noopener noreferrer">Yang Cao</a>. 
             Prior to that, I received my B.S. degree from Southwest Jiaotong University in 2017. I was fortunate to receive the AAAI 2023 Distinguished Paper Award and the ACM MM 2025 MSMA Workshop Best Student Paper Award. 
             My research interests lie at the intersection of <b>Embodied Perception and Interaction</b>, <b>Multimodal Reasoning and Generation</b>, and <b>Neuromorphic Vision</b>.
         </div>
@@ -807,11 +50,11 @@ span {
         <div class="profile-links-line">
             <a href="mailto:wzhai056@ustc.edu.cn">Email</a>
             <span class="link-sep">|</span>
-            <a href="https://scholar.google.ca/citations?user=UI5_qZcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <a href="https://scholar.google.ca/citations?user=UI5_qZcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
             <span class="link-sep">|</span>
-            <a href="https://faculty.ustc.edu.cn/zhaiwei/zh_CN/index.htm" target="_blank">USTC Homepage</a>
+            <a href="https://faculty.ustc.edu.cn/zhaiwei/zh_CN/index.htm" target="_blank" rel="noopener noreferrer">USTC Homepage</a>
             <span class="link-sep">|</span>
-            <a href="#" target="_blank">MILab</a>
+            <a title="Link pending update">MEI-Lab</a>
         </div>
     </div>
 </div>
@@ -1046,9 +289,7 @@ span {
         </div>
 
     </div>
-    <a href="javascript:toggleNewsHistory()" class="news-more-btn" id="news-btn-text">
-        View History News... &#9660;
-    </a>
+    <button type="button" class="news-more-btn" id="news-btn-text" data-action="toggle-news-history">View History News... &#9660;</button>
 
 </div>
 
@@ -1060,14 +301,14 @@ span {
 
 
 <div class="pub-filters">
-    <button class="filter-btn" data-filter="selected" onclick="filterPubs('selected')">Recent Highlights</button>
-    <button class="filter-btn" data-filter="2026" onclick="filterPubs('2026')">2026</button>
-    <button class="filter-btn" data-filter="2025" onclick="filterPubs('2025')">2025</button>
-    <button class="filter-btn" data-filter="2024" onclick="filterPubs('2024')">2024</button>
-    <button class="filter-btn" data-filter="2023" onclick="filterPubs('2023')">2023</button>
-    <button class="filter-btn" data-filter="2022" onclick="filterPubs('2022')">2022</button>
-    <button class="filter-btn" data-filter="preprint" onclick="filterPubs('preprint')">Pre-print</button>
-    <button class="filter-btn" data-filter="all" onclick="filterPubs('all')">All</button>
+    <button class="filter-btn" data-filter="selected">Recent Highlights</button>
+    <button class="filter-btn" data-filter="preprint">Pre-print</button>
+    <button class="filter-btn" data-filter="2026">2026</button>
+    <button class="filter-btn" data-filter="2025">2025</button>
+    <button class="filter-btn" data-filter="2024">2024</button>
+    <button class="filter-btn" data-filter="2023">2023</button>
+    <button class="filter-btn" data-filter="2022">2022</button>
+    <button class="filter-btn" data-filter="all">All</button>
 </div>
 
 
@@ -1094,15 +335,15 @@ span {
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2603.14435">PDF</a>
             <a href="https://nianheng.github.io/THO-project/">Project</a>
-            <a href="javascript:toggleblock('zhang2026end-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhang2026end-bib">BibTeX</button>
         </div>
 
         <div class="paper-desc">
             An end-to-end Spatial-Temporal Transformer that achieves real-time (31.5 FPS), physically plausible 4D human-object reconstruction from a single video without test-time optimization.
         </div>
 
-        <div id="zhang2026end-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhang2026end-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhang2026end,
   title={End-to-End Spatial-Temporal Transformer for Real-time 4D HOI Reconstruction},
   author={Zhang, Haoyu and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
@@ -1133,10 +374,10 @@ span {
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2603.09731">PDF</a>
             <a href="https://jackyu6.github.io/EXPLORE-Page/">Project</a>
-            <a href="javascript:toggleblock('yu2026explore-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yu2026explore-bib">BibTeX</button>
         </div>
-        <div id="yu2026explore-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yu2026explore-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yu2026explore,
   title={EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning},
   author={Yu, Chengjun and Zhu, XuHan and Du, Chaoqun and Yu, Pengfei and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1154,7 +395,7 @@ span {
         <img src="./Wei Zhai_files/shao2025value.png" alt="VGPO">
     </div>
     <div class="paper-content">
-        <a href="https://arxiv.org/abs/" class="paper-title">
+        <a class="paper-title" title="Link pending update">
             Value-Anchored Group Policy Optimization for Flow Models
         </a>
         <div class="paper-authors">
@@ -1165,15 +406,8 @@ span {
         </div>
 
         <div class="paper-links">
-            <a href="https://arxiv.org/abs/">PDF</a>
-            <a href="https://xxxx.github.io/">Project</a>
-            <a href="javascript:toggleblock('shao2025value-bib')">BibTeX</a>
-        </div>
-        <div id="shao2025value-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-@article{
-}
-</pre>
+            <a title="Link pending update">PDF</a>
+            <a title="Link pending update">Project</a>
         </div>
     </div>
 </div>
@@ -1196,10 +430,10 @@ span {
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.23452">PDF</a>
             <a href="https://github.com/AILab-CVC/VideoGen-Eval">Code</a>
-            <a href="javascript:toggleblock('yang2025videogen-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2025videogen-bib">BibTeX</button>
         </div>
-        <div id="yang2025videogen-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2025videogen-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yang2025videogen,
   title={VideoGen-Eval: Agent-based System for Video Generation Evaluation},
   author={Yang, Yuhang and Fan, Ke and Sun, Shangkun and Li, Hongxiang and Zeng, Ailing and Han, FeiLin and Zhai, Wei and Liu, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1225,16 +459,16 @@ span {
         </div>
         <div class="paper-venue">
             Arxiv
-            <br><span style="color:#666; font-size:12px;">Journal version of "Leverage Interactive Affinity for Affordance Learning" (CVPR 2023)</span>
+            <br><span class="paper-note">Journal version of "Leverage Interactive Affinity for Affordance Learning" (CVPR 2023)</span>
         </div>
 
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2410.11363">PDF</a>
             <a href="https://github.com/lhc1224/VCR-Net">Code</a>
-            <a href="javascript:toggleblock('luo2024visual-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2024visual-bib">BibTeX</button>
         </div>
-        <div id="luo2024visual-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2024visual-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{luo2024visual,
     title={Visual-Geometric Collaborative Guidance for Affordance Learning},
     author={Luo, Hongchen and Zhai, Wei and Wang, Jiao and Cao, Yang and Zha, Zheng-Jun},
@@ -1264,10 +498,10 @@ span {
 
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2409.19650">PDF</a>
-            <a href="javascript:toggleblock('liu2024grounding-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="liu2024grounding-bib">BibTeX</button>
         </div>
-        <div id="liu2024grounding-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="liu2024grounding-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{liu2024grounding,
     title={Grounding 3D Scene Affordance From Egocentric Interactions},
     author={Liu, Cuiyu and Zhai, Wei and Yang, Yuhang and Luo, Hongchen and Liang, Sen and Cao, Yang and Zha, Zheng-Jun},
@@ -1297,10 +531,10 @@ span {
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2405.11794">PDF</a>
             <a href="https://github.com/alibaba-yuanjing-aigclab/ViViD">Code</a>
-            <a href="javascript:toggleblock('fang2024vivid-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="fang2024vivid-bib">BibTeX</button>
         </div>
-        <div id="fang2024vivid-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="fang2024vivid-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{fang2024vivid,
     title={ViViD: Video Virtual Try-on using Diffusion Models},
     author={Fang, Zixun and Zhai, Wei and Su, Aimin and Song, Hongliang and Zhu, Kai and Wang, Mao and Chen, Yu and Liu, Zhiheng and Cao, Yang and Zha, Zheng-Jun},
@@ -1329,10 +563,10 @@ span {
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2403.09194">PDF</a>
-            <a href="javascript:toggleblock('luo2024intention-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2024intention-bib">BibTeX</button>
         </div>
-        <div id="luo2024intention-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2024intention-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{luo2024intention,
     title={Intention-driven Ego-to-Exo Video Generation},
     author={Luo, Hongchen and Zhu, Kai and Zhai, Wei and Cao, Yang},
@@ -1368,7 +602,6 @@ span {
         <div class="paper-links">
             <a href="https://www.computer.org/csdl/journal/tp/5555/01/11475181/2fuLQIZcQMw">PDF</a>
             <a href="https://github.com/wangkunyu241/SkyFind">Code</a>
-            <a href="javascript:toggleblock('wang2026skyfind-bib')">BibTeX</a>
         </div>
 
         <div class="paper-desc">
@@ -1380,11 +613,6 @@ span {
             <span class="tag-item tag-embodied">具身智能</span>
         </div> -->
 
-        <div id="wang2026skyfind-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-
-</pre>
-        </div>
     </div>
 </div>
 
@@ -1407,15 +635,15 @@ span {
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2602.14376">PDF</a>
-            <a href="javascript:toggleblock('wu2026event-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2026event-bib">BibTeX</button>
         </div>
 
         <div class="paper-desc">
             An event-frame fusion framework featuring Affine Invariant Simplicial modeling that achieves robust long-term dense deformation tracking while using only 18.9% of the resources required by high-speed video methods.
         </div>
 
-        <div id="wu2026event-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2026event-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wu2026event,
   title={Event-based Visual Deformation Measurement},
   author={Wu, Yuliang and Zhai, Wei and Cui, Yuxin and Zhao, Tiesong and Cao, Yang and Zha, Zheng-Jun},
@@ -1448,15 +676,15 @@ span {
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2603.29931">PDF</a>
             <a href="https://yyvhang.github.io/Gloria_Page/">Project</a>
-            <a href="javascript:toggleblock('yang2026gloria-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2026gloria-bib">BibTeX</button>
         </div>
 
         <div class="paper-desc">
             Proposes a compact anchor-frame representation to generate high-quality, 10-minute+ character videos with superior identity preservation and multi-view appearance consistency.
         </div>
 
-        <div id="yang2026gloria-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2026gloria-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yang2026gloria,
   title={Gloria: Consistent Character Video Generation via Content Anchors},
   author={Yang, Yuhang and Zhang, Fan and Pi, Huaijin and Guo, Shuai and Xu, Guowei and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1487,10 +715,10 @@ span {
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2512.18312">PDF</a>
             <a href="https://tiptoehigherz.github.io/Material-Extraction/">Project</a>
-            <a href="javascript:toggleblock('zhang2026mate-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhang2026mate-bib">BibTeX</button>
         </div>
-        <div id="zhang2026mate-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhang2026mate-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhang2025mate,
   title={MatE: Material Extraction from Single-Image via Geometric Prior},
   author={Zhang, Zeyu and Zhai, Wei and Yang, Jian and Cao, Yang},
@@ -1508,7 +736,7 @@ span {
         <img src="./Wei Zhai_files/han2026unsupervised.png" alt="Unsupervised">
     </div>
     <div class="paper-content">
-        <a href="https://arxiv.org/abs/xxxx" class="paper-title">
+        <a class="paper-title" title="Link pending update">
             Unsupervised 3d Motion Estimation Using Event Camera
         </a>
         <div class="paper-authors">
@@ -1519,13 +747,7 @@ span {
         </div>
 
         <div class="paper-links">
-            <a href="https://arxiv.org/abs/xxxx">PDF</a>
-            <a href="javascript:toggleblock('han2026unsupervised-bib')">BibTeX</a>
-        </div>
-        <div id="han2026unsupervised-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-
-</pre>
+            <a title="Link pending update">PDF</a>
         </div>
     </div>
 </div>
@@ -1548,10 +770,10 @@ span {
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2512.02536">PDF</a>
-            <a href="javascript:toggleblock('yang2026wemmu-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2026wemmu-bib">BibTeX</button>
         </div>
-        <div id="yang2026wemmu-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2026wemmu-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yang2025wemmu,
   title={WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens},
   author={Yang, Jian and Yin, Dacheng and He, Xiaoxuan and Li, Yong and Rao, Fengyun and Lyu, Jing and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1569,7 +791,7 @@ span {
         <img src="./Wei Zhai_files/wang2026diffusion.png" alt="Diffusion">
     </div>
     <div class="paper-content">
-        <a href="https://arxiv.org/abs/xxx" class="paper-title">
+        <a class="paper-title" title="Link pending update">
             Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models
         </a>
         <div class="paper-authors">
@@ -1580,13 +802,7 @@ span {
         </div>
 
         <div class="paper-links">
-            <a href="https://arxiv.org/abs/xxx">PDF</a>
-            <a href="javascript:toggleblock('wang2026diffusion-bib')">BibTeX</a>
-        </div>
-        <div id="wang2026diffusion-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-
-</pre>
+            <a title="Link pending update">PDF</a>
         </div>
     </div>
 </div>
@@ -1610,10 +826,10 @@ span {
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2504.07503">PDF</a>
-            <a href="javascript:toggleblock('chen2025event-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="chen2025event-bib">BibTeX</button>
         </div>
-        <div id="chen2025event-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="chen2025event-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{chen2025event,
 title={Event Signal Filtering via Probability Flux Estimation},
 author={Chen, Jinze and Zhai, Wei and Cao, Yang and Li, Bin and Zha, Zheng-Jun},
@@ -1645,15 +861,15 @@ year={2025}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2510.14874">PDF</a>
             <a href="https://guangyid.github.io/hoi123touch/">Project</a>
-            <a href="javascript:toggleblock('han2025touch-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="han2025touch-bib">BibTeX</button>
         </div>
 
         <div class="paper-desc">
             Extends HOI generation from fixed grasping to diverse free-form interactions (e.g., pushing, poking) by introducing the large-scale WildO2 dataset and the TOUCH diffusion-based framework for fine-grained semantic control.
         </div>
 
-        <div id="han2025touch-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="han2025touch-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{han2025touch,
   title={TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions},
   author={Han, Guangyi and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
@@ -1683,10 +899,10 @@ year={2025}
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2602.12590">PDF</a>
-            <a href="javascript:toggleblock('chen2026unbias-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="chen2026unbias-bib">BibTeX</button>
         </div>
-        <div id="chen2026unbias-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="chen2026unbias-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{chen2026unbiased,
   title={Unbiased Gradient Estimation for Event Binning via Functional Backpropagation},
   author={Chen, Jinze and Zhai, Wei and Han, Han and Ma, Tiankai and Cao, Yang and Li, Bin and Zha, Zheng-Jun},
@@ -1717,10 +933,10 @@ year={2025}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2506.05289">PDF</a>
             <a href="https://github.com/ali-vilab/alitok">Code</a>
-            <a href="javascript:toggleblock('wu2025alitok-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2025alitok-bib">BibTeX</button>
         </div>
-        <div id="wu2025alitok-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2025alitok-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wu2025alitok,
   title={AliTok: Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model},
   author={Wu, Pingyu and Zhu, Kai and Liu, Yu and Tang, Longxiang and Yang, Jian and Peng, Yansong and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1740,7 +956,7 @@ year={2025}
     </div>
 
     <div class="paper-content">
-        <a href="https:" class="paper-title">
+        <a class="paper-title" title="Link pending update">
             E-MaT: Event-oriented Mamba for Egocentric Point Tracking
         </a>
         
@@ -1753,13 +969,7 @@ year={2025}
         </div>
 
         <div class="paper-links">
-            <a href="https:">PDF</a>
-            <a href="javascript:toggleblock('han2025e-bib')">BibTeX</a>
-        </div>
-        
-        <div id="han2025e-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-</pre>
+            <a title="Link pending update">PDF</a>
         </div>
     </div>
 </div>
@@ -1784,11 +994,11 @@ year={2025}
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2506.02477">PDF</a>
-            <a href="javascript:toggleblock('wang2025towards-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wang2025towards-bib">BibTeX</button>
         </div>
         
-        <div id="wang2025towards-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wang2025towards-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wang2025towards,
   title={Towards Better De-raining Generalization via Rainy Characteristics Memorization and Replay},
   author={Wang, Kunyu and Fu, Xueyang and Cao, Chengzhi and Ge, Chengjie and Zhai, Wei and Zha, Zheng-Jun},
@@ -1822,11 +1032,11 @@ year={2025}
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2410.15392">PDF</a>
             <a href="https://lbh666.github.io/ef-3dgs/">Code</a>
-            <a href="javascript:toggleblock('liao2024ef-bib-list')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="liao2024ef-bib-list">BibTeX</button>
         </div>
         
-        <div id="liao2024ef-bib-list" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="liao2024ef-bib-list" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{liao2024ef,
 title={EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting},
 author={Liao, Bohao and Zhai, Wei and Wan, Zengyu and Zhang, Tianzhu and Cao, Yang and Zha, Zheng-Jun},
@@ -1859,11 +1069,11 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2506.23513">PDF</a>
             <a href="https://becauseimbatman0.github.io/ViewPoint">Project</a>
-            <a href="javascript:toggleblock('fang2025panoramic-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="fang2025panoramic-bib">BibTeX</button>
         </div>
         
-        <div id="fang2025panoramic-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="fang2025panoramic-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{fang2025panoramic,
   title={Panoramic Video Generation with Pretrained Diffusion Models},
   author={Fang, Zixun and Zhu, Kai and Liu, Zhiheng and Liu, Yu and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1893,10 +1103,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2506.02453">PDF</a>
             <a href="https://github.com/wangkunyu241/PAID">Code</a>
-            <a href="javascript:toggleblock('wang2025paid-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wang2025paid-bib">BibTeX</button>
         </div>
-        <div id="wang2025paid-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wang2025paid-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wang2025paid,
   title={PAID: Pairwise Angular-Invariant Decomposition for Continual Test-Time Adaptation},
   author={Wang, Kunyu and Fu, Xueyang and Bao, Yuanfei and Ge, Chengjie and Cao, Chengzhi and Zhai, Wei and Zha, Zheng-Jun},
@@ -1926,10 +1136,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2411.16082">PDF</a>
             <a href="https://wpy1999.github.io/IV-VAE/">Code</a>
-            <a href="javascript:toggleblock('huang2024leverage-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="huang2024leverage-bib">BibTeX</button>
         </div>
-        <div id="huang2024leverage-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="huang2024leverage-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{huang2024leverage,
 title={Leverage Task Context for Object Affordance Ranking},
 author={Huang, Haojie and Luo, Hongchen and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -1959,10 +1169,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2504.06982">PDF</a>
             <a href="https://yyvhang.github.io/SIGMAN_3D/">Code</a>
-            <a href="javascript:toggleblock('yang2025sigman-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2025sigman-bib">BibTeX</button>
         </div>
-        <div id="yang2025sigman-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2025sigman-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yang2025sigman,
   title={SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets},
   author={Yang, Yuhang and Liu, Fengqi and Lu, Yixing and Zhao, Qin and Wu, Pingyu and Zhai, Wei and Yi, Ran and Cao, Yang and Ma, Lizhuang and Zha, Zheng-Jun and others},
@@ -1992,10 +1202,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.08270">PDF</a>
             <a href="https://jackyu6.github.io/HERO/">Code</a>
-            <a href="javascript:toggleblock('yu2025hero-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yu2025hero-bib">BibTeX</button>
         </div>
-        <div id="yu2025hero-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yu2025hero-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{yu2025hero,
 title={HERO: Human Reaction Generation from Videos},
 author={Yu, Chengjun and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
@@ -2025,10 +1235,10 @@ year={2025}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2412.01300">PDF</a>
             <a href="https://hh-xiaohu.github.io/Ev-TAP/">Code</a>
-            <a href="javascript:toggleblock('han2024event-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="han2024event-bib">BibTeX</button>
         </div>
-        <div id="han2024event-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="han2024event-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{han2024event,
 title={Event-Based Tracking Any Point with Motion-Augmented Temporal Consistency},
 author={Han, Han and Zhai, Wei and Cao, Yang and Li, Bin and Zha, Zheng-jun},
@@ -2057,10 +1267,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2503.11371">PDF</a>
-            <a href="javascript:toggleblock('wan2025emotive-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wan2025emotive-bib">BibTeX</button>
         </div>
-        <div id="wan2025emotive-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wan2025emotive-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wan2025emotive,
   title={EMoTive: Event-guided Trajectory Modeling for 3D Motion Estimation},
   author={Wan, Zengyu and Zhai, Wei and Cao, Yang and Zha, Zhengjun},
@@ -2089,10 +1299,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2407.21510">PDF</a>
-            <a href="javascript:toggleblock('zhang2024pear-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhang2024pear-bib">BibTeX</button>
         </div>
-        <div id="zhang2024pear-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhang2024pear-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhang2024pear,
     title={PEAR: Phrase-Based Hand-Object Interaction Anticipation},
     author={Zhang, Zichen and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
@@ -2122,10 +1332,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2025W/EventVision/papers/Wu_BRAT_Bidirectional_Relative_Positional_Attention_Transformer_for_Event-based_Eye_tracking_CVPRW_2025_paper.pdf">PDF</a>
-            <a href="javascript:toggleblock('wu2025brat-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2025brat-bib">BibTeX</button>
         </div>
-        <div id="wu2025brat-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2025brat-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{wu2025brat,
   title={BRAT: Bidirectional Relative Positional Attention Transformer for Event-based Eye tracking},
   author={Wu, Yuliang and Han, Han and Chen, Jinze and Zhai, Wei and Cao, Yang and Zha, Zheng-jun},
@@ -2156,10 +1366,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2412.08614">PDF</a>
             <a href="https://github.com/LuFan31/CompreCap">Code</a>
-            <a href="javascript:toggleblock('lu2024benchmarking-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="lu2024benchmarking-bib">BibTeX</button>
         </div>
-        <div id="lu2024benchmarking-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="lu2024benchmarking-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{lu2024benchmarking,
     title={Benchmarking Large Vision-Language Models via Directed Scene Graph for Comprehensive Image Captioning},
     author={Lu, Fan and Wu, Wei and Zheng, Kecheng and Ma, Shuailei and Gong, Biao and Liu, Jiawei and Zhai, Wei and Cao, Yang and Shen, Yujun and Zha, Zheng-Jun},
@@ -2189,10 +1399,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2411.19626">PDF</a>
             <a href="https://yawen-shao.github.io/GREAT/">Code</a>
-            <a href="javascript:toggleblock('shao2024great-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="shao2024great-bib">BibTeX</button>
         </div>
-        <div id="shao2024great-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="shao2024great-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{shao2024great,
 title={GREAT: Geometry-Intention Collaborative Inference for Open-Vocabulary 3D Object Affordance Grounding},
 author={Shao, Yawen and Zhai, Wei and Yang, Yuhang and Luo, Hongchen and Cao, Yang and Zha, Zheng-Jun},
@@ -2222,10 +1432,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2411.06449">PDF</a>
             <a href="https://wpy1999.github.io/IV-VAE/">Code</a>
-            <a href="javascript:toggleblock('wu2024improved-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2024improved-bib">BibTeX</button>
         </div>
-        <div id="wu2024improved-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2024improved-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wu2024improved,
 title={Improved Video VAE for Latent Video Diffusion Model},
 author={Wu, Pingyu and Zhu, Kai and Liu, Yu and Zhao, Liming and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -2242,7 +1452,7 @@ year={2024}
         <img src="./Wei Zhai_files/yang2024mmar.png" alt="MMAR">
     </div>
     <div class="paper-content">
-        <a href="https://arxiv.org/pdf/2410.10798?" class="paper-title">
+        <a href="https://arxiv.org/pdf/2410.10798" class="paper-title">
             MMAR: Towards Lossless Multi-Modal Auto-Regressive Prababilistic Modeling
         </a>
         <div class="paper-authors">
@@ -2253,11 +1463,11 @@ year={2024}
         </div>
 
         <div class="paper-links">
-            <a href="https://arxiv.org/pdf/2410.10798?">PDF</a>
-            <a href="javascript:toggleblock('yang2024mmar-bib')">BibTeX</a>
+            <a href="https://arxiv.org/pdf/2410.10798">PDF</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2024mmar-bib">BibTeX</button>
         </div>
-        <div id="yang2024mmar-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2024mmar-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yang2024mmar,
     title={MMAR: Towards Lossless Multi-Modal Auto-Regressive Prababilistic Modeling},
     author={Yang, Jian and Yin, Dacheng and Zhou, Yizhou and Rao, Fengyun and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -2274,7 +1484,7 @@ year={2024}
         <img src="./Wei Zhai_files/wang2025efficient.png" alt="Efficient CTTA-OD">
     </div>
     <div class="paper-content">
-        <a href="https://arxiv.org/abs/" class="paper-title">
+        <a class="paper-title" title="Link pending update">
             Efficient Test-time Adaptive Object Detection via Sensitivity-Guided Pruning
         </a>
         <div class="paper-authors">
@@ -2286,13 +1496,7 @@ year={2024}
         </div>
 
         <div class="paper-links">
-            <a href="https://arxiv.org/abs/">PDF</a>
-            <a href="javascript:toggleblock('wang2025efficient-bib')">BibTeX</a>
-        </div>
-        <div id="wang2025efficient-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-
-</pre>
+            <a title="Link pending update">PDF</a>
         </div>
     </div>
 </div>
@@ -2314,10 +1518,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/2409.20146">PDF</a>
-            <a href="javascript:toggleblock('deng2024vmad-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="deng2024vmad-bib">BibTeX</button>
         </div>
-        <div id="deng2024vmad-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="deng2024vmad-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{deng2024vmad,
     title={VMAD: Visual-enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection},
     author={Deng, Huilin and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
@@ -2347,10 +1551,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://arxiv.org/abs/2312.01732">PDF</a>
             <a href="https://github.com/LuFan31/LSA">Code</a>
-            <a href="javascript:toggleblock('lu2023likelihood-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="lu2023likelihood-bib">BibTeX</button>
         </div>
-        <div id="lu2023likelihood-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="lu2023likelihood-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{lu2023likelihood,
     title={Likelihood-Aware Semantic Alignment for Full-Spectrum Out-of-Distribution Detection},
     author={Lu, Fan and Zhu, Kai and Zheng, Kecheng and Zhai, Wei and Cao, Yang},
@@ -2386,10 +1590,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://openreview.net/pdf?id=ea4oxkiMP7">PDF</a>
             <a href="https://yyvhang.github.io/EgoChoir/">Code</a>
-            <a href="javascript:toggleblock('yang2024egochoir-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2024egochoir-bib">BibTeX</button>
         </div>
-        <div id="yang2024egochoir-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2024egochoir-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{yang2024egochoir,
     title={EgoChoir: Capturing 3D Human-Object Interaction Regions from Egocentric Views},
     author={Yang, Yuhang and Zhai, Wei and Wang, Chengfeng and Yu, Chengjun and Cao, Yang and Zha, Zheng-Jun},
@@ -2418,12 +1622,6 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://dl.acm.org/doi/pdf/10.1145/3664647.3680831">PDF</a>
-            <a href="javascript:toggleblock('dong2024unidense-bib')">BibTeX</a>
-        </div>
-        <div id="dong2024unidense-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
-
-</pre>
         </div>
     </div>
 </div>
@@ -2445,10 +1643,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10612786/">PDF</a>
-            <a href="javascript:toggleblock('wan2023event-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wan2023event-bib">BibTeX</button>
         </div>
-        <div id="wan2023event-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wan2023event-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wan2024event,
     title={Event-based Optical Flow via Transforming into Motion-dependent View},
     author={Wan, Zengyu and Wang, Yang and Wei, Zhai and Tan, Ganchao and Cao, Yang and Zha, Zheng-Jun},
@@ -2479,10 +1677,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/07631.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2405.05552">Arxiv</a>
-            <a href="javascript:toggleblock('zhang2023bidirectional-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhang2023bidirectional-bib">BibTeX</button>
         </div>
-        <div id="zhang2023bidirectional-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhang2023bidirectional-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhang2024bidirectional,
     title={Bidirectional Progressive Transformer for Interaction Intention Anticipation},
     author={Zhang, Zichen and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
@@ -2511,10 +1709,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-32-11-18527&id=549921">PDF</a>
-            <a href="javascript:toggleblock('wu2024event-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2024event-bib">BibTeX</button>
         </div>
-        <div id="wu2024event-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2024event-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wu2024event,
     title={Event-based asynchronous HDR imaging by temporal incident light modulation},
     author={Wu, Yuliang and Tan, Ganchao and Chen, Jinze and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -2547,10 +1745,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10494062">PDF</a>
-            <a href="javascript:toggleblock('deng2023prioritized-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="deng2023prioritized-bib">BibTeX</button>
         </div>
-        <div id="deng2023prioritized-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="deng2023prioritized-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{deng2024prioritized,
     title={Prioritized Local Matching Network for Cross-Category Few-Shot Anomaly Detection},
     author={Deng, Huilin and Luo, Hongchen and Zhai, Wei and Cao, Yang and Kang, Yu},
@@ -2582,10 +1780,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_LEMON_Learning_3D_Human-Object_Interaction_Relation_from_2D_Images_CVPR_2024_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2312.08963">Arxiv</a>
             <a href="https://yyvhang.github.io/LEMON/">Website</a>
-            <a href="javascript:toggleblock('yang2023lemon-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2023lemon-bib">BibTeX</button>
         </div>
-        <div id="yang2023lemon-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2023lemon-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{yang2024lemon,
     title={LEMON: Learning 3D Human-Object Interaction Relation from 2D Images},
     author={Yang, Yuhang and Zhai, Wei and Luo, Hongchen and Cao, Yang and Zha, Zheng-Jun},
@@ -2616,10 +1814,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2024W/AI4Streaming/papers/Wang_MambaPupil_Bidirectional_Selective_Recurrent_Model_for_Event-based_Eye_Tracking_CVPRW_2024_paper.pdf">PDF</a>
-            <a href="javascript:toggleblock('wang2024mambapupil-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wang2024mambapupil-bib">BibTeX</button>
         </div>
-        <div id="wang2024mambapupil-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wang2024mambapupil-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{wang2024mambapupil,
     title={Mambapupil: Bidirectional selective recurrent model for event-based eye tracking},
     author={Wang, Zhong and Wan, Zengyu and Han, Han and Liao, Bohao and Wu, Yuliang and Zhai, Wei and Cao, Yang and Zha, Zheng-jun},
@@ -2649,10 +1847,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ojs.aaai.org/index.php/AAAI/article/download/28117/28238">PDF</a>
-            <a href="javascript:toggleblock('liang2023hypercorrelation-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="liang2023hypercorrelation-bib">BibTeX</button>
         </div>
-        <div id="liang2023hypercorrelation-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="liang2023hypercorrelation-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{liang2024hypercorrelation,
     title={Hypercorrelation Evolution for Video Class-Incremental Learning},
     author={Liang, Sen and Zhu, Kai and Zhai, Wei and Liu, Zhiheng and Cao, Yang},
@@ -2684,17 +1882,17 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">International Journal of Computer Vision (IJCV)</span>
-            <br><span style="color:#666; font-size:12px;">Journal version of "Learning Affordance Grounding from Exocentric Images" (CVPR 2022)</span>
+            <br><span class="paper-note">Journal version of "Learning Affordance Grounding from Exocentric Images" (CVPR 2022)</span>
         </div>
 
         <div class="paper-links">
             <a href="https://link.springer.com/article/10.1007/s11263-023-01962-z">PDF</a>
             <a href="https://arxiv.org/abs/2208.13196">Arxiv</a>
             <a href="https://github.com/lhc1224/Cross-View-AG">Code</a>
-            <a href="javascript:toggleblock('luo2022grounded-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2022grounded-bib">BibTeX</button>
         </div>
-        <div id="luo2022grounded-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2022grounded-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{luo2024grounded,
     title={Grounded affordance from exocentric view},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -2723,16 +1921,16 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-PAMI</span>
-            <br><span style="color:#666; font-size:12px;">Journal version of MPAP (ICCV 2019) and DSR-Net (CVPR 2020)</span>
+            <br><span class="paper-note">Journal version of MPAP (ICCV 2019) and DSR-Net (CVPR 2020)</span>
         </div>
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10286884/">PDF</a>
             <a href="https://github.com/tiaotiao11-22/MPAP">Code</a>
-            <a href="javascript:toggleblock('zhai2021on-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2021on-bib">BibTeX</button>
         </div>
-        <div id="zhai2021on-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2021on-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhai2023exploring,
     title={On exploring multiplicity of primitives and attributes for texture recognition in the wild},
     author={Zhai, Wei and Cao, Yang and Zhang, Jing and Xie, Haiyong and Tao, Dacheng and Zha, Zheng-Jun},
@@ -2758,17 +1956,17 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">International Journal of Computer Vision (IJCV)</span>
-            <br><span style="color:#666; font-size:12px;">Journal version of BAS (CVPR 2022)</span>
+            <br><span class="paper-note">Journal version of BAS (CVPR 2022)</span>
         </div>
 
         <div class="paper-links">
             <a href="https://link.springer.com/article/10.1007/s11263-023-01919-2">PDF</a>
             <a href="https://arxiv.org/abs/2309.12943">Arxiv</a>
             <a href="https://github.com/wpy1999/BAS-Extension">Code</a>
-            <a href="javascript:toggleblock('zhai2022background-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2022background-bib">BibTeX</button>
         </div>
-        <div id="zhai2022background-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2022background-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhai2024background,
     title={Background activation suppression for weakly supervised object localization and semantic segmentation},
     author={Zhai, Wei and Wu, Pingyu and Zhu, Kai and Cao, Yang and Wu, Feng and Zha, Zheng-Jun},
@@ -2803,10 +2001,10 @@ year={2024}
             <a href="https://ieeexplore.ieee.org/abstract/document/10246333/">PDF</a>
             <a href="https://arxiv.org/abs/2108.05675">Arxiv</a>
             <a href="https://github.com/lhc1224/HAG-Net">Code</a>
-            <a href="javascript:toggleblock('luo2021learning-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2021learning-bib">BibTeX</button>
         </div>
-        <div id="luo2021learning-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2021learning-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{luo2023learning,
     title={Learning visual affordance grounding from demonstration videos},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -2838,10 +2036,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Wu_Spatial-Aware_Token_for_Weakly_Supervised_Object_Localization_ICCV_2023_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2303.10438">Arxiv</a>
             <a href="https://github.com/wpy1999/SAT">Code</a>
-            <a href="javascript:toggleblock('wu2023spatial-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2023spatial-bib">BibTeX</button>
         </div>
-        <div id="wu2023spatial-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2023spatial-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{wu2023spatial,
     title={Spatial-aware token for weakly supervised object localization},
     author={Wu, Pingyu and Zhai, Wei and Cao, Yang and Luo, Jiebo and Zha, Zheng-Jun},
@@ -2873,10 +2071,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_Grounding_3D_Object_Affordance_from_2D_Interactions_in_Images_ICCV_2023_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2303.10438">Arxiv</a>
             <a href="https://github.com/yyvhang/IAGNet">Code</a>
-            <a href="javascript:toggleblock('yang2023grounding-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="yang2023grounding-bib">BibTeX</button>
         </div>
-        <div id="yang2023grounding-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="yang2023grounding-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{yang2023grounding,
     title={Grounding 3d object affordance from 2d interactions in images},
     author={Yang, Yuhang and Zhai, Wei and Luo, Hongchen and Cao, Yang and Luo, Jiebo and Zha, Zheng-Jun},
@@ -2906,10 +2104,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://just.ustc.edu.cn/en/article/doi/10.52396/JUSTC-2022-0165">PDF</a>
-            <a href="javascript:toggleblock('wang2023robustness-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wang2023robustness-bib">BibTeX</button>
         </div>
-        <div id="wang2023robustness-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wang2023robustness-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wang2024robustness,
     title={Robustness benchmark for unsupervised anomaly detection models},
     author={Wang, Pei and Zhai, Wei and Cao, Yang},
@@ -2943,10 +2141,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Luo_Leverage_Interactive_Affinity_for_Affordance_Learning_CVPR_2023_paper.pdf">PDF</a>
             <a href="https://github.com/lhc1224/PIAL-Net">Code</a>
-            <a href="javascript:toggleblock('luo2023leverage-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2023leverage-bib">BibTeX</button>
         </div>
-        <div id="luo2023leverage-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2023leverage-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{luo2023leverage,
     title={Leverage interactive affinity for affordance learning},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -2976,10 +2174,10 @@ year={2024}
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Lu_Uncertainty-Aware_Optimal_Transport_for_Semantically_Coherent_Out-of-Distribution_Detection_CVPR_2023_paper.pdf">PDF</a>
             <a href="https://github.com/LuFan31/ET-OOD">Code</a>
-            <a href="javascript:toggleblock('lu2023uncertainty-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="lu2023uncertainty-bib">BibTeX</button>
         </div>
-        <div id="lu2023uncertainty-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="lu2023uncertainty-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{lu2023uncertainty,
     title={Uncertainty-Aware Optimal Transport for Semantically Coherent Out-of-Distribution Detection},
     author={Lu, Fan and Zhu, Kai and Zhai, Wei and Zheng, Kecheng and Cao, Yang},
@@ -3010,10 +2208,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ojs.aaai.org/index.php/AAAI/article/download/25128/24900">PDF</a>
-            <a href="javascript:toggleblock('dong2023exploring-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="dong2023exploring-bib">BibTeX</button>
         </div>
-        <div id="dong2023exploring-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="dong2023exploring-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{dong2023exploring,
     title={Exploring Tuning Characteristics of Ventral Stream’s Neurons for Few-Shot Image Classification},
     author={Dong, Lintao and Zhai, Wei and Zha, Zheng-Jun},
@@ -3049,10 +2247,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/6cc31b44d88dce8380d36e81485cd07f-Paper-Conference.pdf">PDF</a>
-            <a href="javascript:toggleblock('zhai2022exploring-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2022exploring-bib">BibTeX</button>
         </div>
-        <div id="zhai2022exploring-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2022exploring-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhai2022exploring,
     title={Exploring figure-ground assignment mechanism in perceptual organization},
     author={Zhai, Wei and Cao, Yang and Zhang, Jing and Zha, Zheng-Jun},
@@ -3085,10 +2283,10 @@ year={2024}
             <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/6cc31b44d88dce8380d36e81485cd07f-Paper-Conference.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2202.12076">Arxiv</a>
             <a href="https://github.com/lulsheng/CBCE-Net">Code</a>
-            <a href="javascript:toggleblock('lu2022phrase-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="lu2022phrase-bib">BibTeX</button>
         </div>
-        <div id="luo2022phrase-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2022phrase-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{lu2022phrase,
     title={Phrase-based affordance detection via cyclic bilateral interaction},
     author={Lu, Liangsheng and Zhai, Wei and Luo, Hongchen and Kang, Yu and Cao, Yang},
@@ -3114,17 +2312,17 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">International Journal of Computer Vision (IJCV)</span>
-            <br><span style="color:#666; font-size:12px;">Journal version of "One-Shot Affordance Detection" (IJCAI 2021)</span>
+            <br><span class="paper-note">Journal version of "One-Shot Affordance Detection" (IJCAI 2021)</span>
         </div>
 
         <div class="paper-links">
             <a href="https://link.springer.com/article/10.1007/s11263-022-01642-4">PDF</a>
             <a href="https://arxiv.org/pdf/2108.03658.pdf">Arxiv</a>
             <a href="https://github.com/lhc1224/OSAD_Net">Code</a>
-            <a href="javascript:toggleblock('zhai2022one-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2022one-bib">BibTeX</button>
         </div>
-        <div id="zhai2022one-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2022one-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhai2022one,
     title={One-shot object affordance detection in the wild},
     author={Zhai, Wei and Luo, Hongchen and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -3157,10 +2355,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9815160">PDF</a>
-            <a href="javascript:toggleblock('zhai2022deep-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2022deep-bib">BibTeX</button>
         </div>
-        <div id="zhai2022deep-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2022deep-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhai2022deep,
     title={Deep texton-coherence network for camouflaged object detection},
     author={Zhai, Wei and Cao, Yang and Xie, HaiYong and Zha, Zheng-Jun},
@@ -3192,10 +2390,10 @@ year={2024}
             <a href="https://ieeexplore.ieee.org/abstract/document/9817812">PDF</a>
             <a href="https://arxiv.org/abs/2203.09845">Arxiv</a>
             <a href="https://github.com/Tale17/LCG-Net">Code</a>
-            <a href="javascript:toggleblock('li2022location-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="li2022location-bib">BibTeX</button>
         </div>
-        <div id="li2022location-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="li2022location-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{li2022location,
     title={Location-free camouflage generation network},
     author={Li, Yangyang and Zhai, Wei and Cao, Yang and Zha, Zheng-jun},
@@ -3227,10 +2425,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Luo_Learning_Affordance_Grounding_From_Exocentric_Images_CVPR_2022_paper.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2203.09905.pdf">Arxiv</a>
             <a href="https://github.com/lhc1224/Cross-View-AG">Code</a>
-            <a href="javascript:toggleblock('luo2022learning-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2022learning-bib">BibTeX</button>
         </div>
-        <div id="luo2022learning-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2022learning-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{luo2022learning,
     title={Learning affordance grounding from exocentric images},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -3262,10 +2460,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Wu_Background_Activation_Suppression_for_Weakly_Supervised_Object_Localization_CVPR_2022_paper.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2112.00580.pdf">Arxiv</a>
             <a href="https://github.com/wpy1999/BAS">Code</a>
-            <a href="javascript:toggleblock('wu2022background-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2022background-bib">BibTeX</button>
         </div>
-        <div id="wu2022background-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2022background-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{wu2022background,
     title={Background activation suppression for weakly supervised object localization},
     author={Wu, Pingyu and Zhai, Wei and Cao, Yang},
@@ -3298,10 +2496,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Zhu_Self-Sustaining_Representation_Expansion_for_Non-Exemplar_Class-Incremental_Learning_CVPR_2022_paper.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2203.06359.pdf">Arxiv</a>
             <a href="https://github.com/zhukaii/SSRE">Code</a>
-            <a href="javascript:toggleblock('zhu2022self-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhu2022self-bib">BibTeX</button>
         </div>
-        <div id="zhu2022self-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhu2022self-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhu2022self,
     title={Self-sustaining representation expansion for non-exemplar class-incremental learning},
     author={Zhu, Kai and Zhai, Wei and Cao, Yang and Luo, Jiebo and Zha, Zheng-Jun},
@@ -3331,10 +2529,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9697984">PDF</a>
-            <a href="javascript:toggleblock('wang2022robust-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wang2022robust-bib">BibTeX</button>
         </div>
-        <div id="wang2022robust-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wang2022robust-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wang2022robust,
     title={Robust object detection via adversarial novel style exploration},
     author={Wang, Wen and Zhang, Jing and Zhai, Wei and Cao, Yang and Tao, Dacheng},
@@ -3371,10 +2569,10 @@ year={2024}
             <a href="https://www.ijcai.org/proceedings/2021/0124.pdf">PDF</a>
             <a href="https://arxiv.org/pdf/2106.14747.pdf">Arxiv</a>
             <a href="https://github.com/lhc1224/OSAD_Net">Code</a>
-            <a href="javascript:toggleblock('luo2021one-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="luo2021one-bib">BibTeX</button>
         </div>
-        <div id="luo2021one-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="luo2021one-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{luo2021one,
     title={One-shot affordance detection},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -3403,10 +2601,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ietresearch.onlinelibrary.wiley.com/doi/pdfdirect/10.1049/cvi2.12017">PDF</a>
-            <a href="javascript:toggleblock('li2021tri-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="li2021tri-bib">BibTeX</button>
         </div>
-        <div id="li2021tri-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="li2021tri-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{li2021tri,
     title={A tri-attention enhanced graph convolutional network for skeleton-based action recognition},
     author={Li, Xingming and Zhai, Wei and Cao, Yang},
@@ -3441,10 +2639,10 @@ year={2024}
             <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Zhu_Self-Promoted_Prototype_Refinement_for_Few-Shot_Class-Incremental_Learning_CVPR_2021_paper.pdf">PDF</a>
             <a href="https://arxiv.org/abs/2107.08918">Arxiv</a>
             <a href="https://github.com/zhukaii/SPPR">Code</a>
-            <a href="javascript:toggleblock('zhu2021self-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhu2021self-bib">BibTeX</button>
         </div>
-        <div id="zhu2021self-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhu2021self-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhu2021self,
     title={Self-promoted prototype refinement for few-shot class-incremental learning},
     author={Zhu, Kai and Cao, Yang and Zhai, Wei and Cheng, Jie and Zha, Zheng-Jun},
@@ -3477,10 +2675,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://www.ijcai.org/proceedings/2020/0142.pdf">PDF</a>
-            <a href="javascript:toggleblock('zhu2020self-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhu2020self-bib">BibTeX</button>
         </div>
-        <div id="zhu2020self-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhu2020self-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhu2021self,
     title={Self-supervised tuning for few-shot segmentation},
     author={Zhu, Kai and Zhai, Wei and Cao, Yang},
@@ -3509,10 +2707,10 @@ year={2024}
         </div>
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9190822">PDF</a>
-            <a href="javascript:toggleblock('wang2020deep-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wang2020deep-bib">BibTeX</button>
         </div>
-        <div id="wang2020deep-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wang2020deep-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{wang2020deep,
     title={Deep inhomogeneous regularization for transfer learning},
     author={Wang, Wen and Zhai, Wei and Cao, Yang},
@@ -3544,10 +2742,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhai_Deep_Structure-Revealed_Network_for_Texture_Recognition_CVPR_2020_paper.pdf">PDF</a>
-            <a href="javascript:toggleblock('zhai2020deep-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2020deep-bib">BibTeX</button>
         </div>
-        <div id="zhai2020deep-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2020deep-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhai2020deep,
     title={Deep structure-revealed network for texture recognition},
     author={Zhai, Wei and Cao, Yang and Zha, Zheng-Jun and Xie, HaiYong and Wu, Feng},
@@ -3573,15 +2771,15 @@ year={2024}
         </div>
         <div class="paper-venue">
             In <span class="venue-name">IEEE T-MM 2020</span>
-            <br><span style="color:#666; font-size:12px;">Journal version of "One-Shot Texture Retrieval with Global Context Metric" (IJCAI 2019)</span>
+            <br><span class="paper-note">Journal version of "One-Shot Texture Retrieval with Global Context Metric" (IJCAI 2019)</span>
         </div>
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/9224176">PDF</a>
-            <a href="javascript:toggleblock('zhu2020one-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhu2020one-bib">BibTeX</button>
         </div>
-        <div id="zhu2020one-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhu2020one-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhu2020one,
     title={One-shot texture retrieval using global grouping metric},
     author={Zhu, Kai and Cao, Yang and Zhai, Wei and Zha, Zheng-Jun},
@@ -3615,10 +2813,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhai_Deep_Multiple-Attribute-Perceived_Network_for_Real-World_Texture_Recognition_ICCV_2019_paper.pdf">PDF</a>
-            <a href="javascript:toggleblock('zhai2019deep-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2019deep-bib">BibTeX</button>
         </div>
-        <div id="zhai2019deep-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2019deep-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhai2019deep,
     title={Deep multiple-attribute-perceived network for real-world texture recognition},
     author={Zhai, Wei and Cao, Yang and Zhang, Jing and Zha, Zheng-Jun},
@@ -3649,10 +2847,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://arxiv.org/pdf/1905.06656.pdf">PDF</a>
-            <a href="javascript:toggleblock('zhu2019one-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhu2019one-bib">BibTeX</button>
         </div>
-        <div id="zhu2019one-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhu2019one-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{zhu2019one,
     title={One-shot texture retrieval with global context metric},
     author={Zhu, Kai and Zhai, Wei and Zha, Zheng-Jun and Cao, Yang},
@@ -3681,10 +2879,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ietresearch.onlinelibrary.wiley.com/doi/pdfdirect/10.1049/iet-ipr.2018.6588">PDF</a>
-            <a href="javascript:toggleblock('wu2019pixtextgan-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="wu2019pixtextgan-bib">BibTeX</button>
         </div>
-        <div id="wu2019pixtextgan-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="wu2019pixtextgan-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @article{wu2019pixtextgan,
     title={PixTextGAN: structure aware text image synthesis for license plate recognition},
     author={Wu, Shilian and Zhai, Wei and Cao, Yang},
@@ -3720,10 +2918,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/8462364">PDF</a>
-            <a href="javascript:toggleblock('zhai2018generative-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhai2018generative-bib">BibTeX</button>
         </div>
-        <div id="zhai2018generative-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhai2018generative-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhai2018generative,
     title={A generative adversarial network based framework for unsupervised visual surface inspection},
     author={Zhai, Wei and Zhu, Jiang and Cao, Yang and Wang, Zengfu},
@@ -3755,10 +2953,10 @@ year={2024}
 
         <div class="paper-links">
             <a href="https://link.springer.com/content/pdf/10.1007%2F978-3-319-73603-7_8.pdf">PDF</a>
-            <a href="javascript:toggleblock('zhu2018co-bib')">BibTeX</a>
+            <button type="button" class="bib-toggle" data-toggle-target="zhu2018co-bib">BibTeX</button>
         </div>
-        <div id="zhu2018co-bib" style="display:none; margin-top:10px;">
-<pre style="background:#f8f9fa; padding:12px; border:1px solid #eee; border-radius:4px; font-size:12px; color:#555; font-family:Consolas, monospace;">
+        <div id="zhu2018co-bib" class="bibtex-block">
+<pre class="bibtex-pre">
 @inproceedings{zhu2018co,
     title={Co-occurrent structural edge detection for color-guided depth map super-resolution},
     author={Zhu, Jiang and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -3783,11 +2981,11 @@ year={2024}
         </div>
         <div class="exp-content">
             <div class="exp-org">
-                <a href="http://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a>
+                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
             </div>
             <div class="exp-role">Associate Researcher</div>
             <div class="exp-desc">
-                <a href="https://auto.ustc.edu.cn/" target="_blank">Department of Automation</a>
+                <a href="https://auto.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">Department of Automation</a>
             </div>
         </div>
     </div>
@@ -3798,7 +2996,7 @@ year={2024}
         </div>
         <div class="exp-content">
             <div class="exp-org">
-                <a href="http://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a>
+                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
             </div>
             <div class="exp-role">Postdoctoral Researcher</div>
             <div class="exp-desc">
@@ -3814,7 +3012,7 @@ year={2024}
         </div>
         <div class="exp-content">
             <div class="exp-org">
-                <a href="http://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a>
+                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
             </div>
             <div class="exp-role">Ph.D. in Cyberspace Security</div>
             <div class="exp-desc">
@@ -3830,7 +3028,7 @@ year={2024}
         </div>
         <div class="exp-content">
             <div class="exp-org">
-                <a href="http://cybersec.ustc.edu.cn//" target="_blank">JD Explore Academy</a>
+                <a href="http://cybersec.ustc.edu.cn//" target="_blank" rel="noopener noreferrer">JD Explore Academy</a>
             </div>
             <div class="exp-role">Research Intern</div>
             <div class="exp-desc">
@@ -3845,7 +3043,7 @@ year={2024}
         </div>
         <div class="exp-content">
             <div class="exp-org">
-                <a href="https://www.swjtu.edu.cn/" target="_blank">Southwest Jiaotong University</a>
+                <a href="https://www.swjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Southwest Jiaotong University</a>
             </div>
             <div class="exp-role">B.S. in Computer Science</div>
             <div class="exp-desc">
@@ -4032,78 +3230,5 @@ year={2024}
 
 
 
-<script type="text/javascript">
-function toggleNewsHistory() {
-    var hiddenDiv = document.getElementById("news-hidden");
-    var btn = document.getElementById("news-btn-text");
-    
-    if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
-        hiddenDiv.style.display = "block"; // 展开
-        btn.innerHTML = "Collaspe History &#9650;"; // 按钮变文字
-    } else {
-        hiddenDiv.style.display = "none"; // 收起
-        btn.innerHTML = "View History News... &#9660;"; // 按钮变文字
-    }
-}
-</script>
-
-
-
-<script type="text/javascript">
-// 控制 News 折叠/展开的函数保持不变
-function toggleNewsHistory() {
-    var hiddenDiv = document.getElementById("news-hidden");
-    var btn = document.getElementById("news-btn-text");
-    
-    if (hiddenDiv.style.display === "none" || hiddenDiv.style.display === "") {
-        hiddenDiv.style.display = "block"; // 展开
-        btn.innerHTML = "Collaspe History &#9650;"; 
-    } else {
-        hiddenDiv.style.display = "none"; // 收起
-        btn.innerHTML = "View History News... &#9660;"; 
-    }
-}
-
-// === 新增/更新的论文筛选功能 ===
-function filterPubs(category) {
-    // 1. 切换按钮的激活(高亮)状态
-    const buttons = document.querySelectorAll('.filter-btn');
-    buttons.forEach(btn => {
-        if (btn.getAttribute('data-filter') === category) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-
-    // 2. 遍历所有论文并控制显示/隐藏
-    const papers = document.querySelectorAll('.paper-row');
-    papers.forEach(paper => {
-        // 如果点击的是 'all'，或者该论文包含对应的类名 (例如 'pub-2026' 或 'pub-selected')
-        if (category === 'all' || paper.classList.contains('pub-' + category)) {
-            paper.style.display = 'flex'; // 显示（因为你的CSS是用flex布局的）
-        } else {
-            paper.style.display = 'none'; // 隐藏
-        }
-    });
-
-    // 3. 处理年份分界线 (year-header)
-    // 只有在点击 "All" 时，才显示 "2026", "2025" 这种年份文字分隔符，其他模式下隐藏以保持页面整洁
-    const headers = document.querySelectorAll('.year-header');
-    headers.forEach(header => {
-        if (category === 'all') {
-            header.style.display = 'inline-block';
-        } else {
-            header.style.display = 'none';
-        }
-    });
-}
-
-// 4. 网页加载完成后，自动触发“Selected”筛选
-document.addEventListener('DOMContentLoaded', function() {
-    filterPubs('selected');
-});
-</script>
-
-
 </body></html>
+
