@@ -1,644 +1,51 @@
-/* === Publications Layout === */
-.paper-row {
-    display: flex;
-    padding: 22px 0;           /* 增加上下留白，显得更从容 */
-    border-bottom: 1px solid #eaeaea; /* 分割线颜色变得更浅更细 */
-    align-items: flex-start;
-}
-
-.paper-img {
-    flex: 0 0 220px;
-    margin-right: 28px;        /* 稍微拉大图文间距 */
-    padding-top: 2px;
-}
-
-/* 让 video 和 img 享受完全相同的排版、圆角、阴影和悬停放大效果 */
-.paper-img img,
-.paper-img video {
-    width: 100%;
-    border-radius: 6px;
-    border: 1px solid #f2f2f2;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease;
-    object-fit: cover; /* 确保视频比例不失调 */
-}
-
-.paper-img:hover img,
-.paper-img:hover video {
-    transform: scale(1.02);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-.paper-content {
-    flex: 1;
-}
-
-/* 1. 题目：深邃、稳重 */
-.paper-title {
-    display: block;
-    font-size: 18px;           /* 稍微加大字号 */
-    font-weight: 600;          /* 半粗体，比 bold 稍微细一点点，更显精致 */
-    color: #d9534f;            /* 深炭灰，比纯黑更有质感 */
-    margin-bottom: 6px;
-    text-decoration: none;
-    line-height: 1.35;
-    letter-spacing: -0.2px;    /* 稍微收紧字间距，显得紧凑 */
-}
-
-.paper-title:hover {
-    color: #0066cc;            /* 悬停变为宝石蓝 */
-    text-decoration: none;     /* 悬停不去掉下划线，保持清爽，仅变色即可（或者你喜欢下划线可以加） */
-}
-
-/* 2. 作者：清晰，突出自己 */
-.paper-authors {
-    font-size: 15px;
-    color: #444;               /* 深灰 */
-    line-height: 1.5;
-    margin-bottom: 6px;
-}
-
-/* 你的名字特殊样式 */
-.me {
-    color: #000;               /* 你的名字用纯黑 */
-    font-weight: 600;
-}
-
-/* 3. 会议/期刊：优雅 */
-.paper-venue {
-    font-size: 15px;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.venue-name {
-    font-style: italic;
-    font-weight: 600;          /* 会议简称加粗 */
-}
-
-/* 4. 奖项/高亮：高级的红色 */
-.highlight-tag {
-    color: #d9534f;            /* 砖红色，不刺眼 */
-    font-weight: 700;
-    font-size: 14px;
-    margin-left: 6px;
-}
-
-.highlight-tag.blue {
-    color: #1a73e8;            /* 谷歌蓝，用于 Distinction 等 */
-}
-
-/* 5. 亮点描述：细腻 */
-.paper-desc {
-    font-size: 14px;
-    color: #666;               /* 浅灰 */
-    line-height: 1.5;          /* 行高拉大，增加可读性 */
-    margin-bottom: 12px;
-    font-weight: 400;
-    text-align: justify;
-}
-
-/* 描述中的强调词 */
-.paper-desc b {
-    color: #333;               /* 强调词颜色加深 */
-    font-weight: 600;
-}
-
-/* 6. 链接：统一化 */
-.paper-links a,
-.paper-links .bib-toggle {
-    font-size: 12px;
-    font-weight: 600;
-    color: #0066cc;            /* 宝石蓝 */
-    text-decoration: none;
-    margin-right: 14px;
-    text-transform: uppercase; /* 全大写，显得整齐 */
-    letter-spacing: 0.5px;
-}
-
-.paper-links .bib-toggle {
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    line-height: inherit;
-    cursor: pointer;
-}
-
-.paper-links a:hover,
-.paper-links .bib-toggle:hover {
-    color: #004c99;            /* 悬停变深 */
-}
-
-.paper-links > *:not(:last-child)::after {
-    content: "/";
-    color: #232323;          /* 让斜杠变成浅灰色，不抢链接的风头 */
-    margin-left: 12px;    /* 这里控制斜杠【左侧】的间距 */
-    display: inline-block;
-    pointer-events: none; /* 确保鼠标点到斜杠上不会触发链接 */
-    text-decoration: none;
-}
-
-.bibtex-block {
-    display: none;
-    margin-top: 10px;
-}
-
-.bibtex-pre {
-    background: #f8f9fa;
-    padding: 12px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    font-size: 12px;
-    color: #555;
-    font-family: Consolas, monospace;
-}
-
-.paper-note {
-    color: #666;
-    font-size: 12px;
-}
-
-/* === Publication Filters (年份/精选筛选菜单) === */
 .pub-filters {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eaeaea; /* 底部灰线 */
-    padding-bottom: 10px;
     flex-wrap: wrap;
-}
-
-.filter-btn {
-    font-size: 18px;
-    font-weight: 500;
-    color: #666;
-    cursor: pointer;
-    padding: 6px 12px;
-    border: none;
-    background: transparent;
-    transition: all 0.3s ease;
-    position: relative;
-    border-radius: 4px;
-}
-
-.filter-btn:hover {
-    color: #0066cc; /* 鼠标悬停变蓝 */
-    background-color: #f4f6f8;
-}
-
-.filter-btn.active {
-    color: #0066cc;
-}
-
-/* 激活状态下的底部下划线特效 */
-.filter-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -12px; /* 覆盖到容器的边框上 */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #0066cc;
-    border-radius: 2px;
-}
-
-/* === Paper Tags (研究方向标签) === */
-.paper-tags {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag-item {
-    font-size: 12px;
-    color: #0066cc;
-    background-color: #f0f7ff; /* 极浅的蓝色背景 */
-    padding: 4px 10px;
-    border-radius: 14px; /* 圆角标签 */
-    border: 1px solid #cce0ff;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-/* 如果你希望不同类别有不同的颜色，可以加一些额外的 class */
-.tag-item.tag-embodied { color: #d9534f; background-color: #fff5f5; border-color: #ffebeb; } /* 红色系 */
-.tag-item.tag-vision { color: #0066cc; background-color: #f0f7ff; border-color: #e1f0ff; }   /* 蓝色系 */
-.tag-item.tag-neuromorphic { color: #b58900; background-color: #fff9e6; border-color: #fff3cd; } /* 金色系 */
-/* === Visual Refresh Overrides === */
-.pub-filters {
-    position: sticky;
-    top: 18px;
-    z-index: 10;
-    gap: 10px;
-    margin-bottom: 24px;
-    padding: 14px 16px;
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.82);
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
-    backdrop-filter: blur(10px);
-}
-
-.filter-btn {
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #5b6475;
-}
-
-.filter-btn:hover {
-    color: #155e75;
-    background-color: rgba(15, 118, 110, 0.08);
-}
-
-.filter-btn.active {
-    color: #ffffff;
-    background: linear-gradient(135deg, #0f766e, #155e75);
-    box-shadow: 0 10px 20px rgba(15, 118, 110, 0.2);
-}
-
-.filter-btn.active::after {
-    display: none;
-}
-
-.paper-row {
-    margin-bottom: 16px;
-    padding: 22px;
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.84);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
-}
-
-.paper-row:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.08);
-}
-
-.paper-img {
-    flex: 0 0 230px;
-    margin-right: 30px;
-}
-
-.paper-img img,
-.paper-img video {
-    border-radius: 18px;
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.10);
-}
-
-.paper-title {
-    color: #14213d;
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-.paper-title:hover {
-    color: #0f766e;
-}
-
-.paper-authors,
-.paper-desc {
-    color: #526072;
-}
-
-.paper-venue {
-    color: #27364f;
-}
-
-.highlight-tag {
-    color: #c2410c;
-}
-
-.paper-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-}
-
-.paper-links a,
-.paper-links .bib-toggle {
-    display: inline-flex;
-    align-items: center;
-    min-height: 32px;
-    padding: 0 10px;
-    border: 1px solid rgba(15, 118, 110, 0.12);
-    border-radius: 999px;
-    background: rgba(240, 253, 250, 0.72);
-    color: #155e75;
-    letter-spacing: 0.04em;
-}
-
-.paper-links a:hover,
-.paper-links .bib-toggle:hover {
-    color: #ffffff;
-    background: #0f766e;
-    border-color: #0f766e;
-}
-
-.paper-links > *:not(:last-child)::after {
-    display: none;
-}
-
-.bibtex-block {
-    margin-top: 12px;
-}
-
-.bibtex-pre {
-    padding: 16px;
-    border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    background: #f8fafc;
-    color: #445063;
-}
-
-.paper-note {
-    color: #64748b;
-}
-
-.paper-tags {
-    gap: 10px;
-}
-
-.tag-item {
-    padding: 5px 12px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-@media (max-width: 860px) {
-    .pub-filters {
-        position: static;
-        padding: 12px;
-        border-radius: 18px;
-    }
-
-    .paper-row {
-        flex-direction: column;
-        padding: 18px;
-        border-radius: 22px;
-    }
-
-    .paper-img {
-        flex: none;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 16px;
-    }
-
-    .paper-title {
-        font-size: 18px;
-    }
-}
-
-/* === Academic Tone Overrides === */
-.pub-filters {
-    position: static;
-    gap: 8px;
-    margin-bottom: 18px;
-    padding: 0 0 12px;
-    border: none;
+    gap: 5px;
+    margin-bottom: 9px;
+    padding-bottom: 8px;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
 }
 
 .filter-btn {
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #4b5563;
-}
-
-.filter-btn:hover {
-    color: #1e3a8a;
-    background-color: #f3f4f6;
-}
-
-.filter-btn.active {
-    color: #1e3a8a;
-    background: #eff6ff;
-    box-shadow: none;
-}
-
-.paper-row {
-    margin-bottom: 0;
-    padding: 20px 0;
+    padding: 2px 7px;
     border: none;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-.paper-row:hover {
-    transform: none;
-    box-shadow: none;
-}
-
-.paper-img {
-    flex: 0 0 210px;
-    margin-right: 24px;
-}
-
-.paper-img img,
-.paper-img video {
-    border-radius: 10px;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: none;
-}
-
-.paper-title {
-    color: #1f2937;
-    font-size: 18px;
-}
-
-.paper-title:hover {
-    color: #1e3a8a;
-}
-
-.paper-authors,
-.paper-desc,
-.paper-note {
-    color: #4b5563;
-}
-
-.paper-venue {
-    color: #374151;
-}
-
-.highlight-tag {
-    color: #b45309;
-}
-
-.paper-links {
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.paper-links a,
-.paper-links .bib-toggle {
-    min-height: auto;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    color: #1e3a8a;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-}
-
-.paper-links a:hover,
-.paper-links .bib-toggle:hover {
-    color: #1d4ed8;
-    background: transparent;
-    border-color: transparent;
-}
-
-.bibtex-pre {
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    background: #f8fafc;
-}
-
-.tag-item {
-    padding: 4px 10px;
     border-radius: 999px;
-    font-size: 10px;
-    font-weight: 600;
-}
-
-/* === Modern Academic Polish === */
-.pub-filters {
-    gap: 6px;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-}
-
-.filter-btn {
-    padding: 4px 9px;
-    font-size: 13px;
-    letter-spacing: 0.01em;
-}
-
-.filter-btn.active {
-    color: #1d4ed8;
-    background: rgba(219, 234, 254, 0.7);
-}
-
-.paper-row {
-    padding: 18px 0;
-}
-
-.paper-img {
-    flex: 0 0 196px;
-    margin-right: 22px;
-}
-
-.paper-img img,
-.paper-img video {
-    border-radius: 8px;
-}
-
-.paper-title {
-    font-size: 17px;
-    font-weight: 620;
-    line-height: 1.42;
-    letter-spacing: -0.01em;
-    margin-bottom: 5px;
-}
-
-.paper-authors,
-.paper-venue,
-.paper-desc {
-    font-size: 14px;
-}
-
-.paper-authors {
-    line-height: 1.6;
-}
-
-.paper-venue {
-    margin-bottom: 8px;
-}
-
-.paper-desc {
-    max-width: 72ch;
-    line-height: 1.72;
-}
-
-.paper-links {
-    gap: 12px;
-    margin-bottom: 7px;
-}
-
-.paper-links a,
-.paper-links .bib-toggle {
-    font-size: 11px;
-    letter-spacing: 0.06em;
-}
-
-.bibtex-pre {
+    background: transparent;
+    color: #4b5563;
     font-size: 11.5px;
-    line-height: 1.55;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: color 0.18s ease, background-color 0.18s ease;
+    white-space: nowrap;
 }
 
-.paper-tags {
-    gap: 7px;
-    margin-top: 10px;
+.filter-btn[data-filter="selected"] {
+    color: #334155;
+    font-weight: 600;
 }
 
-.tag-item {
-    padding: 3px 8px;
-    font-size: 9.5px;
-    letter-spacing: 0.05em;
-    border-color: rgba(148, 163, 184, 0.28);
+.filter-btn:hover {
+    color: #1e3a8a;
+    background: #f3f4f6;
 }
 
-@media (max-width: 860px) {
-    .paper-row {
-        padding: 16px 0;
-    }
-
-    .paper-img {
-        width: min(100%, 320px);
-        margin-bottom: 14px;
-    }
-
-    .paper-title {
-        font-size: 16px;
-    }
-
-    .paper-desc {
-        max-width: none;
-    }
-}
-
-/* === Final Polish === */
-.pub-filters {
-    margin-bottom: 14px;
-}
-
-.filter-btn {
-    padding: 3px 8px;
-    font-size: 12.5px;
+.filter-btn.active {
+    color: #1e3a8a;
+    background: rgba(219, 234, 254, 0.55);
 }
 
 .paper-row {
-    padding: 17px 0;
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0 15px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.paper-row.pub-selected {
+    padding-left: 10px;
+    border-left: 2px solid rgba(30, 58, 138, 0.18);
 }
 
 .paper-row:first-of-type {
@@ -646,73 +53,406 @@
 }
 
 .paper-img {
-    flex: 0 0 188px;
-    margin-right: 20px;
+    flex: 0 0 180px;
+    margin-right: 18px;
+    padding-top: 2px;
 }
 
-.paper-title {
-    font-size: 16.5px;
-    margin-bottom: 4px;
+.paper-img img,
+.paper-img video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.paper-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.paper-title,
+.paper-title:visited,
+.paper-title.pending-link {
+    display: block;
+    margin-bottom: 2px;
+    color: #1f2937;
+    font-size: 17.2px;
+    font-weight: 620;
+    line-height: 1.38;
+    letter-spacing: -0.012em;
+    text-decoration: none;
+    max-width: none;
+}
+
+.pending-link {
+    color: #6b7280;
+    cursor: default;
+    text-decoration: none;
+}
+
+.paper-title.pending-link {
+    color: #1f2937;
+}
+
+.paper-title:hover,
+.paper-title:active {
+    color: #1e3a8a;
 }
 
 .paper-authors,
 .paper-venue,
 .paper-desc {
-    font-size: 13.6px;
+    font-size: 14.2px;
+    color: #4b5563;
+}
+
+.paper-authors {
+    line-height: 1.56;
+    margin-bottom: 3px;
+}
+
+.paper-authors .me,
+.paper-authors strong.me {
+    color: #111827;
+    font-weight: 650 !important;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
 }
 
 .paper-venue {
-    margin-bottom: 7px;
+    margin-bottom: 5px;
+    color: #374151;
+    line-height: 1.55;
+}
+
+.venue-name {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.highlight-tag {
+    margin-left: 7px;
+    color: #92400e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: baseline;
 }
 
 .paper-desc {
-    max-width: 70ch;
-    margin-bottom: 10px;
+    max-width: none;
+    margin-bottom: 8px;
+    line-height: 1.7;
+    color: #556070;
 }
 
 .paper-links {
-    gap: 10px;
-    margin-bottom: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .paper-links a,
 .paper-links .bib-toggle {
-    font-size: 10.5px;
-    letter-spacing: 0.07em;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #1e3a8a;
+    font-size: 10.2px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.paper-note {
-    font-size: 11px;
+.paper-links .pending-link {
+    font-size: 10.2px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.paper-links a:hover,
+.paper-links .bib-toggle:hover {
+    color: #1d4ed8;
+}
+
+/* === Back To Academic Calm === */
+.filter-btn {
+    color: #475569;
+}
+
+.filter-btn[data-filter="selected"] {
+    color: #334155;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #1e3a8a;
+}
+
+.paper-row.pub-selected {
+    border-left-color: rgba(30, 58, 138, 0.16);
+}
+
+.paper-title,
+.paper-title:visited,
+.paper-title.pending-link {
+    color: #1f2937;
+}
+
+.paper-title:hover,
+.paper-title:active {
+    color: #1e3a8a;
+}
+
+.paper-authors,
+.paper-venue,
+.paper-desc,
+.bibtex-pre,
+.paper-note,
+.tag-item {
+    color: #475569;
+}
+
+.paper-authors .me {
+    color: #111827;
+}
+
+.highlight-tag {
+    color: #9a3412;
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.paper-links a,
+.paper-links .bib-toggle {
+    color: #1e3a8a;
+}
+
+.paper-links a:hover,
+.paper-links .bib-toggle:hover {
+    color: #1d4ed8;
+}
+
+/* === Refined Warm Palette === */
+.filter-btn {
+    color: #5b6472;
+}
+
+.filter-btn[data-filter="selected"] {
+    color: #7c4a21;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #1f3f75;
+}
+
+.paper-row.pub-selected {
+    border-left-color: rgba(124, 74, 33, 0.16);
+}
+
+.paper-title,
+.paper-title:visited,
+.paper-title.pending-link {
+    color: #1f2937;
+}
+
+.paper-title:hover,
+.paper-title:active {
+    color: #1f3f75;
+}
+
+.paper-authors,
+.paper-venue,
+.paper-desc,
+.bibtex-pre,
+.paper-note,
+.tag-item {
+    color: #4b5563;
+}
+
+.paper-authors .me {
+    color: #161b22;
+}
+
+.highlight-tag {
+    color: #a14b18;
+    background: #f7f3ee;
+    border-color: rgba(122, 74, 33, 0.12);
+}
+
+.paper-links a,
+.paper-links .bib-toggle {
+    color: #1f3f75;
+}
+
+.paper-links a:hover,
+.paper-links .bib-toggle:hover {
+    color: #1d4ed8;
+}
+
+.paper-links > *:not(:last-child)::after {
+    content: "/";
+    margin-left: 8px;
+    color: #c0c7d1;
+}
+
+.paper-links > * {
+    line-height: 1.4;
+}
+
+.bibtex-block {
+    display: none;
+    margin-top: 2px;
 }
 
 .bibtex-pre {
-    margin-top: 2px;
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 6px;
+    background: #f8fafc;
+    color: #475569;
+    font-family: Consolas, Monaco, monospace;
     font-size: 11px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+}
+
+.paper-note {
+    color: #6b7280;
+    font-size: 10.8px;
+}
+
+.year-header + .paper-row {
+    padding-top: 10px;
 }
 
 .paper-tags {
+    display: flex;
+    flex-wrap: wrap;
     gap: 6px;
     margin-top: 8px;
 }
 
 .tag-item {
     padding: 2px 7px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #475569;
     font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.tag-item.tag-embodied,
+.tag-item.tag-vision,
+.tag-item.tag-neuromorphic {
+    color: #475569;
+    background: #f8fafc;
+    border-color: rgba(148, 163, 184, 0.28);
 }
 
 @media (max-width: 860px) {
+    .pub-filters {
+        gap: 5px;
+    }
+
+    .paper-row {
+        flex-direction: column;
+        padding: 16px 0;
+    }
+
     .paper-img {
-        width: min(100%, 300px);
+        flex: none;
+        width: min(100%, 292px);
         margin-right: 0;
+        margin-bottom: 12px;
+        padding-top: 0;
     }
 
     .paper-title {
-        font-size: 15.5px;
+        font-size: 16.1px;
     }
 
     .paper-authors,
     .paper-venue,
     .paper-desc {
-        font-size: 13.4px;
+        font-size: 14.1px;
+    }
+
+    .paper-desc {
+        max-width: none;
     }
 }
+
+/* === Academic Calm Palette === */
+.filter-btn {
+    color: #475569;
+}
+
+.filter-btn[data-filter="selected"] {
+    color: #334155;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #1e3a8a;
+}
+
+.paper-row.pub-selected {
+    border-left-color: rgba(30, 58, 138, 0.16);
+}
+
+.paper-title,
+.paper-title:visited,
+.paper-title.pending-link {
+    color: #1f2937;
+}
+
+.paper-title:hover,
+.paper-title:active {
+    color: #1e3a8a;
+}
+
+.paper-authors,
+.paper-venue,
+.paper-desc,
+.bibtex-pre,
+.paper-note,
+.tag-item {
+    color: #475569;
+}
+
+.paper-authors .me {
+    color: #111827;
+}
+
+.highlight-tag {
+    color: #9a3412;
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.paper-links a,
+.paper-links .bib-toggle {
+    color: #1e3a8a;
+}
+
+.paper-links a:hover,
+.paper-links .bib-toggle:hover {
+    color: #1d4ed8;
+}
+
