@@ -1,13 +1,10 @@
-/* === 鍏ㄥ眬瀛椾綋鍫嗘爤锛氭ā浠?Saurabh Gupta 椋庢牸 === */
+/* === Base Typography === */
 html, body {
-    /* 浣犲凡鏈夌殑瀛椾綋鍫嗘爤淇濇寔涓嶅彉 */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-    /* === 鏍稿績锛氭ā浠夸粬鐨勬覆鏌撹川鎰?=== */
-    -webkit-font-smoothing: antialiased; /* 寮哄埗鎶楅敮榻匡紝璁╁瓧浣撳彉缁?*/
-    -moz-osx-font-smoothing: grayscale;  /* 鐏嫄娴忚鍣ㄦ姉閿娇 */
-    text-rendering: optimizeLegibility;   /* 浼樺寲鏂囧瓧鍙鎬?*/
-    color: #222;                         /* 浠栫殑棰滆壊姣?#333 绋嶅井娣变竴鐐圭偣锛屾洿鎺ヨ繎榛?*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #222;
 }
 
 .mathjax-message {
@@ -18,40 +15,27 @@ body {
     background: #eef1f4;
 }
 
-/* === 鏂板锛氭墿灞曠綉椤典富浣撳唴瀹圭殑瀹藉害 === */
 #layout-content {
-    max-width: 900px !important; /* 璋冩暣杩欎釜鏁板€煎彲浠ユ帶鍒舵暣浣撳搴︼紝姣斿 1100px 鎴?1200px */
-    margin: 0 auto !important;    /* 淇濊瘉鍐呭灞呬腑 */
-    padding: 0 20px;              /* 缁欐墜鏈虹鐣欏嚭涓€鐐瑰懠鍚哥┖闂?*/
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding: 0 20px;
 }
 
-/* 纭繚鏍囬涔熺户鎵胯繖濂楀瓧浣擄紝浣嗗姞绮?*/
 h1, h2, h3, h4 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    color: #000;            /* 鏍囬浣跨敤绾粦浠ョず鍖哄埆 */
+    color: #000;
 }
 
 h1 {
-    /* 1. 璋冩暣瀛楀彿锛歋aurabh 鐨勯鏍奸€氬父鍦?40px - 42px 涔嬮棿 */
     font-size: 36px;
-
-    /* 2. 璋冩暣绮楃粏锛氫娇鐢?800 (Extra Bold) 閰嶅悎绯荤粺瀛椾綋闈炲父鏈夊紶鍔?*/
     font-weight: 600;
-
-    /* 3. 鏍稿績椋庢牸锛氳礋鐨勫瓧闂磋窛銆傝瀛楁瘝鍜屾眽瀛楅潬寰楁洿杩戯紝鏄惧緱鏇翠笓涓氥€佹洿鍍忓钩闈㈣璁?*/
     letter-spacing: -1.5px;
-
-    /* 4. 棰滆壊锛氫娇鐢ㄧ函榛?#000 绐佸嚭涓汉韬唤 */
     color: #000;
-
-    /* 5. 瀛椾綋锛氳嫳鏂囦紭鍏堢郴缁熷師鐢燂紝涓枃浣跨敤鑻规柟鎴栧井杞泤榛?*/
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-
-    /* 6. 闂磋窛锛氳皟鏁村鍚嶄笅鏂圭殑绌洪殭 */
     margin-top: 0px;
     margin-bottom: 10px;
-    border: none; /* 纭繚娌℃湁 h2 榛樿鐨勪笅鍒掔嚎 */
+    border: none;
 }
 
 h2, .profile-name {
@@ -66,7 +50,7 @@ h2, .profile-name {
     font-weight: 600;
 }
 
-/* === Saurabh Gupta Style Profile === */
+/* === Legacy Profile Layout === */
 .profile-section {
     display: flex;
     gap: 40px;
@@ -76,12 +60,12 @@ h2, .profile-name {
 }
 
 .profile-avatar {
-    flex: 0 0 160px; /* 澶村儚瀹藉害 */
+    flex: 0 0 160px;
 }
 
 .profile-avatar img {
     width: 100%;
-    border-radius: 4px; /* 鏋佸皬鐨勫渾瑙掓垨涓嶅姞鍦嗚 */
+    border-radius: 4px;
     background: #ffffff;
 }
 
@@ -89,19 +73,15 @@ h2, .profile-name {
     flex: 1;
 }
 
-/* 濮撳悕锛氬ぇ鑰岄啋鐩?*/
 .profile-name {
-    font-size: 35px;      /* 浠栧疄闄呬唬鐮佷腑鐨勫昂瀵?*/
+    font-size: 35px;
     font-weight: 500;
     color: #000;
     margin-bottom: 8px;
-
-    /* 鏍稿績缁嗚妭锛氭敹绱у瓧闂磋窛锛岃鍚嶅瓧鐪嬭捣鏉ユ洿涓撲笟 */
     letter-spacing: -1.2px;
     line-height: 1.2;
 }
 
-/* 鑱屼綅涓庡崟浣嶏細绱у噾鎺掑垪 */
 .profile-title-line {
     font-size: 19px;
     color: #333;
@@ -113,7 +93,6 @@ h2, .profile-name {
     font-weight: 600;
 }
 
-/* 閾炬帴閮ㄥ垎锛氫娇鐢ㄥ垎闅旂锛岃€屼笉鏄寜閽?*/
 .profile-links-line {
     margin-top: 15px;
     margin-bottom: 20px;
@@ -135,10 +114,9 @@ h2, .profile-name {
     margin: 0 8px;
 }
 
-/* 绠€浠嬶細琛岄珮閫備腑锛屾枃瀛楁繁鐏?*/
 .profile-bio {
     font-size: 16px;
-    line-height: 1.5; /* 浠栫殑琛岄珮鏄?1.5锛屾瘮浣犵殑 1.6 绋嶅井绱у噾鐐?*/
+    line-height: 1.5;
     color: #444;
     text-align: justify;
 }
@@ -153,37 +131,34 @@ h2, .profile-name {
 }
 
 .profile-bio b {
-    font-weight: 500; /* 鎶婇粯璁ょ殑 700 闄嶄负 600锛堝崐绮椾綋锛?*/
-    color: #000000;      /* 鍙互椤轰究璋冧竴涓嬮鑹?*/
+    font-weight: 500;
+    color: #000000;
 }
 
-/* === Modern News List (No Scrollbar) === */
+/* === Legacy News Layout === */
 .news-container {
     margin-bottom: 10px;
 }
 
-/* 鍗曟潯鏂伴椈琛?*/
 .news-row {
     display: flex;
-    align-items: baseline; /* 鏂囧瓧鍩虹嚎瀵归綈 */
+    align-items: baseline;
     padding: 6px 0;
-    border-bottom: 1px dashed #eaeaea; /* 铏氱嚎鍒嗗壊 */
+    border-bottom: 1px dashed #eaeaea;
     transition: background-color 0.2s;
 }
 
 .news-row:hover {
-    background-color: #fafafa; /* 榧犳爣鎮仠寰珮浜?*/
+    background-color: #fafafa;
 }
 
-/* 宸︿晶鏃ユ湡 */
 .news-date {
-    flex: 0 0 85px; /* 鍥哄畾瀹藉害 */
+    flex: 0 0 85px;
     font-size: 15px;
     font-weight: 600;
     color: #444;
 }
 
-/* 鍙充晶鍐呭 */
 .news-content {
     flex: 1;
     font-size: 15px;
@@ -191,11 +166,9 @@ h2, .profile-name {
     line-height: 1.5;
 }
 
-/* 楂樹寒鏍峰紡 */
 .h-red { color: #d9534f; font-weight: 600; }
 .h-blue { color: #0066cc; font-weight: 600; }
 
-/* 寰界珷 (鍙€夛紝鐢ㄤ簬 Awards) */
 .news-badge {
     display: inline-block;
     padding: 1px 6px;
@@ -208,12 +181,10 @@ h2, .profile-name {
     vertical-align: middle;
 }
 
-/* === 鎶樺彔/灞曞紑鎺у埗 === */
 #news-hidden {
-    display: none; /* 榛樿闅愯棌鏃ф柊闂?*/
+    display: none;
 }
 
-/* 灞曞紑鎸夐挳鏍峰紡 */
 .news-more-btn {
     display: block;
     width: 100%;
@@ -237,55 +208,48 @@ h2, .profile-name {
     color: #000000;
 }
 
-/* === Experience Section === */
+/* === Legacy Experience Layout === */
 .exp-section {
     margin-bottom: 10px;
 }
 
 .exp-item {
     display: flex;
-    margin-bottom: 0px; /* 椤圭洰涔嬮棿鐨勮窛绂荤敱 padding-bottom 鎺у埗锛屾柟渚跨敾绾?*/
+    margin-bottom: 0px;
 }
 
-/* 1. 宸︿晶锛氭椂闂村尯鍩?*/
 .exp-time {
-    flex: 0 0 160px;       /* 鍥哄畾瀹藉害锛岀‘淇濆榻?*/
+    flex: 0 0 160px;
     text-align: right;
-    padding-right: 30px;   /* 绂讳腑闂寸嚎鐨勮窛绂?*/
+    padding-right: 30px;
     font-size: 15px;
     font-weight: 600;
-    color: #555;           /* 娣辩伆鑹叉椂闂?*/
-    padding-top: 2px;      /* 瑙嗚涓婁笌鍙充晶鏍囬瀵归綈 */
+    color: #555;
+    padding-top: 2px;
     line-height: 1.5;
 }
 
-/* 2. 鍙充晶锛氬唴瀹瑰尯鍩?(甯﹀乏杈规绾? */
 .exp-content {
     flex: 1;
-    border-left: 2px solid #eef0f3; /* 娴呯伆鑹叉椂闂磋酱绾?*/
-    padding-left: 30px;    /* 鍐呭绂荤嚎鐨勮窛绂?*/
-    padding-bottom: 20px;  /* 姣忎釜缁忓巻涓嬫柟鐨勭暀鐧?*/
-    position: relative;    /* 鐢ㄤ簬瀹氫綅鍦嗙偣 */
+    border-left: 2px solid #eef0f3;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    position: relative;
 }
 
-/* 鏈€鍚庝竴涓」鐩幓鎺夊乏杈规绾?(鍙€夛紝鎴栬€呬繚鐣欑嚎寤朵几) */
-/* .exp-item:last-child .exp-content { border-left: 2px solid transparent; } */
-
-/* 3. 鏃堕棿杞翠笂鐨勫渾鐐?*/
 .exp-content::before {
     content: '';
     position: absolute;
-    left: -6px;            /* (绾垮2px / 2) - (鍦嗙偣瀹?0px / 2) = -1 - 5 = -6px */
-    top: 6px;              /* 鏍规嵁瀛楀彿寰皟鍨傜洿浣嶇疆 */
+    left: -6px;
+    top: 6px;
     width: 10px;
     height: 10px;
-    background: #fff;      /* 鐧藉簳 */
-    border: 2px solid #0066cc; /* 瀹濈煶钃濆渾鐜?(鍛煎簲 Publication 鐨勯摼鎺ヨ壊) */
+    background: #fff;
+    border: 2px solid #0066cc;
     border-radius: 50%;
     z-index: 1;
 }
 
-/* 4. 鍗曚綅鍚嶇О */
 .exp-org {
     font-size: 18px;
     font-weight: 600;
@@ -295,23 +259,21 @@ h2, .profile-name {
 }
 
 .exp-org a {
-    color: inherit;        /* 缁ф壙鐖跺厓绱犻鑹?*/
+    color: inherit;
     text-decoration: none;
 }
 
 .exp-org a:hover {
-    color: #0066cc;        /* 鎮仠鍙樿摑 */
+    color: #0066cc;
 }
 
-/* 5. 鑱屼綅/瀛︿綅 */
 .exp-role {
     font-size: 16px;
     font-weight: 600;
-    color: #333;           /* 娆℃繁鑹?*/
+    color: #333;
     margin-bottom: 8px;
 }
 
-/* 6. 璇︾粏鎻忚堪 (瀵煎笀銆侀儴闂ㄧ瓑) */
 .exp-desc {
     font-size: 14px;
     color: #666;
@@ -325,18 +287,18 @@ h2, .profile-name {
 
 .year-header {
     font-size: 22px;
-    font-weight: 600;          /* 鐗圭矖 */
+    font-weight: 600;
     color: #000;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-bottom: 5px;       /* 鏂囧瓧鍒板簳閮ㄧ嚎鐨勮窛绂?*/
-    border-bottom: 3px solid #000; /* 搴曢儴榛戠嚎 */
-    display: inline-block;     /* 璁╀笅鍒掔嚎鍙窡鏂囧瓧涓€鏍峰 */
+    padding-bottom: 5px;
+    border-bottom: 3px solid #000;
+    display: inline-block;
 }
+
 .mathjax-message {
     display: none;
 }
-
 /* === Visual Refresh === */
 :root {
     --page-bg: #f4f1ea;
@@ -1584,4 +1546,5 @@ body {
 .year-header {
     color: #4b5563;
 }
+
 
