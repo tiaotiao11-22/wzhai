@@ -12,12 +12,17 @@ function hideallbibs()
     }
 }
 
+function isHidden(element)
+{
+    return window.getComputedStyle(element).display === 'none' ;
+}
+
 function togglebib(paperid)
 {
     var paper = document.getElementById(paperid) ;
     var bib = paper.getElementsByTagName('pre') ;
     if (bib.length > 0) {
-        if (bib [0] .style.display == 'none') {
+        if (isHidden(bib [0])) {
             bib [0] .style.display = 'block' ;
         } else {
             bib [0] .style.display = 'none' ;
@@ -28,7 +33,7 @@ function togglebib(paperid)
 function toggleblock(blockId)
 {
    var block = document.getElementById(blockId);
-   if (block.style.display == 'none') {
+   if (isHidden(block)) {
     block.style.display = 'block' ;
    } else {
     block.style.display = 'none' ;
