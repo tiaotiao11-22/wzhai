@@ -53,6 +53,9 @@ window.PAPERS_DATA = {
       pdf: "https://www.preprints.org/frontend/manuscript/bb70c5a8337c1ff741d45d43f2392e23/download_pub",
       project: "https://github.com/Shawn-CodeDev/Awesome-Consistency-Diffusion-Visual-Generation"
     },
+    starRepos: {
+      project: "Shawn-CodeDev/Awesome-Consistency-Diffusion-Visual-Generation"
+    },
     bibtex: `@article{yan2026consistency,
   title={Consistency in Diffusion-Based Visual Generation: A Survey},
   author={Yan, Song and Zhai, Wei and Wang, Chenfeng and Li, Ruixuan and Yang, Zhangping and Cai, Yancheng and Zhang, Tao and Wang, Ling and Lan, Yunwei and He, Yujie and Cao, Yang and Li, Min and Zha, Zheng-Jun},
@@ -244,6 +247,9 @@ window.PAPERS_DATA = {
       pdf: "https://arxiv.org/abs/2405.11794",
       code: "https://github.com/alibaba-yuanjing-aigclab/ViViD"
     },
+    starRepos: {
+      code: "alibaba-yuanjing-aigclab/ViViD"
+    },
     bibtex: `@article{fang2024vivid,
     title={ViViD: Video Virtual Try-on using Diffusion Models},
     author={Fang, Zixun and Zhai, Wei and Su, Aimin and Song, Hongliang and Zhu, Kai and Wang, Mao and Chen, Yu and Liu, Zhiheng and Cao, Yang and Zha, Zheng-Jun},
@@ -298,6 +304,9 @@ window.PAPERS_DATA = {
     links: {
       pdf: "https://www.computer.org/csdl/journal/tp/5555/01/11475181/2fuLQIZcQMw",
       code: "https://github.com/wangkunyu241/SkyFind"
+    },
+    starRepos: {
+      code: "wangkunyu241/SkyFind"
     }
   },
 
@@ -542,6 +551,9 @@ year={2025}
       pdf: "https://arxiv.org/abs/2506.05289",
       code: "https://github.com/ali-vilab/alitok"
     },
+    starRepos: {
+      code: "ali-vilab/alitok"
+    },
     bibtex: `@article{wu2025alitok,
   title={AliTok: Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model},
   author={Wu, Pingyu and Zhu, Kai and Liu, Yu and Tang, Longxiang and Yang, Jian and Peng, Yansong and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -613,15 +625,7 @@ year={2025}
     links: {
       pdf: "https://arxiv.org/pdf/2410.15392",
       code: "https://lbh666.github.io/ef-3dgs/"
-    },
-    bibtex: `@article{liao2026ef,
-  title={Ef-3dgs: Event-aided free-trajectory 3d gaussian splatting},
-  author={Liao, Bohao and Zhai, Wei and Wan, Zengyu and Cheng, Zhixin and Yang, Wenfei and Cao, Yang and Zhang, Tianzhu and Zha, Zheng-Jun},
-  journal={Advances in Neural Information Processing Systems},
-  volume={38},
-  pages={86307--86338},
-  year={2026}
-}`
+    }
   },
 
   {
@@ -752,7 +756,10 @@ year={2024}
     image: "yu2025hero.png",
     links: {
       pdf: "https://arxiv.org/abs/2503.08270",
-      code: "https://jackyu6.github.io/HERO/"
+      code: "https://github.com/JackYu6/HERO_release"
+    },
+    starRepos: {
+      code: "JackYu6/HERO_release"
     },
     bibtex: `@inproceedings{yu2025hero,
 title={HERO: Human Reaction Generation from Videos},
@@ -1058,7 +1065,10 @@ year={2024}
     image: "yang2024egochoir.gif",
     links: {
       pdf: "https://openreview.net/pdf?id=ea4oxkiMP7",
-      code: "https://yyvhang.github.io/EgoChoir/"
+      code: "https://github.com/yyvhang/EgoChoir_release"
+    },
+    starRepos: {
+      code: "yyvhang/EgoChoir_release"
     },
     bibtex: `@article{yang2024egochoir,
     title={EgoChoir: Capturing 3D Human-Object Interaction Regions from Egocentric Views},
@@ -1206,7 +1216,10 @@ year={2024}
     image: "yang2023lemon.png",
     links: {
       pdf: "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_LEMON_Learning_3D_Human-Object_Interaction_Relation_from_2D_Images_CVPR_2024_paper.pdf",
-      code: "https://yyvhang.github.io/LEMON/"
+      code: "https://github.com/yyvhang/lemon_3d"
+    },
+    starRepos: {
+      code: "yyvhang/lemon_3d"
     },
     bibtex: `@inproceedings{yang2024lemon,
     title={LEMON: Learning 3D Human-Object Interaction Relation from 2D Images},
@@ -1290,6 +1303,9 @@ year={2024}
     links: {
       pdf: "https://link.springer.com/article/10.1007/s11263-023-01962-z",
       code: "https://github.com/lhc1224/Cross-View-AG"
+    },
+    starRepos: {
+      code: "lhc1224/Cross-View-AG"
     },
     bibtex: `@article{luo2024grounded,
     title={Grounded affordance from exocentric view},
@@ -1433,6 +1449,9 @@ year={2024}
     links: {
       pdf: "https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_Grounding_3D_Object_Affordance_from_2D_Interactions_in_Images_ICCV_2023_paper.pdf",
       code: "https://github.com/yyvhang/IAGNet"
+    },
+    starRepos: {
+      code: "yyvhang/IAGNet"
     },
     bibtex: `@inproceedings{yang2023grounding,
     title={Grounding 3d object affordance from 2d interactions in images},
@@ -1609,6 +1628,9 @@ year={2024}
       pdf: "https://link.springer.com/article/10.1007/s11263-022-01642-4",
       code: "https://github.com/lhc1224/OSAD_Net"
     },
+    starRepos: {
+      code: "lhc1224/OSAD_Net"
+    },
     bibtex: `@article{zhai2022one,
     title={One-shot object affordance detection in the wild},
     author={Zhai, Wei and Luo, Hongchen and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -1689,6 +1711,9 @@ year={2024}
       pdf: "https://openaccess.thecvf.com/content/CVPR2022/papers/Luo_Learning_Affordance_Grounding_From_Exocentric_Images_CVPR_2022_paper.pdf",
       code: "https://github.com/lhc1224/Cross-View-AG"
     },
+    starRepos: {
+      code: "lhc1224/Cross-View-AG"
+    },
     bibtex: `@inproceedings{luo2022learning,
     title={Learning affordance grounding from exocentric images},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -1712,6 +1737,9 @@ year={2024}
     links: {
       pdf: "https://openaccess.thecvf.com/content/CVPR2022/papers/Wu_Background_Activation_Suppression_for_Weakly_Supervised_Object_Localization_CVPR_2022_paper.pdf",
       code: "https://github.com/wpy1999/BAS"
+    },
+    starRepos: {
+      code: "wpy1999/BAS"
     },
     bibtex: `@inproceedings{wu2022background,
     title={Background activation suppression for weakly supervised object localization},
@@ -1794,6 +1822,9 @@ year={2024}
       pdf: "https://www.ijcai.org/proceedings/2021/0124.pdf",
       code: "https://github.com/lhc1224/OSAD_Net"
     },
+    starRepos: {
+      code: "lhc1224/OSAD_Net"
+    },
     bibtex: `@article{luo2021one,
     title={One-shot affordance detection},
     author={Luo, Hongchen and Zhai, Wei and Zhang, Jing and Cao, Yang and Tao, Dacheng},
@@ -1844,6 +1875,9 @@ year={2024}
     links: {
       pdf: "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhu_Self-Promoted_Prototype_Refinement_for_Few-Shot_Class-Incremental_Learning_CVPR_2021_paper.pdf",
       code: "https://github.com/zhukaii/SPPR"
+    },
+    starRepos: {
+      code: "zhukaii/SPPR"
     },
     bibtex: `@inproceedings{zhu2021self,
     title={Self-promoted prototype refinement for few-shot class-incremental learning},
