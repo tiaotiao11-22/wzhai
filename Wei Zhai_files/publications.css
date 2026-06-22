@@ -1,24 +1,22 @@
 .pub-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 9px;
-    padding-bottom: 8px;
+    gap: 7px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .filter-btn {
-    padding: 2px 7px;
+    padding: 2px 8px;
     border: none;
     border-radius: 999px;
     background: transparent;
-    color: #4b5563;
-    font-size: 11.5px;
+    color: #526173;
+    font-size: 11.6px;
     font-weight: 500;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.025em;
     cursor: pointer;
-    transition: color 0.18s ease, background-color 0.18s ease;
-    white-space: nowrap;
 }
 
 .filter-btn[data-filter="selected"] {
@@ -26,36 +24,33 @@
     font-weight: 600;
 }
 
-.filter-btn:hover {
-    color: #1e3a8a;
-    background: #f3f4f6;
-}
-
+.filter-btn:hover,
 .filter-btn.active {
     color: #1e3a8a;
-    background: rgba(219, 234, 254, 0.55);
+    background: #f6f8fa;
 }
 
 .paper-row {
     display: flex;
     align-items: flex-start;
-    padding: 15px 0 15px;
+    padding: 18px 0;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.paper-row.pub-selected {
-    padding-left: 10px;
-    border-left: 2px solid rgba(30, 58, 138, 0.18);
+.paper-row:first-of-type {
+    padding-top: 10px;
 }
 
-.paper-row:first-of-type {
-    padding-top: 8px;
+.paper-row.pub-selected {
+    padding-left: 12px;
+    border-left: 2px solid rgba(30, 58, 138, 0.14);
+    background: linear-gradient(90deg, rgba(248, 250, 252, 0.92), rgba(248, 250, 252, 0));
 }
 
 .paper-img {
     flex: 0 0 180px;
-    margin-right: 18px;
-    padding-top: 2px;
+    margin-right: 20px;
+    padding-top: 3px;
 }
 
 .paper-img img,
@@ -63,9 +58,9 @@
     display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
+    object-fit: cover;
     border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 6px;
-    object-fit: cover;
 }
 
 .paper-content {
@@ -77,14 +72,19 @@
 .paper-title:visited,
 .paper-title.pending-link {
     display: block;
-    margin-bottom: 2px;
-    color: #1f2937;
-    font-size: 17.2px;
-    font-weight: 620;
-    line-height: 1.38;
-    letter-spacing: -0.012em;
+    margin-bottom: 5px;
+    color: #1b2430;
+    font-size: 17.6px;
+    font-weight: 625;
+    line-height: 1.32;
+    letter-spacing: -0.015em;
     text-decoration: none;
     max-width: none;
+}
+
+.paper-title:hover,
+.paper-title:active {
+    color: #1e3a8a;
 }
 
 .pending-link {
@@ -94,221 +94,155 @@
 }
 
 .paper-title.pending-link {
-    color: #1f2937;
-}
-
-.paper-title:hover,
-.paper-title:active {
-    color: #1e3a8a;
+    color: #1b2430;
 }
 
 .paper-authors,
 .paper-venue,
-.paper-desc {
-    font-size: 14.2px;
-    color: #4b5563;
+.paper-desc,
+.bibtex-pre,
+.paper-note,
+.tag-item {
+    color: #475569;
 }
 
 .paper-authors {
-    line-height: 1.56;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
+    font-size: 13.8px;
+    line-height: 1.62;
+    color: #667387;
 }
 
 .paper-authors .me,
 .paper-authors strong.me {
-    color: #111827;
-    font-weight: 650 !important;
+    color: #273243;
+    font-weight: 580 !important;
     -webkit-text-stroke: 0;
     text-shadow: none;
 }
 
+.author-marker {
+    margin-left: 1px;
+    color: #7a8593;
+    font-size: 0.95em;
+}
+
 .paper-venue {
     margin-bottom: 5px;
-    color: #374151;
-    line-height: 1.55;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: #2f3b4d;
 }
 
 .venue-name {
     font-style: italic;
-    font-weight: 600;
+    font-weight: 620;
 }
 
 .highlight-tag {
-    margin-left: 7px;
-    color: #92400e;
-    font-size: 11px;
+    margin-left: 8px;
+    color: #9a3412;
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
+    padding: 1px 7px;
+    font-size: 9.5px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.065em;
     text-transform: uppercase;
     white-space: nowrap;
     vertical-align: baseline;
 }
 
 .paper-desc {
+    margin-bottom: 9px;
+    font-size: 13.9px;
+    line-height: 1.76;
+    color: #738195;
     max-width: none;
-    margin-bottom: 8px;
-    line-height: 1.7;
-    color: #556070;
 }
 
 .paper-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0;
     align-items: center;
-    margin-bottom: 4px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.paper-links > * {
+    line-height: 1.4;
+}
+
+.paper-links > *:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    color: #c0c8d2;
 }
 
 .paper-links a,
-.paper-links .bib-toggle {
+.paper-links .bib-toggle,
+.paper-links .pending-link {
     padding: 0;
     border: none;
     background: transparent;
-    color: #1e3a8a;
-    font-size: 10.2px;
+    color: #7f8b9b;
+    font-size: 9.8px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
 }
 
-.paper-links .pending-link {
-    font-size: 10.2px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.paper-links > *:not(:last-child) {
+    margin-right: 11px;
 }
 
-.paper-links a:hover,
-.paper-links .bib-toggle:hover {
-    color: #1d4ed8;
+.paper-link-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-/* === Back To Academic Calm === */
-.filter-btn {
-    color: #475569;
-}
-
-.filter-btn[data-filter="selected"] {
-    color: #334155;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    color: #1e3a8a;
-}
-
-.paper-row.pub-selected {
-    border-left-color: rgba(30, 58, 138, 0.16);
-}
-
-.paper-title,
-.paper-title:visited,
-.paper-title.pending-link {
-    color: #1f2937;
-}
-
-.paper-title:hover,
-.paper-title:active {
-    color: #1e3a8a;
-}
-
-.paper-authors,
-.paper-venue,
-.paper-desc,
-.bibtex-pre,
-.paper-note,
-.tag-item {
-    color: #475569;
-}
-
-.paper-authors .me {
-    color: #111827;
-}
-
-.highlight-tag {
-    color: #9a3412;
+.link-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 6px 0 5px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
     background: #f8fafc;
-    border-color: rgba(15, 23, 42, 0.08);
+    color: #7b8796;
+    font-size: 9.1px;
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    line-height: 1.7;
+    vertical-align: middle;
 }
 
-.paper-links a,
-.paper-links .bib-toggle {
-    color: #1e3a8a;
-}
-
-.paper-links a:hover,
-.paper-links .bib-toggle:hover {
-    color: #1d4ed8;
-}
-
-/* === Refined Warm Palette === */
-.filter-btn {
-    color: #5b6472;
-}
-
-.filter-btn[data-filter="selected"] {
-    color: #7c4a21;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    color: #1f3f75;
-}
-
-.paper-row.pub-selected {
-    border-left-color: rgba(124, 74, 33, 0.16);
-}
-
-.paper-title,
-.paper-title:visited,
-.paper-title.pending-link {
-    color: #1f2937;
-}
-
-.paper-title:hover,
-.paper-title:active {
-    color: #1f3f75;
-}
-
-.paper-authors,
-.paper-venue,
-.paper-desc,
-.bibtex-pre,
-.paper-note,
-.tag-item {
+.link-stars-icon {
+    display: inline-flex;
+    align-items: center;
     color: #4b5563;
 }
 
-.paper-authors .me {
-    color: #161b22;
+.link-stars-icon svg {
+    display: block;
+    width: 10px;
+    height: 10px;
+    fill: currentColor;
 }
 
-.highlight-tag {
-    color: #a14b18;
-    background: #f7f3ee;
-    border-color: rgba(122, 74, 33, 0.12);
-}
-
-.paper-links a,
-.paper-links .bib-toggle {
-    color: #1f3f75;
+.link-stars-text {
+    color: #6f7c8d;
 }
 
 .paper-links a:hover,
 .paper-links .bib-toggle:hover {
-    color: #1d4ed8;
-}
-
-.paper-links > *:not(:last-child)::after {
-    content: "/";
-    margin-left: 8px;
-    color: #c0c7d1;
-}
-
-.paper-links > * {
-    line-height: 1.4;
+    color: #1e3a8a;
 }
 
 .bibtex-block {
@@ -322,7 +256,6 @@
     border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 6px;
     background: #f8fafc;
-    color: #475569;
     font-family: Consolas, Monaco, monospace;
     font-size: 11px;
     line-height: 1.55;
@@ -330,8 +263,8 @@
 }
 
 .paper-note {
-    color: #6b7280;
-    font-size: 10.8px;
+    font-size: 10.7px;
+    color: #8a95a3;
 }
 
 .year-header + .paper-row {
@@ -342,18 +275,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 8px;
+    margin-top: 9px;
 }
 
 .tag-item {
-    padding: 2px 7px;
+    padding: 2px 8px;
     border: 1px solid rgba(148, 163, 184, 0.28);
     border-radius: 999px;
     background: #f8fafc;
-    color: #475569;
-    font-size: 9px;
+    font-size: 8.9px;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.055em;
     text-transform: uppercase;
 }
 
@@ -366,25 +298,21 @@
 }
 
 @media (max-width: 860px) {
-    .pub-filters {
-        gap: 5px;
-    }
-
     .paper-row {
         flex-direction: column;
-        padding: 16px 0;
+        padding: 17px 0;
     }
 
     .paper-img {
         flex: none;
         width: min(100%, 292px);
         margin-right: 0;
-        margin-bottom: 12px;
+        margin-bottom: 13px;
         padding-top: 0;
     }
 
     .paper-title {
-        font-size: 16.1px;
+        font-size: 16.2px;
     }
 
     .paper-authors,
@@ -392,67 +320,4 @@
     .paper-desc {
         font-size: 14.1px;
     }
-
-    .paper-desc {
-        max-width: none;
-    }
 }
-
-/* === Academic Calm Palette === */
-.filter-btn {
-    color: #475569;
-}
-
-.filter-btn[data-filter="selected"] {
-    color: #334155;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    color: #1e3a8a;
-}
-
-.paper-row.pub-selected {
-    border-left-color: rgba(30, 58, 138, 0.16);
-}
-
-.paper-title,
-.paper-title:visited,
-.paper-title.pending-link {
-    color: #1f2937;
-}
-
-.paper-title:hover,
-.paper-title:active {
-    color: #1e3a8a;
-}
-
-.paper-authors,
-.paper-venue,
-.paper-desc,
-.bibtex-pre,
-.paper-note,
-.tag-item {
-    color: #475569;
-}
-
-.paper-authors .me {
-    color: #111827;
-}
-
-.highlight-tag {
-    color: #9a3412;
-    background: #f8fafc;
-    border-color: rgba(15, 23, 42, 0.08);
-}
-
-.paper-links a,
-.paper-links .bib-toggle {
-    color: #1e3a8a;
-}
-
-.paper-links a:hover,
-.paper-links .bib-toggle:hover {
-    color: #1d4ed8;
-}
-
