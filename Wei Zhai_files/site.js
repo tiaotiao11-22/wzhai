@@ -81,24 +81,35 @@ function normalizePaper(paper, ownerName) {
         venue: paper.venue || "",
         note: paper.note || paper.venueNote || "",
         description: paper.description || "",
-        bibtex: paper.bibtex || ""
+        bibtex: paper.bibtex || "",
+        starRepos: paper.starRepos || {}
     };
 }
 
 function renderAuthor(author, me) {
     var meta = normalizeAuthor(author);
-    var markers = (meta.coFirst ? "*" : "") + (meta.corresponding ? "✉" : "");
     var isMe = String(me || "").trim().toLowerCase() === meta.name.toLowerCase();
+    var nameHtml;
+    var markerHtml = "";
 
     if (!meta.name) {
         return "";
     }
 
     if (isMe) {
-        return '<strong class="me">' + escapeHtml(meta.name) + '</strong>' + escapeHtml(markers);
+        nameHtml = '<strong class="me">' + escapeHtml(meta.name) + "</strong>";
+    } else {
+        nameHtml = escapeHtml(meta.name);
     }
 
-    return escapeHtml(meta.name) + escapeHtml(markers);
+    if (meta.coFirst) {
+        markerHtml += '<span class="author-marker">*</span>';
+    }
+    if (meta.corresponding) {
+        markerHtml += '<span class="author-marker">&#9993;</span>';
+    }
+
+    return nameHtml + markerHtml;
 }
 
 function renderAuthors(authors, me) {
@@ -137,19 +148,43 @@ function renderMedia(paper) {
     return "";
 }
 
+function renderStarBadge(repo) {
+    if (!repo) {
+        return "";
+    }
+    return [
+        '<span class="link-stars" data-star-repo="' + escapeHtml(repo) + '" hidden title="GitHub stars">',
+        '    <span class="link-stars-icon" aria-hidden="true">',
+        '        <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">',
+        '            <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.57 7.57 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>',
+        "        </svg>",
+        "    </span>",
+        '    <span class="link-stars-text">Star</span>',
+        "</span>"
+    ].join("");
+}
+
+function renderLinkItem(kind, href, label, repo) {
+    return '<span class="paper-link-item"><a href="' + escapeHtml(href) + '">' + escapeHtml(label) + "</a>" + renderStarBadge(repo) + "</span>";
+}
+
+function renderButtonItem(label, targetId) {
+    return '<span class="paper-link-item"><button type="button" class="bib-toggle" data-toggle-target="' + escapeHtml(targetId) + '">' + escapeHtml(label) + "</button></span>";
+}
+
 function renderLinks(paper) {
     var links = [];
     if (paper.pdf) {
-        links.push('<a href="' + escapeHtml(paper.pdf) + '">PDF</a>');
+        links.push(renderLinkItem("pdf", paper.pdf, "PDF", paper.starRepos.pdf));
     }
     if (paper.project) {
-        links.push('<a href="' + escapeHtml(paper.project) + '">Project</a>');
+        links.push(renderLinkItem("project", paper.project, "Project", paper.starRepos.project));
     }
     if (paper.code) {
-        links.push('<a href="' + escapeHtml(paper.code) + '">Code</a>');
+        links.push(renderLinkItem("code", paper.code, "Code", paper.starRepos.code));
     }
     if (paper.bibtex) {
-        links.push('<button type="button" class="bib-toggle" data-toggle-target="' + escapeHtml(paper.id) + '-bib">BibTeX</button>');
+        links.push(renderButtonItem("BibTeX", paper.id + "-bib"));
     }
     if (!paper.pdf && !paper.project && !paper.code && !paper.bibtex) {
         links.push('<span class="pending-link" title="Link pending update">Link pending update</span>');
@@ -164,7 +199,7 @@ function renderRating(paper) {
     if (!paper.rating) {
         return "";
     }
-    return '\n            <span class="highlight-tag">(' + escapeHtml(formatRatingLabel(paper.rating)) + ")</span>";
+    return '\n            <span class="highlight-tag">' + escapeHtml(formatRatingLabel(paper.rating)) + "</span>";
 }
 
 function renderBibtex(paper) {
@@ -172,11 +207,71 @@ function renderBibtex(paper) {
         return "";
     }
     return [
-        '',
+        "",
         '        <div id="' + escapeHtml(paper.id) + '-bib" class="bibtex-block">',
         '<pre class="bibtex-pre">' + escapeHtml(paper.bibtex) + "</pre>",
         "        </div>"
     ].join("\n");
+}
+
+var repoStarCache = {};
+
+function formatStarCount(value) {
+    var count = Number(value || 0);
+    if (count >= 1000) {
+        return (Math.round(count / 100) / 10) + "k";
+    }
+    return String(count);
+}
+
+async function fetchRepoStars(repo) {
+    if (!repo) {
+        return null;
+    }
+
+    if (Object.prototype.hasOwnProperty.call(repoStarCache, repo)) {
+        return repoStarCache[repo];
+    }
+
+    try {
+        var response = await fetch("https://api.github.com/repos/" + repo, {
+            headers: {
+                "Accept": "application/vnd.github+json"
+            }
+        });
+        if (!response.ok) {
+            throw new Error("Failed to fetch repo stars for " + repo);
+        }
+        var data = await response.json();
+        var stars = typeof data.stargazers_count === "number" ? data.stargazers_count : null;
+        repoStarCache[repo] = stars;
+        return stars;
+    } catch (error) {
+        console.warn(error);
+        repoStarCache[repo] = null;
+        return null;
+    }
+}
+
+async function hydrateRepoStars() {
+    var starNodes = Array.prototype.slice.call(document.querySelectorAll(".link-stars[data-star-repo]"));
+    var uniqueRepos = starNodes
+        .map(function(node) { return node.getAttribute("data-star-repo"); })
+        .filter(function(repo, index, array) { return repo && array.indexOf(repo) === index; });
+
+    await Promise.all(uniqueRepos.map(async function(repo) {
+        var stars = await fetchRepoStars(repo);
+        if (stars === null) {
+            return;
+        }
+        document.querySelectorAll('.link-stars[data-star-repo="' + repo.replace(/"/g, '\\"') + '"]').forEach(function(node) {
+            var textNode = node.querySelector(".link-stars-text");
+            if (textNode) {
+                textNode.textContent = formatStarCount(stars);
+            }
+            node.hidden = false;
+        });
+    }));
 }
 
 function renderVenue(paper) {
@@ -203,20 +298,19 @@ function renderPaper(paper) {
         renderMedia(paper),
         '    <div class="paper-content">',
         "        " + renderTitle(paper),
+        "        " + renderVenue(paper),
         '        <div class="paper-authors">',
         "            " + renderAuthors(paper.authors || [], paper.me),
-        "        </div>",
-        "        " + renderVenue(paper),
-        "        " + renderLinks(paper)
+        "        </div>"
     ];
 
     if (paper.description) {
-        parts.push("");
         parts.push('        <div class="paper-desc">');
         parts.push("            " + escapeHtml(paper.description));
         parts.push("        </div>");
     }
 
+    parts.push("        " + renderLinks(paper));
     parts.push(renderBibtex(paper));
     parts.push("    </div>");
     parts.push("</div>");
@@ -329,6 +423,7 @@ async function initPublications() {
         var data = window.PAPERS_DATA;
         renderPublications(data);
         filterPubs("selected");
+        await hydrateRepoStars();
     } catch (error) {
         console.error(error);
         renderPublicationError("Failed to load publications data.");
