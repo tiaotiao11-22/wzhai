@@ -647,6 +647,9 @@ year={2025}
       pdf: "https://arxiv.org/abs/2506.23513",
       project: "https://becauseimbatman0.github.io/ViewPoint"
     },
+    starRepos: {
+      project: "ali-vilab/ViewPoint"
+    },
     bibtex: `@article{fang2025panoramic,
   title={Panoramic Video Generation with Pretrained Diffusion Models},
   author={Fang, Zixun and Zhu, Kai and Liu, Zhiheng and Liu, Yu and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
@@ -697,8 +700,7 @@ year={2025}
     venue: "In ACM MM 2025 MSMA Workshop",
     image: "huang2024leverage.png",
     links: {
-      pdf: "https://arxiv.org/abs/2411.16082",
-      code: "https://wpy1999.github.io/IV-VAE/"
+      pdf: "https://arxiv.org/abs/2411.16082"
     },
     bibtex: `@article{huang2024leverage,
 title={Leverage Task Context for Object Affordance Ranking},
@@ -730,6 +732,9 @@ year={2024}
     links: {
       pdf: "https://arxiv.org/abs/2504.06982",
       code: "https://yyvhang.github.io/SIGMAN_3D/"
+    },
+    starRepos: {
+      code: "yyvhang/SIGMAN_release"
     },
     bibtex: `@article{yang2025sigman,
   title={SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets},
@@ -892,6 +897,9 @@ year={2024}
       pdf: "https://arxiv.org/abs/2412.08614",
       code: "https://github.com/LuFan31/CompreCap"
     },
+    starRepos: {
+      code: "LuFan31/CompreCap"
+    },
     bibtex: `@article{lu2024benchmarking,
     title={Benchmarking Large Vision-Language Models via Directed Scene Graph for Comprehensive Image Captioning},
     author={Lu, Fan and Wu, Wei and Zheng, Kecheng and Ma, Shuailei and Gong, Biao and Liu, Jiawei and Zhai, Wei and Cao, Yang and Shen, Yujun and Zha, Zheng-Jun},
@@ -917,6 +925,9 @@ year={2024}
     links: {
       pdf: "https://arxiv.org/abs/2411.19626",
       code: "https://yawen-shao.github.io/GREAT/"
+    },
+    starRepos: {
+      code: "yawen-shao/GREAT_code"
     },
     bibtex: `@article{shao2024great,
 title={GREAT: Geometry-Intention Collaborative Inference for Open-Vocabulary 3D Object Affordance Grounding},
@@ -944,6 +955,9 @@ year={2024}
     links: {
       pdf: "https://arxiv.org/abs/2411.06449",
       code: "https://wpy1999.github.io/IV-VAE/"
+    },
+    starRepos: {
+      code: "ali-vilab/iv-vae"
     },
     bibtex: `@article{wu2024improved,
 title={Improved Video VAE for Latent Video Diffusion Model},
