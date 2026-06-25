@@ -192,6 +192,8 @@ h4 {
     font-size: 15.6px;
     line-height: 1.82;
     color: var(--text-body);
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .profile-bio b {
