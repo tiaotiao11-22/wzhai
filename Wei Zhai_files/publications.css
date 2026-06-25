@@ -160,6 +160,8 @@
     line-height: 1.76;
     color: #738195;
     max-width: none;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .paper-links {
