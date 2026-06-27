@@ -1,555 +1,323 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
-
-<link rel="icon" href="./Wei Zhai_files/ustc_icon.png">
-
-<link rel="stylesheet" href="./Wei Zhai_files/main.css" type="text/css">
-<link rel="stylesheet" href="./Wei Zhai_files/nomenu.css" type="text/css">
-<link rel="stylesheet" href="./Wei Zhai_files/base.css" type="text/css">
-<link rel="stylesheet" href="./Wei Zhai_files/publications.css" type="text/css">
-<link rel="stylesheet" href="./Wei Zhai_files/sections.css" type="text/css">
-<!--- <title>Wei Zhai</title> --->
-<title>Wei Zhai</title>
-<!-- MathJax -->
-<script src="./Wei Zhai_files/latest.js" async="">
-</script>
-<script type="text/x-mathjax-config;executed=true">
-MathJax.Hub.Config({
-	  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
-<!-- End MathJax -->
-<script type="text/javascript" src="./Wei Zhai_files/hidebib.js"></script>
-<script type="text/javascript" src="./papers.js"></script>
-<script type="text/javascript" src="./Wei Zhai_files/site.js"></script>
-
-
-</head>
-<body><div id="MathJax_Message" class="mathjax-message"></div>
-<div id="main-container">
-<div id="layout-content"> <!-- nomenu  -->
-<div id="toptitle">
-
-<div class="profile-section">
-    <div class="profile-avatar">
-        <img src="./Wei Zhai_files/1.jpg" alt="Wei Zhai">
-    </div>
-
-    <div class="profile-info">
-        <h2 class="page-title">Wei Zhai (翟伟)</h2>
-
-        <div class="profile-meta">
-            <div class="profile-meta-line">Associate Researcher</div>
-            <div class="profile-meta-line">
-                <a href="https://auto.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">Department of Automation</a>
-            </div>
-            <div class="profile-meta-line">
-                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
-            </div>
-            <div class="profile-meta-line">
-                <span class="profile-label">Email:</span>
-                <a href="mailto:wzhai056@ustc.edu.cn">wzhai056@ustc.edu.cn</a>
-            </div>
-        </div>
-
-        <div class="profile-links-line">
-            <a href="mailto:wzhai056@ustc.edu.cn">Email</a>
-            <span class="link-sep">|</span>
-            <a href="https://scholar.google.ca/citations?user=UI5_qZcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <span class="link-sep">|</span>
-            <a href="https://faculty.ustc.edu.cn/zhaiwei/zh_CN/index.htm" target="_blank" rel="noopener noreferrer">USTC Homepage</a>
-            <span class="link-sep">|</span>
-            <a href="https://ustc-milab.work/" target="_blank" rel="noopener noreferrer">MEI-Lab</a>
-        </div>
-    </div>
-</div>
-
-<div class="profile-bio">
-    I am an Associate Researcher in the <a href="https://auto.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">Department of Automation</a>, <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China (USTC)</a>. I received my Ph.D. from USTC in 2022 under the supervision of Prof. <a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm" target="_blank" rel="noopener noreferrer">Zheng-Jun Zha</a> and Prof. <a href="https://staff.iaticetc.cn:1234/" target="_blank" rel="noopener noreferrer">Yang Cao</a>, and my B.S. degree from Southwest Jiaotong University in 2017. My research focuses on <b>Embodied Perception and Interaction</b>, <b>Multimodal Reasoning and Generation</b>, and <b>Neuromorphic Vision</b>. I was fortunate to receive the AAAI 2023 Distinguished Paper Award and the ACM MM 2025 MSMA Workshop Best Student Paper Award.
-</div>
-
-
-
-<h2>News</h2>
-<div class="news-container">
-
-    <div class="news-row">
-        <div class="news-date">03/2026</div>
-        <div class="news-content">
-            <span class="h-red">1</span> papers accepted by <span class="h-red">T-PAMI</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">02/2026</div>
-        <div class="news-content">
-            <span class="h-red">7</span> papers accepted by <span class="h-red">CVPR 2026</span>.
-            <span class="news-badge">1 Highlight</span>
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">01/2026</div>
-        <div class="news-content">
-            <span class="h-red">3</span> papers accepted by <span class="h-red">ICLR 2026</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">11/2025</div>
-        <div class="news-content">
-            <span class="h-red">1</span> paper accepted by <span class="h-red">AAAI 2025</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">10/2025</div>
-        <div class="news-content">
-            <span class="h-red">1</span> paper accepted by <span class="h-red">T-NNLS</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">09/2025</div>
-        <div class="news-content">
-            <span class="h-red">3</span> papers accepted by <span class="h-red">NeurIPS 2025</span>.
-            <span class="news-badge">1 Spotlight</span>
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">09/2025</div>
-        <div class="news-content">
-            <span class="h-red">1</span> paper accepted by <span class="h-red">ACM MM MSMA Workshop</span>.
-            <span class="news-badge">Best Student Paper</span>
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">06/2025</div>
-        <div class="news-content">
-            <span class="h-red">4</span> papers accepted by <span class="h-red">ICCV 2025</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">06/2025</div>
-        <div class="news-content">
-            Won the <span class="h-blue">1st Place</span> in <span class="h-red">Efficient Event-based Eye-Tracking Challenge</span>.
-        </div>
-    </div>
-    
-    <div class="news-row">
-        <div class="news-date">06/2025</div>
-        <div class="news-content">
-            Won the <span class="h-blue">1st Place</span> in <span class="h-red">Body Contact Estimation Challenge (RHOBIN2025 CVPR)</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">05/2025</div>
-        <div class="news-content">
-            <span class="h-red">1</span> paper accepted by <span class="h-red">SCIENCE CHINA Information Sciences</span>.
-        </div>
-    </div>
-
-    <div class="news-row">
-        <div class="news-date">02/2025</div>
-        <div class="news-content">
-            <span class="h-red">5</span> papers accepted by <span class="h-red">CVPR 2025</span>.
-            <span class="news-badge">1 Oral</span>
-        </div>
-    </div>
-
-    <div id="news-hidden">
-        
-        <div class="news-row">
-            <div class="news-date">09/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">NeurIPS 2024</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">07/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">ACM MM 2024</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">07/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">T-IP</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">07/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">ECCV 2024</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">06/2024</div>
-            <div class="news-content">
-                Won the <span class="h-blue">2nd Place</span> in <span class="h-red">3D Contact Estimation Challenge (RHOBIN2024 CVPR)</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">04/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">Optics Express</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">04/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">T-AI</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">03/2024</div>
-            <div class="news-content">
-                Won the <span class="h-blue">2nd Place</span> in <span class="h-red">Efficient Super-Resolution Challenge (NTIRE2024 CVPR)</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">03/2024</div>
-            <div class="news-content">
-                Won the <span class="h-blue">1st Place</span> in <span class="h-red">Event-based Eye Tracking Task (AIS2024 CVPR)</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">02/2024</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">CVPR 2024</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">12/2023</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">AAAI 2024</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">11/2023</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">IJCV</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">10/2023</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">T-PAMI</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">09/2023</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">IJCV</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">07/2023</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">T-NNLS</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">07/2023</div>
-            <div class="news-content">
-                <span class="h-red">2</span> papers accepted by <span class="h-red">ICCV 2023</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">03/2023</div>
-            <div class="news-content">
-                <span class="h-red">2</span> papers accepted by <span class="h-red">CVPR 2023</span>.
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">01/2023</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">AAAI 2023</span>.
-                <span class="news-badge">Distinguished Paper</span>
-            </div>
-        </div>
-
-        <div class="news-row">
-            <div class="news-date">09/2022</div>
-            <div class="news-content">
-                <span class="h-red">1</span> paper accepted by <span class="h-red">NeurIPS 2022</span>.
-            </div>
-        </div>
-
-    </div>
-    <button type="button" class="news-more-btn" id="news-btn-text" data-action="toggle-news-history">View History News... &#9660;</button>
-
-</div>
-
-
-
-
-
-<h2>Publications</h2>
-<div id="publications-root">
-    <div class="pub-filters" id="pub-filters"></div>
-    <div id="publications-list"></div>
-</div>
-
-<h2>Experience</h2>
-<div class="exp-section">
-
-    <div class="exp-item">
-        <div class="exp-time">
-            Jul 2024 - Present
-        </div>
-        <div class="exp-content">
-            <div class="exp-org">
-                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
-            </div>
-            <div class="exp-role">Associate Researcher</div>
-            <div class="exp-desc">
-                <a href="https://auto.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">Department of Automation</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="exp-item">
-        <div class="exp-time">
-            Jul 2022 - Jun 2024
-        </div>
-        <div class="exp-content">
-            <div class="exp-org">
-                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
-            </div>
-            <div class="exp-role">Postdoctoral Researcher</div>
-            <div class="exp-desc">
-                Department of Automation <br>
-                Advisor: Prof. <a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm">Zheng-Jun Zha</a> and Prof. <a href="https://staff.iaticetc.cn:1234/">Yang Cao</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="exp-item">
-        <div class="exp-time">
-            Sep 2017 - Jun 2022
-        </div>
-        <div class="exp-content">
-            <div class="exp-org">
-                <a href="http://www.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>
-            </div>
-            <div class="exp-role">Ph.D. in Cyberspace Security</div>
-            <div class="exp-desc">
-                School of Cyberspace Security <br>
-                Advisor: Prof. <a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm">Zheng-Jun Zha</a> and Prof. <a href="https://staff.iaticetc.cn:1234/">Yang Cao</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="exp-item">
-        <div class="exp-time">
-            Dec 2020 - Sep 2021
-        </div>
-        <div class="exp-content">
-            <div class="exp-org">
-                <a href="http://cybersec.ustc.edu.cn//" target="_blank" rel="noopener noreferrer">JD Explore Academy</a>
-            </div>
-            <div class="exp-role">Research Intern</div>
-            <div class="exp-desc">
-                Mentor: Prof. <a href="https://scholar.google.ca/citations?user=RwlJNLcAAAAJ&hl=en">Dacheng Tao</a> and Dr. <a href="https://scholar.google.ca/citations?user=9jH5v74AAAAJ&hl=en">Jing Zhang</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="exp-item">
-        <div class="exp-time">
-            Sep 2013 - Jun 2017
-        </div>
-        <div class="exp-content">
-            <div class="exp-org">
-                <a href="https://www.swjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Southwest Jiaotong University</a>
-            </div>
-            <div class="exp-role">B.S. in Computer Science</div>
-            <div class="exp-desc">
-                Outstanding Graduate of Southwest Jiaotong University (2017)
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-
-<h2>Awards and Honors</h2>
-<div class="info-section">
-
-    <div class="info-row">
-        <div class="info-label">2025</div>
-        <div class="info-content">
-            <b>ACM MM MSMA Workshop Best Student Paper</b>
-            <span class="award-badge badge-blue">Best Paper</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2025</div>
-        <div class="info-content">
-            1st Place, Body Contact Estimation Challenge (RHOBIN2025 CVPR Workshop)
-            <span class="award-badge badge-gold">Champion</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2025</div>
-        <div class="info-content">
-            1st Place, Efficient Event-based Eye-Tracking Challenge (CVPR Workshop)
-            <span class="award-badge badge-gold">Champion</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2024</div>
-        <div class="info-content">
-            1st Place, Event-based Eye Tracking Task (AIS2024 CVPR Workshop)
-            <span class="award-badge badge-gold">Champion</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2024</div>
-        <div class="info-content">
-            2nd Place, 3D Contact Estimation Challenge (RHOBIN2024 CVPR Workshop)
-            <span class="award-badge badge-red">Runner-up</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2024</div>
-        <div class="info-content">
-            2nd Place, NTIRE 2024 Efficient Super-Resolution Challenge
-            <span class="award-badge badge-red">Runner-up</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2023</div>
-        <div class="info-content">
-            <b>AAAI Distinguished Paper Award</b>
-            <span class="award-badge badge-blue">Distinguished</span>
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2021</div>
-        <div class="info-content">
-            Outstanding Internship at JD Explore Academy
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2019</div>
-        <div class="info-content">
-            National Scholarship (University of Science and Technology of China)
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2017</div>
-        <div class="info-content">
-            Outstanding Graduate of Southwest Jiaotong University
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">2016</div>
-        <div class="info-content">
-            National Scholarship (Southwest Jiaotong University)
-        </div>
-    </div>
-
-</div>
-
-<h2>Professional Activities</h2>
-<div class="info-section">
-    <div class="service-stack">
-        <div class="service-line">
-            <span class="service-line-label">Conference Reviewer:</span>
-            <span class="service-line-text">CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, AAAI, ACM MM, IJCAI</span>
-        </div>
-
-        <div class="service-line">
-            <span class="service-line-label">Journal Reviewer:</span>
-            <span class="service-line-text">T-PAMI, IJCV, T-IP, T-NNLS, T-MM, T-CSVT, PR, ToMM</span>
-        </div>
-    </div>
-</div>
-
-
-<h2>Teaching</h2>
-<div class="info-section">
-
-    <div class="info-row">
-        <div class="info-label">Autumn 2024</div>
-        <div class="info-content">
-            Computer Vision, USTC
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">Autumn 2025</div>
-        <div class="info-content">
-            Computer Vision, USTC
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">Spring 2026</div>
-        <div class="info-content">
-            Deep Learning, USTC
-        </div>
-    </div>
-
-</div>
-
-
-<h2>Teaching Assistants</h2>
-<div class="info-section">
-
-    <div class="info-row">
-        <div class="info-label">Autumn 2020</div>
-        <div class="info-content">
-            Computer Vision, USTC
-        </div>
-    </div>
-
-    <div class="info-row">
-        <div class="info-label">Autumn 2019</div>
-        <div class="info-content">
-            Image Processing, USTC
-        </div>
-    </div>
-
-</div>
-
-
-
-</body></html>
-
+/* === Highlight Works === */
+.highlight-container {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 14px 4px 24px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.highlight-card {
+    display: flex;
+    flex: 0 0 232px;
+    flex-direction: column;
+    padding: 11px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    text-align: left;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(30, 58, 138, 0.14);
+    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
+}
+
+.highlight-card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.highlight-card img {
+    width: 100%;
+    height: 136px;
+    margin-bottom: 9px;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.work-title {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 7px;
+    color: #1f2937;
+    font-size: 13.8px;
+    font-weight: 700;
+    line-height: 1.34;
+    -webkit-box-orient: vertical;
+}
+
+.highlight-card a:hover .work-title {
+    color: #1e3a8a;
+}
+
+.work-meta {
+    margin-top: auto;
+    color: #667487;
+    font-size: 11.8px;
+    line-height: 1.52;
+}
+
+.work-highlight {
+    display: inline-block;
+    margin-top: 3px;
+    color: #9a3412;
+    font-weight: 700;
+}
+
+.work-highlight.blue {
+    color: #1e3a8a;
+}
+
+.highlight-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.highlight-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.highlight-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+/* === Services, Awards, Teaching === */
+.info-section {
+    margin-bottom: 10px;
+}
+
+.info-section b {
+    font-weight: 600;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 28px;
+    row-gap: 10px;
+}
+
+.service-col {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-header {
+    margin-bottom: 12px;
+    color: #1f2937;
+    font-size: 16.2px;
+    font-weight: 630;
+    letter-spacing: -0.01em;
+}
+
+.service-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.service-list li {
+    position: relative;
+    margin-bottom: 9px;
+    padding-left: 15px;
+    color: #475569;
+    font-size: 14.3px;
+    line-height: 1.72;
+}
+
+.service-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #5b6472;
+    font-size: 12.8px;
+    font-weight: 600;
+    letter-spacing: 0.045em;
+    white-space: nowrap;
+}
+
+.info-content {
+    max-width: none;
+    color: #3f4a59;
+    font-size: 14.3px;
+    line-height: 1.72;
+    overflow-wrap: anywhere;
+}
+
+.award-badge {
+    display: inline-block;
+    margin-left: 7px;
+    padding: 1px 7px;
+    background: #f6f8fa;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
+    font-size: 9.4px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+}
+
+.badge-red {
+    color: #92400e;
+}
+
+.badge-blue {
+    color: #1e3a8a;
+}
+
+.badge-gold {
+    color: #b45309;
+}
+
+span {
+    font-weight: 400;
+}
+
+@media (max-width: 860px) {
+    .service-col {
+        min-width: 100%;
+    }
+
+    .info-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .info-label {
+        white-space: normal;
+    }
+
+    .info-content {
+        max-width: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .highlight-container,
+    .highlight-card,
+    .info-row,
+    .info-label,
+    .info-content {
+        box-sizing: border-box;
+        min-width: 0;
+    }
+
+    .highlight-container {
+        gap: 11px;
+        padding: 9px 2px 16px;
+    }
+
+    .highlight-card {
+        flex-basis: 206px;
+        padding: 9px;
+    }
+
+    .highlight-card img {
+        height: 122px;
+        margin-bottom: 8px;
+    }
+
+    .work-title {
+        margin-bottom: 6px;
+        font-size: 13px;
+        line-height: 1.32;
+    }
+
+    .work-meta {
+        font-size: 11.1px;
+        line-height: 1.48;
+    }
+
+    .info-row {
+        gap: 2px;
+        padding: 8px 0;
+    }
+
+    .info-label {
+        font-size: 11.6px;
+        letter-spacing: 0.035em;
+    }
+
+    .info-content {
+        font-size: 13.2px;
+        line-height: 1.56;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .award-badge {
+        margin-left: 5px;
+        padding: 1px 6px;
+        font-size: 8.7px;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-container {
+        gap: 9px;
+        padding: 7px 0 14px;
+    }
+
+    .highlight-card {
+        flex-basis: 188px;
+        padding: 8px;
+    }
+
+    .highlight-card img {
+        height: 112px;
+    }
+
+    .work-title {
+        font-size: 12.4px;
+    }
+
+    .work-meta {
+        font-size: 10.6px;
+    }
+
+    .info-label {
+        font-size: 11.1px;
+    }
+
+    .info-content {
+        font-size: 12.8px;
+        line-height: 1.5;
+    }
+
+    .service-list li {
+        margin-bottom: 7px;
+        font-size: 13.1px;
+        line-height: 1.58;
+    }
+}
