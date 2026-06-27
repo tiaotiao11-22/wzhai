@@ -722,3 +722,71 @@ div#member p{
     max-width: 100%;
   }
 }
+
+/* Mobile conflict reset for the homepage */
+@media screen and (max-width: 860px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  div#main-container,
+  div#layout,
+  div#layout-content-container,
+  div#layout-content {
+    overflow-x: hidden !important;
+  }
+
+  div#layout,
+  div#layout-content-container,
+  div#layout-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  div#layout {
+    display: block !important;
+  }
+
+  div#layout-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  div#img-container,
+  div#text-container,
+  div#text-img-container {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre,
+  tt,
+  table {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  pre,
+  tt {
+    overflow-x: auto;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
