@@ -26,6 +26,35 @@ window.PAPERS_DATA = {
   owner: OWNER,
   papers: [
   {
+    id: "yu2026explore",
+    title: "EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning",
+    authors: [
+      "Chengjun Yu",
+      "Xuhan Zhu",
+      "Chaoqun Du",
+      corresponding("Pengfei Yu"),
+      corresponding("Wei Zhai"),
+      "Yang Cao",
+      "Zheng-Jun Zha"
+    ],
+    year: 2026,
+    selected: true,
+    venue: "In ECCV 2026",
+    description: "Introduces a challenging benchmark for long-horizon egocentric scene prediction, exposing how far current multimodal models still are from reliably reasoning about the physical consequences of actions.",
+    image: "yu2026explore.png",
+    links: {
+      pdf: "https://arxiv.org/abs/2603.09731",
+      project: "https://jackyu6.github.io/EXPLORE-Page/"
+    },
+    bibtex: `@article{yu2026explore,
+  title={EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning},
+  author={Yu, Chengjun and Zhu, XuHan and Du, Chaoqun and Yu, Pengfei and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2603.09731},
+  year={2026}
+}`
+  },
+
+  {
     id: "yan2026consistency",
     title: "Consistency in Diffusion-Based Visual Generation: A Survey",
     authors: [
@@ -65,6 +94,123 @@ window.PAPERS_DATA = {
   },
 
   {
+    id: "wang2026self",
+    title: "Self-Consistent Latent Reasoning: Long Latent Sequence Reasoning for Vision-Language Model",
+    authors: [
+      "Chenfeng Wang",
+      "Wei He",
+      "Xuhan Zhu",
+      "Chunpeng Zhou",
+      "Qizhen Li",
+      "Song Yan",
+      "Yufei Zheng",
+      "Chengjun Yu",
+      "Fan Lu",
+      "Wei Zhai",
+      "Yang Cao",
+      "Pengfei Yu",
+      "Zheng-Jun Zha"
+    ],
+    year: 2026,
+    preprint: true,
+    venue: "Arxiv",
+    description: "Extends latent chain-of-thought for vision-language models by preventing information-gain collapse, enabling substantially longer latent reasoning sequences with stronger benchmark performance and out-of-distribution generalization.",
+    image: "wang2026self.png",
+    links: {
+      pdf: "https://arxiv.org/abs/2605.12163"
+    },
+    bibtex: `@article{wang2026self,
+  title={Self-Consistent Latent Reasoning: Long Latent Sequence Reasoning for Vision-Language Model},
+  author={Wang, Chenfeng and He, Wei and Zhu, Xuhan and Zhou, Chunpeng and Li, Qizhen and Yan, Song and Zheng, Yufei and Yu, Chengjun and Lu, Fan and Zhai, Wei and Cao, Yang and Yu, Pengfei and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2605.12163},
+  year={2026}
+}`
+  },
+
+  {
+    id: "yan2026determinism",
+    title: "Beyond Randomness: Understand the Order of the Noise in Diffusion",
+    authors: [
+      "Song Yan",
+      "Min Li",
+      "Bi Xinliang",
+      "Jian Yang",
+      "Yusen Zhang",
+      "Guanye Xiong",
+      "Yunwei Lan",
+      "Tao Zhang",
+      "Wei Zhai",
+      "Zheng-Jun Zha"
+    ],
+    year: 2026,
+    preprint: true,
+    venue: "Arxiv",
+    description: "Shows that diffusion noise carries analyzable semantic order rather than pure randomness, and introduces a simple training-free erasure-injection process for more controllable and consistent generation.",
+    image: "yan2026determinism.png",
+    links: {
+      pdf: "https://arxiv.org/abs/2511.07756"
+    },
+    bibtex: `@article{yan2026determinism,
+  title={Beyond Randomness: Understand the Order of the Noise in Diffusion},
+  author={Yan, Song and Li, Min and Bi, Xinliang and Yang, Jian and Zhang, Yusen and Xiong, Guanye and Lan, Yunwei and Zhang, Tao and Zhai, Wei and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2511.07756},
+  year={2026}
+}`
+  },
+
+  {
+    id: "liu2026egogen",
+    title: "EgoGen: Egocentric Interaction Video Generation with 3D Hand Structure Constraints",
+    authors: [
+      "Cuiyu Liu",
+      corresponding("Wei Zhai"),
+      "Hongchen Luo",
+      "Yang Cao",
+      "Zhengjun Zha"
+    ],
+    year: 2026,
+    rating: "oral",
+    venue: "In ICASSP 2026",
+    description: "Generates egocentric interaction videos under explicit 3D hand-structure constraints, improving anatomical plausibility and temporal consistency while introducing a dedicated benchmark for this setting.",
+    image: "liu2026egogen.png",
+    links: {
+      pdf: "https://ieeexplore.ieee.org/abstract/document/11461342/"
+    },
+    bibtex: `@inproceedings{liu2026egogen,
+  title={EgoGen: Egocentric Interaction Video Generation with 3D Hand Structure Constraints},
+  author={Liu, Cuiyu and Zhai, Wei and Luo, Hongchen and Cao, Yang and Zha, Zhengjun},
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={11712--11716},
+  year={2026}
+}`
+  },
+
+  {
+    id: "wang2026grace",
+    title: "GRACE: Estimating Geometry-level 3D Human-Scene Contact from 2D Images",
+    authors: [
+      "Chengfeng Wang",
+      corresponding("Wei Zhai"),
+      "Yuhang Yang",
+      "Yang Cao",
+      "Zhengjun Zha"
+    ],
+    year: 2026,
+    venue: "In ICIP 2026",
+    description: "Estimates geometry-level 3D human-scene contact directly from 2D images through geometry-aware reasoning, improving contact localization accuracy while generalizing across diverse human shapes.",
+    image: "wang2026grace.png",
+    links: {
+      pdf: "https://arxiv.org/abs/2505.06575"
+    },
+    bibtex: `@inproceedings{wang2026grace,
+  title={GRACE: Estimating Geometry-level 3D Human-Scene Contact from 2D Images},
+  author={Wang, Chengfeng and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zhengjun},
+  booktitle={International Conference on Image Processing (ICIP)},
+  year={2026}
+}`
+  },
+
+  {
     id: "zhang2026end",
     title: "End-to-End Spatial-Temporal Transformer for Real-time 4D HOI Reconstruction",
     authors: [
@@ -88,35 +234,6 @@ window.PAPERS_DATA = {
   title={End-to-End Spatial-Temporal Transformer for Real-time 4D HOI Reconstruction},
   author={Zhang, Haoyu and Zhai, Wei and Yang, Yuhang and Cao, Yang and Zha, Zheng-Jun},
   journal={arXiv preprint arXiv:2603.14435},
-  year={2026}
-}`
-  },
-
-  {
-    id: "yu2026explore",
-    title: "EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning",
-    authors: [
-      "Chengjun Yu",
-      "Xuhan Zhu",
-      "Chaoqun Du",
-      "Pengfei Yu",
-      "Wei Zhai",
-      "Yang Cao",
-      "Zheng-Jun Zha"
-    ],
-    year: 2026,
-    selected: true,
-    venue: "In ECCV 2026",
-    description: "Introduces a challenging benchmark for long-horizon egocentric scene prediction, exposing how far current multimodal models still are from reliably reasoning about the physical consequences of actions.",
-    image: "yu2026explore.png",
-    links: {
-      pdf: "https://arxiv.org/abs/2603.09731",
-      project: "https://jackyu6.github.io/EXPLORE-Page/"
-    },
-    bibtex: `@article{yu2026explore,
-  title={EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning},
-  author={Yu, Chengjun and Zhu, XuHan and Du, Chaoqun and Yu, Pengfei and Zhai, Wei and Cao, Yang and Zha, Zheng-Jun},
-  journal={arXiv preprint arXiv:2603.09731},
   year={2026}
 }`
   },
