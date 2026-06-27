@@ -28,6 +28,13 @@ body {
 
 body {
     line-height: 1.72;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
 }
 
 a,
@@ -150,6 +157,7 @@ h4 {
 
 .profile-meta-line a {
     color: inherit;
+    overflow-wrap: anywhere;
 }
 
 .profile-label {
@@ -230,9 +238,11 @@ h4 {
 
 .news-content {
     flex: 1;
+    min-width: 0;
     font-size: 14.2px;
     line-height: 1.7;
     color: var(--text-body);
+    overflow-wrap: anywhere;
 }
 
 .h-red {
@@ -348,6 +358,7 @@ h4 {
     font-size: 14.5px;
     line-height: 1.7;
     color: var(--text-body);
+    overflow-wrap: anywhere;
 }
 
 .exp-desc a {
@@ -360,6 +371,67 @@ h4 {
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.05em;
+}
+
+/* === Professional Activities === */
+.service-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.service-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 1px 0;
+}
+
+.service-line-label {
+    flex: 0 0 154px;
+    font-size: 14.4px;
+    font-weight: 620;
+    color: var(--text-strong);
+}
+
+.service-line-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 14.2px;
+    line-height: 1.65;
+    color: var(--text-body);
+    overflow-wrap: anywhere;
+}
+
+.service-line-text,
+.service-line-label {
+    display: block;
+}
+
+.service-line-text a {
+    color: inherit;
+}
+
+.service-tags {
+    display: none;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 9px 10px;
+    min-width: 0;
+}
+
+.service-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--text-body);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
 }
 
 /* === Responsive === */
@@ -390,7 +462,12 @@ h4 {
     }
 
     .profile-avatar {
+        margin: 0 auto;
         max-width: 220px;
+    }
+
+    .profile-info {
+        padding-top: 0;
     }
 
     .profile-bio {
@@ -400,7 +477,18 @@ h4 {
     .news-row,
     .exp-item {
         flex-direction: column;
+        align-items: stretch;
         gap: 6px;
+    }
+
+    .service-line {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    .service-line-label {
+        flex: none;
     }
 
     .news-date,
@@ -421,5 +509,227 @@ h4 {
     .exp-content::before {
         left: 0;
         top: -5px;
+    }
+}
+
+@media (max-width: 640px) {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body,
+    #main-container,
+    #layout-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    #main-container {
+        padding: 0;
+    }
+
+    #layout-content {
+        width: 100% !important;
+        padding: 18px 15px 24px !important;
+        border-radius: 0 !important;
+    }
+
+    .page-title {
+        margin-bottom: 16px;
+        font-size: 29px;
+        line-height: 1.08;
+        letter-spacing: -0.028em;
+    }
+
+    #layout-content > h2:not(.page-title) {
+        margin-top: 30px;
+        margin-bottom: 14px;
+        font-size: 20px;
+    }
+
+    #layout-content > h2:not(.page-title)::after {
+        width: 34px;
+        margin-top: 7px;
+    }
+
+    .profile-section {
+        gap: 14px;
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+    }
+
+    .profile-avatar {
+        max-width: 170px;
+    }
+
+    .profile-meta {
+        margin-bottom: 14px;
+    }
+
+    .profile-meta-line {
+        font-size: 14.5px;
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .profile-links-line {
+        gap: 0;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .profile-links-line a,
+    .profile-links-line .pending-link {
+        font-size: 12px;
+        letter-spacing: 0.02em;
+    }
+
+    .link-sep {
+        display: inline-block;
+        margin: 0 6px;
+    }
+
+    .profile-bio {
+        font-size: 14.2px;
+        line-height: 1.8;
+        text-align: left;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .news-row {
+        width: 100%;
+        max-width: 100%;
+        gap: 3px;
+        padding: 8px 0;
+    }
+
+    .news-date {
+        font-size: 11.4px;
+        letter-spacing: 0.04em;
+    }
+
+    .news-content {
+        font-size: 13.4px;
+        line-height: 1.58;
+        width: 100%;
+        max-width: 100%;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .news-badge {
+        display: inline-flex;
+        margin-top: 0;
+        margin-left: 6px;
+        font-size: 8.8px;
+        max-width: 100%;
+        vertical-align: top;
+        width: auto;
+    }
+
+    .exp-org {
+        font-size: 15.4px;
+    }
+
+    .exp-role,
+    .exp-desc {
+        font-size: 13.3px;
+        line-height: 1.58;
+    }
+
+    .service-stack {
+        gap: 8px;
+    }
+
+    .service-line-label,
+    .service-line-text {
+        font-size: 13.5px;
+        line-height: 1.62;
+    }
+
+    .service-line,
+    .service-line-text,
+    .info-section,
+    .news-container,
+    .exp-section {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #layout-content {
+        padding: 16px 12px 22px !important;
+    }
+
+    .page-title {
+        font-size: 26px;
+        line-height: 1.1;
+        letter-spacing: -0.022em;
+    }
+
+    .profile-meta-line {
+        font-size: 14px;
+    }
+
+    .profile-links-line a,
+    .profile-links-line .pending-link {
+        font-size: 11.5px;
+    }
+
+    .profile-bio {
+        font-size: 13.4px;
+        line-height: 1.74;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .news-date {
+        font-size: 10.8px;
+    }
+
+    .news-content {
+        font-size: 12.8px;
+        line-height: 1.54;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .news-content .news-badge {
+        display: inline-flex;
+        margin-top: 0;
+        margin-left: 6px;
+        font-size: 8.5px;
+    }
+
+    .service-line-label,
+    .service-line-text {
+        font-size: 12.8px;
+        line-height: 1.52;
+    }
+
+    .exp-org {
+        font-size: 14.8px;
+    }
+
+    .exp-role,
+    .exp-desc {
+        font-size: 12.9px;
+        line-height: 1.52;
     }
 }
