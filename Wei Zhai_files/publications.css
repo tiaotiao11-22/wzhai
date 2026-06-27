@@ -97,6 +97,16 @@
     color: #1b2430;
 }
 
+.paper-title,
+.paper-title:visited,
+.paper-title.pending-link,
+.paper-authors,
+.paper-venue,
+.paper-desc {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .paper-authors,
 .paper-venue,
 .paper-desc,
@@ -302,6 +312,7 @@
 @media (max-width: 860px) {
     .paper-row {
         flex-direction: column;
+        align-items: stretch;
         padding: 17px 0;
     }
 
@@ -321,5 +332,247 @@
     .paper-venue,
     .paper-desc {
         font-size: 14.1px;
+    }
+}
+
+@media (max-width: 640px) {
+    .pub-filters,
+    .paper-row,
+    .paper-row.pub-selected,
+    .paper-img,
+    .paper-content,
+    .paper-title,
+    .paper-title:visited,
+    .paper-title.pending-link,
+    .paper-authors,
+    .paper-venue,
+    .paper-desc,
+    .paper-links,
+    .bibtex-block,
+    .bibtex-pre {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .paper-row,
+    .paper-row.pub-selected {
+        display: block;
+        overflow: hidden;
+    }
+
+    .pub-filters {
+        gap: 5px;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+
+    .filter-btn {
+        padding: 4px 7px;
+        font-size: 10.8px;
+        line-height: 1.25;
+    }
+
+    .paper-row {
+        padding: 12px 0;
+    }
+
+    .paper-row.pub-selected {
+        padding-left: 8px;
+    }
+
+    .paper-img {
+        display: block;
+        flex: none;
+        width: 100%;
+        margin-bottom: 9px;
+        margin-right: 0;
+        padding-top: 0;
+    }
+
+    .paper-content {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .paper-img img,
+    .paper-img video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    .paper-title,
+    .paper-title:visited,
+    .paper-title.pending-link {
+        margin-bottom: 4px;
+        font-size: 14.7px;
+        line-height: 1.38;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .paper-authors {
+        margin-bottom: 6px;
+        font-size: 13px;
+        line-height: 1.5;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .paper-venue {
+        margin-bottom: 5px;
+        font-size: 13.1px;
+        line-height: 1.4;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .highlight-tag {
+        display: inline-flex;
+        margin-top: 5px;
+        margin-left: 0;
+        padding: 1px 6px;
+        font-size: 8.6px;
+        white-space: normal;
+        width: max-content;
+        max-width: 100%;
+    }
+
+    .paper-desc {
+        margin-bottom: 7px;
+        font-size: 12.7px;
+        line-height: 1.64;
+        text-align: left;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .paper-links {
+        gap: 6px 10px;
+        margin-bottom: 3px;
+        align-items: flex-start;
+    }
+
+    .paper-links > *:not(:last-child)::after {
+        content: none;
+    }
+
+    .paper-links > *:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .paper-links a,
+    .paper-links .bib-toggle,
+    .paper-links .pending-link {
+        font-size: 9.2px;
+        letter-spacing: 0.05em;
+        white-space: normal;
+    }
+
+    .paper-link-item {
+        gap: 4px;
+    }
+
+    .link-stars {
+        padding: 0 5px 0 4px;
+        font-size: 8.6px;
+    }
+
+    .bibtex-pre {
+        padding: 10px 11px;
+        font-size: 10px;
+        line-height: 1.46;
+    }
+}
+
+@media (max-width: 480px) {
+    .pub-filters {
+        gap: 4px;
+        padding-bottom: 7px;
+    }
+
+    .filter-btn {
+        padding: 3px 6px;
+        font-size: 10.1px;
+    }
+
+    .paper-row {
+        padding: 10px 0;
+    }
+
+    .paper-row.pub-selected {
+        padding-left: 6px;
+        border-left-width: 1px;
+    }
+
+    .paper-img {
+        margin-bottom: 8px;
+    }
+
+    .paper-img img,
+    .paper-img video {
+        border-radius: 5px;
+    }
+
+    .paper-title,
+    .paper-title:visited,
+    .paper-title.pending-link {
+        margin-bottom: 4px;
+        font-size: 13.6px;
+        line-height: 1.36;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .paper-authors {
+        margin-bottom: 5px;
+        font-size: 12.2px;
+        line-height: 1.48;
+    }
+
+    .paper-venue {
+        margin-bottom: 4px;
+        font-size: 12.5px;
+        line-height: 1.36;
+    }
+
+    .paper-desc {
+        margin-bottom: 6px;
+        font-size: 12.1px;
+        line-height: 1.6;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+
+    .paper-links {
+        gap: 5px 8px;
+        margin-top: 0;
+    }
+
+    .paper-links a,
+    .paper-links .bib-toggle,
+    .paper-links .pending-link {
+        font-size: 8.8px;
+        letter-spacing: 0.04em;
+    }
+
+    .link-stars {
+        font-size: 8.2px;
     }
 }
